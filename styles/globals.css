@@ -1,16 +1,288 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+body, html {
+  height: 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.wrap {
+height: 100vh;
+width: 100%;
+display:flex;
+flex-direction:column;
 }
 
-* {
-  box-sizing: border-box;
+.top {
+width: 100%;
+height: 50px;
+background-color: blue;
+}
+
+.mid {
+width: 100%;
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.bottom {
+width: 100%;
+height: 50px;
+background-color: blue;
+}
+
+.cards-container{
+padding: 1.5rem;
+/* align-items: center; */
+justify-content: center;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 100%;
+}
+
+.boxing-form {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+img{
+width:100%;
+max-width:400px;
+max-height:300px;
+}
+
+.footer {
+background: #ADA996;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 62px;
+}
+
+.copyright{
+line-height: 62px;
+}
+
+.homepage{
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+height: 100% !important;
+}
+
+.lead {
+margin: 1em !important;
+}
+
+.containerDashboard{
+height: 100%;
+width: 80% !important;
+/* display: flex; */
+/* align-items: center; */
+margin: auto;
+justify-content: center !important;
+}
+
+.NewFormBoxing {
+width: 60% !important;
+}
+
+.partyLogo {
+max-width: 260px !important;
+min-width: 140px !important;
+}
+
+.container{
+/* height: 100%; */
+width: 100% !important;
+align-items: center;
+justify-content: center;
+}
+
+.login{
+margin: auto;
+text-align: center;
+height: 100%;
+min-width: 20em;
+width: 40%;
+}
+
+.sign-up{
+margin: auto;
+text-align: center;
+height: 100%;
+min-width: 20em;
+width: 40%;
+}
+
+.loginSignUpImages{
+width: auto;
+margin: 0em;
+}
+
+/* #homepageVotingOnlineImage {
+  background-image: url("../public/images/colored-ballots_bw.jpg");
+  background-size: contain;
+  height: 20em;
+} */
+
+.homepageSignUpButton {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.color-nav {
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* ELECTION PAGE */
+
+#cards_landscape_wrap-2{
+text-align: center;
+/* background: #F7F7F7; */
+}
+#cards_landscape_wrap-2 .container{
+/* padding-top: 80px;  */
+padding-bottom: 40px;
+}
+#cards_landscape_wrap-2 a{
+text-decoration: none;
+outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+background: #ffffff;
+overflow: hidden;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+-webkit-transition:all .9s ease; 
+-moz-transition:all .9s ease; 
+-o-transition:all .9s ease;
+-ms-transition:all .9s ease;
+transition:all .9s ease;  
+width: 100%;
+height: 200px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+opacity: 0.7;
+-webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+background: #FFFFFF;
+margin-top: 50px;
+-webkit-transition: all 0.2s ease-in;
+-moz-transition: all 0.2s ease-in;
+-ms-transition: all 0.2s ease-in;
+-o-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+background: #fff;
+box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+-webkit-transition: all 0.2s ease-in;
+-moz-transition: all 0.2s ease-in;
+-ms-transition: all 0.2s ease-in;
+-o-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+margin-top: 10px;
+margin-bottom: 0px;
+padding-bottom: 0px; 
+font-size: 14px;
+letter-spacing: 1px;
+color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+margin-top: 0px;
+margin-bottom: 4px; 
+font-size: 18px;
+font-weight: bold;
+text-transform: uppercase;
+font-family: 'Roboto Black', sans-serif;
+letter-spacing: 1px;
+color: black;
+}
+
+ul {
+list-style: none;
+}
+ul li::before {
+content: "📌";
+display: inline-block;
+margin-right: 0.2rem;
+}
+
+.custom_accordion ul {
+text-align: left;
+}
+
+/* ::ng-deep .card-header{
+background-color: white;
+} */
+
+div.active {
+background-color: #268bf0;
+}
+
+.fa-github {
+background: transparent;
+color: rgb(0, 0, 0);
+}
+
+.github-logo:hover {
+color: rgb(41, 41, 41);
+}
+
+/* SPINNER-ICON */
+
+#nprogress .bar {
+height: 6px !important;
+}
+
+#nprogress .spinner-icon {
+width: 36px !important;
+height: 36px !important;
+}
+
+.image-cropper {
+width: 65%;
+height: 50%;
+position: relative;
+overflow: hidden;
+border-radius: 12%;
+}
+
+.image-cropper > img {
+display: inline;
+margin: 0 auto;
+height: 100%;
+width: 100%;
+max-width:500px;
 }
