@@ -1,6 +1,5 @@
 import { GetServerSideProps, GetStaticPropsResult } from 'next';
 import Layout from '../../components/Layout';
-import { getSession } from 'next-auth/react';
 
 interface GalleryPageProps {
     userId: string | null
@@ -9,18 +8,17 @@ interface GalleryPageProps {
 const GalleryPage = ({ userId }: GalleryPageProps) => {
 
   return(
-      <Layout title="Gallery Page">
+      <Layout title="I Soli di Claudio | Galleria">
           <div className="mid">
-            <p>DAGHE</p>
+            <p>${userId}</p>
           </div>
       </Layout>
   );
 }
 
 export const getServerSideProps: GetServerSideProps<GalleryPageProps> = async ({params, req }): Promise<GetStaticPropsResult<GalleryPageProps>> => {
-    const session = await getSession({ req });
 
-    const accessToken = session?.accessToken;
+    // const accessToken = session?.accessToken;
     // election doesn't exist
     // if(election === undefined){
     //   return {
@@ -30,10 +28,10 @@ export const getServerSideProps: GetServerSideProps<GalleryPageProps> = async ({
     //     },
     //   };
     // }
-    const id: string | undefined =  session?.user.id;
+    // const id: string | undefined =  session?.user.id;
     return {
       props: {
-        userId: id === undefined ? null : id
+        userId: "DAGHE"
       }
     };
 };

@@ -1,26 +1,24 @@
 import { GetServerSideProps, GetStaticPropsResult } from 'next';
 import Layout from '../../components/Layout';
-import { getSession } from 'next-auth/react';
 
 interface ArtworkPageProps {
-    userId: string | null
+    artworkName: string
 }
 
-const ArtworkPage = ({ userId }: ArtworkPageProps) => {
+const ArtworkPage = ({ artworkName } : ArtworkPageProps) => {
 
   return(
-      <Layout title="Artwork Page">
+      <Layout title = {`I Soli di Claudio | ${artworkName}`}>
           <div className="mid">
-            <p>DAGHE</p>
+            <p>${artworkName}</p>
           </div>
       </Layout>
   );
 }
 
 export const getServerSideProps: GetServerSideProps<ArtworkPageProps> = async ({params, req }): Promise<GetStaticPropsResult<ArtworkPageProps>> => {
-    const session = await getSession({ req });
 
-    const accessToken = session?.accessToken;
+    // const accessToken = session?.accessToken;
     // election doesn't exist
     // if(election === undefined){
     //   return {
@@ -30,10 +28,10 @@ export const getServerSideProps: GetServerSideProps<ArtworkPageProps> = async ({
     //     },
     //   };
     // }
-    const id: string | undefined =  session?.user.id;
+    // const id: string | undefined =  session?.user.id;
     return {
       props: {
-        userId: id === undefined ? null : id
+        artworkName : "DAGHE"
       }
     };
 };
