@@ -7,8 +7,6 @@ const NavigationBar = () => {
     
     const router: NextRouter = useRouter();
 
-    let session: boolean = true;
-
     return (
         <>
             <Navbar className="color-nav" collapseOnSelect expand="lg" variant="light">
@@ -16,52 +14,34 @@ const NavigationBar = () => {
                 <Navbar.Brand>
                     <Link href="/">
                         <a className="nav-link active" aria-current="page">
-                            <Image id="VotingOnlineWebApplication" src="/images/voting-box.png" alt="Online Voting Web Application Logo" width="60" height="60" />
+                            <Image id="VotingOnlineWebApplication" src="/voting-box.png" alt="Online Voting Web Application Logo" width="60" height="60" />
                         </a>
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse className="justify-content-md-center" id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                    <Nav.Item>
-                    <Link href="/">
-                        <a className="nav-link">Homepage</a>
-                    </Link>
-                    </Nav.Item>
-                    {session &&
-                    <Nav.Item>
-                        <Link href="/user-dashboard">
-                            <a className="nav-link">Personal Dashboard</a>
-                        </Link>
-                    </Nav.Item>
-                    }
-                    {session &&
-                    <Nav.Item>
-                        <Link href="/admin-dashboard">
-                            <a className="nav-link">Admin Dashboard</a>
-                        </Link>
-                    </Nav.Item>
-                    }
-                    </Nav>
-                    {session && !(router.pathname === "/login" || router.pathname === "/sign-up") &&
-                    <ul className="navbar-nav">
-                        <div className="nav-item text-nowrap">
-                            <Link href="/login">
-                            <a className="nav-link">Login</a>
+                <Navbar.Collapse className="justify-content-center pr-5 mr-5" id="responsive-navbar-nav">
+                    <Nav className="mx-auto">
+                        <Nav.Item className=" mx-4">
+                            <Link href="/">
+                                <a className="nav-link">Homepage</a>
                             </Link>
-                        </div>
-                    </ul>
-                    }
-                    {session && !(router.pathname === "/login" || router.pathname === "/sign-up") &&
-                    <ul className="navbar-nav">
-                        <div className="nav-item text-nowrap mt-3">
-                            <p className="nav-link active">Hello</p>
-                        </div>
-                        <div className="nav-item text-nowrap mt-3">
-                            <a className="nav-link" href="" >Logout </a>
-                        </div>
-                    </ul>
-                    }
+                        </Nav.Item>
+                        <Nav.Item className=" mx-4">
+                            <Link href="/user-dashboard">
+                                <a className="nav-link">Galleria</a>
+                            </Link>
+                        </Nav.Item>
+                        <Nav.Item className=" mx-4">
+                            <Link href="/admin-dashboard">
+                                <a className="nav-link">Chi Sono</a>
+                            </Link>
+                        </Nav.Item>
+                        <Nav.Item className=" mx-4">
+                            <Link href="/admin-dashboard">
+                                <a className="nav-link">Contattami</a>
+                            </Link>
+                        </Nav.Item>
+                    </Nav>
                 </Navbar.Collapse>
                 </Container>
             </Navbar>
