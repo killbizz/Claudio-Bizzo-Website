@@ -10,6 +10,7 @@ export const getImageList = (folderPath: string, tag: string = ""): Promise<any>
     return cloudinary.search
         .expression(expression)
         .with_field("context")
+        // .max_results(3)
         .execute()
         .then((result: any) => {
             return result;
