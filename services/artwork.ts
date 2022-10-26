@@ -15,8 +15,6 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
       };
       folders.push(folderElement);
     });
-
-    console.log(folders);
   
     return folders;
   };
@@ -37,10 +35,7 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
       imageURL: imageList.resources[0].secure_url,
 
       title: context.titolo,
-      date: context.data
     };
-
-    console.log(artwork);
   
     return artwork;
   };
