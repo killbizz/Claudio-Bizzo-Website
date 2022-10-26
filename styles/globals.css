@@ -1,5 +1,6 @@
 body, html {
   height: 100%;
+  margin: 0;
 }
 
 .wrap {
@@ -20,6 +21,9 @@ body, html {
   flex:1;
   display:flex;
   flex-direction:column;
+}
+
+.midBackgroundColor {
   background: rgb(255,239,222);
   background: radial-gradient(circle, rgba(255,239,222,1) 0%, rgba(255,236,217,1) 25%, rgba(255,233,211,1) 50%, rgba(255,231,206,1) 75%, rgba(255,228,200,1) 100%); 
 }
@@ -213,12 +217,17 @@ img {
   color: black;
 }
 
-.fa-facebook {
+.fa-facebook-square {
   background: transparent;
   color: rgb(0, 0, 0);
 }
 
 .fa-instagram {
+  background: transparent;
+  color: rgb(0, 0, 0);
+}
+
+.fa-github {
   background: transparent;
   color: rgb(0, 0, 0);
 }
@@ -265,4 +274,14 @@ img {
 
 .custom-button:hover {
   background-position: bottom !important;
+}
+
+.homepageBackgroundImage {
+  background-image: url(/homepage.png);
+  /* Full height */
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: initial;
 }
