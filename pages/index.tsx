@@ -8,9 +8,24 @@ const IndexPage = () => {
 
   return (
     <Layout title="I Soli di Claudio | Homepage">
-      <div className="mid homepageBackgroundImage">
-        
+      <div className="mid">
+        <div className='homepageBackgroundImage'>
+          <div className='row homepageTitle'>
+            <h1 className='col '>Claudio Bizzo,<br/>Artigiano e Creativo</h1>
+          </div>
+          <div className='row homepageDescription'>
+            <p className='col'>Nel mio sito troverai arredamento per interno/esterno,<br/> in modo completamente artigianale ed ecologico</p>
+          </div>
+          <div className='row homepageCitation'>
+            <blockquote >
+              <p className='col' lang="it">“Sono un artigiano. Divento artista <br/>quando la gente guarda quello che faccio.”</p>
+            </blockquote>
+          </div>
+        </div>
       </div>
+      {/* <div>
+        DAGHE
+      </div> */}
     </Layout>
   );
 }

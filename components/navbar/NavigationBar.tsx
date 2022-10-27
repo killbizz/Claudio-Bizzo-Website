@@ -14,7 +14,7 @@ const NavigationBar = () => {
                     <Navbar.Brand>
                         <Link href="/">
                             <a className="nav-link active" aria-current="page">
-                                <Image id="VotingOnlineWebApplication" src="/voting-box.png" alt="Online Voting Web Application Logo" width="60" height="60" />
+                                <Image id="VotingOnlineWebApplication" src="/voting-box.png" alt="Online Voting Web Application Logo" width="45" height="45" />
                             </a>
                         </Link>
                     </Navbar.Brand>
@@ -37,22 +37,22 @@ const NavigationBar = () => {
                         <Nav className="ml-auto d-flex justify-content-end">
                             <Nav.Item className=" mx-4">
                                 <Link href="/">
-                                    <a className="nav-link">Homepage</a>
+                                    <a className="nav-link custom-link">Homepage</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/gallery">
-                                    <a className="nav-link">Galleria</a>
+                                    <a className="nav-link custom-link">Galleria</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/about">
-                                    <a className="nav-link">Chi Sono</a>
+                                    <a className="nav-link custom-link">Chi Sono</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/contact">
-                                    <a className="nav-link">Contattami</a>
+                                    <a className="nav-link custom-link">Contattami</a>
                                 </Link>
                             </Nav.Item>
                         </Nav>
