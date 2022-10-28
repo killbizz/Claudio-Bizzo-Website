@@ -51,7 +51,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
 
   return(
       <Layout title="I Soli di Claudio | Galleria">
-          <div className="mid midBackgroundColor">
+          <div className="mid mid-background-color">
             <h1 className="text-center mt-4 pt-4">Galleria dei Lavori</h1>
             <div id="cards_landscape_wrap-2">
                 <div className="container">

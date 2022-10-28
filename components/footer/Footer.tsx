@@ -8,7 +8,7 @@ const Footer = () => {
                     </div>
                     <div className="col-6">
                         <a href="https://github.com/killbizz/Online-Voting-React-FE">
-                            <i className="fa fa-github fa-3x github-logo copyright" />
+                            <i className="fa fa-github fa-3x logos copyright" />
                         </a>
                     </div>    
                 </div>

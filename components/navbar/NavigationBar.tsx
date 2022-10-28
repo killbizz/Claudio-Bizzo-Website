@@ -9,7 +9,7 @@ const NavigationBar = () => {
 
     return (
         <>
-            <Navbar className="color-nav" collapseOnSelect expand="lg" variant="light">
+            <Navbar className="nav color-nav" collapseOnSelect expand="lg" variant="light">
                 <Container>
                     <Navbar.Brand>
                         <Link href="/">
@@ -21,14 +21,14 @@ const NavigationBar = () => {
                     <Navbar.Brand>
                         <div>
                             <a href="https://www.facebook.com/profile.php?id=100009326235389">
-                                <i className="fa fa-facebook-square fa-2x github-logo copyright" />
+                                <i className="fa fa-facebook-square fa-2x logos copyright" />
                             </a>
                         </div>  
                     </Navbar.Brand>
                     <Navbar.Brand>
                         <div>
                             <a href="https://www.instagram.com/claudiobizzo/">
-                                <i className="fa fa-instagram fa-2x github-logo copyright" />
+                                <i className="fa fa-instagram fa-2x logos copyright" />
                             </a>
                         </div>
                     </Navbar.Brand>

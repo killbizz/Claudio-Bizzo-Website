@@ -4,10 +4,8 @@ body, html {
 }
 
 .wrap {
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  display:flex;
-  flex-direction:column;
 }
 
 .top {
@@ -17,13 +15,14 @@ body, html {
 }
 
 .mid {
+  height: 100%;
   width: 100%;
   flex:1;
   display:flex;
   flex-direction:column;
 }
 
-.midBackgroundColor {
+.mid-background-color {
   background: rgb(255,239,222);
   background: radial-gradient(circle, rgba(255,239,222,1) 0%, rgba(255,236,217,1) 25%, rgba(255,233,211,1) 50%, rgba(255,231,206,1) 75%, rgba(255,228,200,1) 100%); 
 }
@@ -35,33 +34,22 @@ body, html {
 }
 
 .container{
-  /* height: 100%; */
   position: relative;
   width: 100% !important;
   align-items: center;
   justify-content: center;
 }
 
-.cards-container{
-  padding: 1.5rem;
-  /* align-items: center; */
-  justify-content: center;
+.nav {
+  border-bottom: 2px solid #000000;
 }
 
-.boxing-form {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-
-img {
-  width:100%;
-  max-width:400px;
-  max-height:300px;
+.color-nav {
+  background: rgb(194,159,122);
+  background: -moz-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
+  background: linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c29f7a",endColorstr="#c29f7a",GradientType=1);
 }
 
 .footer {
@@ -77,29 +65,28 @@ img {
   line-height: 62px;
 }
 
-.homepage{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 100% !important;
+img {
+  width:100%;
+  max-width:400px;
+  max-height:300px;
 }
 
-.color-nav {
-  background: rgb(194,159,122);
-  background: -moz-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
-  background: linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c29f7a",endColorstr="#c29f7a",GradientType=1);
+.boxing-form {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
-/* GALLERY PAGE */
+/* ----- GALLERY PAGE ----- */
 
 #cards_landscape_wrap-2{
   text-align: center;
-  /* background: #F7F7F7; */
 }
 #cards_landscape_wrap-2 .container{
-  /* padding-top: 80px;  */
   padding-bottom: 40px;
 }
 #cards_landscape_wrap-2 a{
@@ -176,6 +163,8 @@ img {
   color: black;
 }
 
+/* ----- LOGOS ----- */
+
 .fa-facebook-square {
   background: transparent;
   color: rgb(0, 0, 0);
@@ -191,11 +180,11 @@ img {
   color: rgb(0, 0, 0);
 }
 
-.github-logo:hover {
+.logos:hover {
   color: rgb(41, 41, 41);
 }
 
-/* SPINNER-ICON */
+/* ----- SPINNER-ICON ----- */
 
 #nprogress .bar {
   height: 6px !important;
@@ -204,22 +193,6 @@ img {
 #nprogress .spinner-icon {
   width: 36px !important;
   height: 36px !important;
-}
-
-.image-cropper {
-  width: 65%;
-  height: 50%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12%;
-}
-
-.image-cropper > img {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  max-width:500px;
 }
 
 .custom-button {
@@ -235,36 +208,122 @@ img {
   background-position: bottom !important;
 }
 
-.homepageBackgroundImage {
-  background-image: url(/homepage.png);
+/* ----- HOMEPAGE ----- */
+
+.homepage-mid {
+  height: 88vh;
+  width: 100%;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  position:relative
+}
+
+.homepage-background-image {
+  background-image: url(/home_hq_blur.jpg);
   height: 100% !important;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: repeat;
-  background-size: initial;
+  background-size:cover;
+  position: relative;
 }
 
-.homepageTitle {
+.homepage-title {
   color: white;
   position: absolute;
-  top: 20%;
-  left: 15%;
+  height: 100%;
+  top: 12%;
+  left: 12%;
 }
 
-.homepageDescription {
+.homepage-description {
   color: white;
   position: absolute;
   top: 50%;
-  right: 9%;
+  right: 8%;
 }
 
-.homepageCitation {
+.homepage-citation {
   color: white;
   letter-spacing: 3px;
   position: absolute;
-  top: 75%;
-  left: 15%;
+  top: 78%;
+  left: 11%;
 }
+
+.homepage-separator {
+  height: 120px;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align:middle;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+/* ----- SCROLLDOWN ----- */
+
+.scrolldown {
+  position: absolute;
+  bottom: 20px;
+  right: 18%;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-80px) translateX(-50%) rotate(45deg);
+}
+
+.scrolldown span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  animation: animate 1.8s linear infinite;
+  opacity: 0;
+}
+
+.scrolldown span:nth-child(1) {
+  transform: translate(-15px, -15px);
+  animation-delay: -0.4s;
+}
+
+.scrolldown span:nth-child(2) {
+  transform: translate(0, 0);
+  animation-delay: -0.2s;
+}
+
+.scrolldown span:nth-child(3) {
+  transform: translate(15px, 15px);
+  animation-delay: 0s;
+}
+
+@keyframes animate {
+
+  0% {
+    top: -5px;
+    left: -5px;
+    opacity: 0;
+  }
+  
+  25% {
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+  }
+
+  50%,100% {
+    top: -5px;
+    left: -5px;
+    opacity: 0;
+  }
+}
+
+/* ----- CUSTOM LINK ----- */
 
 .custom-link {
   color: #18272F;
