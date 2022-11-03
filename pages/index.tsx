@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic';
+import { Carousel } from 'react-responsive-carousel';
 import Layout from '../components/Layout'
 const Link = dynamic(() => import('next/link'), { ssr: false });
+import Image from 'next/image';
 
 const IndexPage = () => {
   
@@ -11,7 +13,7 @@ const IndexPage = () => {
       <div className="homepage-mid">
         <div className='homepage-background-image'>
           <div className='row homepage-title'>
-            <h1 className='col '>Claudio Bizzo,<br/>Artigiano e Creativo</h1>
+            <h1 className='col'>Claudio Bizzo,<br/>Artigiano e Creativo</h1>
           </div>
           <div className='row homepage-description'>
             <p className='col'>Nel mio sito troverai arredamento per interno/esterno,<br/> in modo completamente artigianale ed ecologico</p>
@@ -31,8 +33,24 @@ const IndexPage = () => {
       <div className="homepage-separator color-nav">
         <h2>LAVORI IN EVIDENZA</h2>
       </div>
-      <div className="homepageMid">
-        DAGHE
+      <div className="homepage-mid-2">
+        <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={4000} transitionTime={1500} 
+          autoPlay infiniteLoop useKeyboardArrows
+          // onClickItem={onClickItem}
+        >
+          <div key={1}>
+              <Image src={"/home_hq_blur.jpg"} layout='fill' />
+              <p className="legend">Legend 1</p>
+          </div>
+          <div key={2}>
+              <Image src={"/homepage.png"} layout='fill' />
+              <p className="legend">Legend 2</p>
+          </div>
+          <div key={3}>
+              <Image src={"/homepage.png"} layout='fill' />
+              <p className="legend">Legend 3</p>
+          </div>
+        </Carousel>
       </div>
     </Layout>
   );

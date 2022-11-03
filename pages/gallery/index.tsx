@@ -64,18 +64,11 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                   <div className="text-box">
                                       <div className="image-box">
                                           <Image
-                                            // onClick={() => {
-                                            //   setModalShow(true);
-                                            //   setIndexImageSelected(index);
-                                            // }}
                                             cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-                                            // className="photoInGallery shadow-1-strong rounded mb-4"
                                             alt={artwork.title}
                                             publicId={artwork.publicId}
-                                            // width="400"
                                             height="300"
                                             crop="fill"
-                                            // gravity="face"
                                             loading="lazy"
                                           />
                                       </div>

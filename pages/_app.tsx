@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // styles for the react carousel
 
 //Binding events
 Router.events.on('routeChangeStart', () => NProgress.start()); 
