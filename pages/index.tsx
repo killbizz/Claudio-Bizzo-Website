@@ -2,11 +2,19 @@ import dynamic from 'next/dynamic';
 import { Carousel } from 'react-responsive-carousel';
 import Layout from '../components/Layout'
 const Link = dynamic(() => import('next/link'), { ssr: false });
-import Image from 'next/image';
+// import { Image } from "cloudinary-react";
+import Image from "next/image";
+import Router  from 'next/router';
+import { GetStaticProps, GetStaticPropsResult } from 'next';
+import { Artwork } from '../types/Artwork';
+import Folder from '../types/Folder';
+import { getFolder, getPreviewArtwork } from '../services/artwork';
 
-const IndexPage = () => {
-  
-  let session: boolean = true;
+interface HomePageProps {
+  featuredArtworks: Artwork[]
+}
+
+const IndexPage = ({ featuredArtworks }: HomePageProps) => {
 
   return (
     <Layout title="I Soli di Claudio | Homepage">
@@ -35,10 +43,31 @@ const IndexPage = () => {
       </div>
       <div className="homepage-mid-2 mid-background-color">
         <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={3500} transitionTime={1500} 
-          autoPlay infiniteLoop useKeyboardArrows
-          // onClickItem={onClickItem}
+          autoPlay infiniteLoop useKeyboardArrows 
+          onClickItem={(index, item) => {
+            // TODO : redirect to the item page
+            console.log(item);
+            // Router.push('/gallery');
+          }}
         >
-          <div key={1}>
+          {
+            featuredArtworks.map((artwork) => 
+              <div key={artwork.publicId}>
+                {/* <Image
+                  cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+                  alt={artwork.title}
+                  publicId={artwork.publicId}
+                  // height="550"
+                  crop="fill"
+                  loading="lazy"
+                  gravity="center"
+                /> */}
+                <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
+                <p className="legend">{artwork.title}</p>
+              </div>
+            )
+          }
+          {/* <div key={1}>
               <Image src={"/home_hq_blur.jpg"} layout='fill' objectFit="cover" />
               <p className="legend">Legend 1</p>
           </div>
@@ -49,12 +78,30 @@ const IndexPage = () => {
           <div key={3}>
               <Image src={"/homepage.png"} layout='fill' objectFit="cover" />
               <p className="legend">Legend 3</p>
-          </div>
+          </div> */}
         </Carousel>
         <button className="btn btn-lg custom-button gallery-explorer-btn" >Esplora la Galleria</button>
       </div>
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<GetStaticPropsResult<HomePageProps>> => {
+  const folders: Folder[] = await getFolder("soli-di-claudio");
+  const featuredArtworks: Artwork[] = [];
+
+  for (let i = 0; i < folders.length; i++) {
+    const artwork: Artwork = await getPreviewArtwork(folders[i].path, "evidenza_home");
+    if(artwork !== null)
+      featuredArtworks.push(artwork);
+  };
+  
+  return {
+    props: {
+      featuredArtworks
+    },
+    revalidate: 60 * 60 * 2 // 2 hour
+  };
+};
 
 export default IndexPage
