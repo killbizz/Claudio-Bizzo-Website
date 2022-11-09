@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let newArtworks: Artwork[] = [];
 
     for (let i = 0; i < params.folders.length; i++) {
-        newArtworks.push(await getPreviewArtwork(params.folders[i].path));
+        newArtworks.push(await getPreviewArtwork(params.folders[i].path, "anteprima_galleria"));
     };
 
     return res.status(200).json(
