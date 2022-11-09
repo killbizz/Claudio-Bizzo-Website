@@ -6,6 +6,7 @@ import Folder from '../../types/Folder';
 import { Image } from "cloudinary-react";
 import { useState } from 'react';
 import { startLoadingBar, stopLoadingBar } from '../../lib/loading';
+import Router  from 'next/router';
 
 interface GalleryPageProps {
     initialArtworks: Artwork[],
@@ -34,9 +35,6 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
     })
     .then((r) => r.json());
 
-    console.log('result', result);
-    console.log('newIndex', newIndex);
-
     setArtworkIndex(newIndex);
     setArtworks(prev => {
       return [
@@ -59,7 +57,10 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                       {
                         artworks.map((artwork) => 
                         <div key={artwork.publicId} className="col-md-4 col-lg-4">
-                          <a href="">
+                          <a href='' onClick={(event: any) => {
+                            event.preventDefault();
+                            Router.push('/artwork/' + artwork.publicId.split("/")[1]);
+                          }}>
                               <div className="card-flyer card-block">
                                   <div className="text-box">
                                       <div className="image-box">
@@ -74,7 +75,12 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                       </div>
                                       <div className={"text-container"}>
                                           <h6>{artwork.title}</h6>
-                                          <button className="btn btn-lg custom-button mt-4 mx-auto text-center d-block" >Esplora</button>
+                                          <button 
+                                            className="btn btn-lg custom-button mt-4 mx-auto text-center d-block" 
+                                            onClick={() => Router.push('/artwork/' + artwork.publicId.split("/")[1])}
+                                          >
+                                            Esplora
+                                          </button>
                                       </div>
                                       
                                   </div>
@@ -99,7 +105,7 @@ export const getStaticProps: GetStaticProps<GalleryPageProps> = async (): Promis
     const initialArtworks: Artwork[] = [];
 
     for (let i = 0; i < 3; i++) {
-      initialArtworks.push(await getPreviewArtwork(folders[i].path));
+      initialArtworks.push(await getPreviewArtwork(folders[i].path, "anteprima_galleria"));
     };
     
     return {
@@ -107,7 +113,7 @@ export const getStaticProps: GetStaticProps<GalleryPageProps> = async (): Promis
         initialArtworks,
         folders
       },
-      revalidate: 30
+      revalidate: 60 * 60 // 1 hour
     };
 };
 
