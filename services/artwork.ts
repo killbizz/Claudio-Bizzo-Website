@@ -19,13 +19,30 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
     return folders;
   };
   
-  export const getPreviewArtwork = async (folder: string): Promise<Artwork> => {
-    const imageList = await getImageList(folder, "anteprima");
+  export const getPreviewArtwork = async (folder: string, tag: string): Promise<Artwork> => {
+
+    if(!(tag === "anteprima_galleria" || tag === "evidenza_home")){
+      throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
+    }
+
+    const imageList = await getImageList(folder, tag);
+
+    if(imageList === undefined || imageList === null){
+      throw Error("getPreviewArtwork Error : error retrieving imageList");
+    }
+
+    // console.log("folder: " + folder);
+    // console.log("tag: " + tag);
+    // console.log(imageList);
+
+    if(imageList.total_count === 0){
+      return null;
+    }
 
     const context: any = imageList.resources[0].context;
 
     if(context === undefined || context === null){
-        throw Error("getPreviewArtwork Error : context field is not present");
+      throw Error("getPreviewArtwork Error : context field is not present");
     }
 
     const artwork: Artwork = {
