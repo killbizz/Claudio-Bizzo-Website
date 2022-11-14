@@ -83,22 +83,22 @@ img {
 
 /* ----- GALLERY PAGE ----- */
 
-#cards_landscape_wrap-2{
+#gallery_cards_wrapper{
   text-align: center;
 }
-#cards_landscape_wrap-2 .container-fluid{
+#gallery_cards_wrapper .container-fluid{
   padding-bottom: 40px;
   padding-left: 8%;
   padding-right: 8%;
 }
-#cards_landscape_wrap-2 a{
+#gallery_cards_wrapper a{
   text-decoration: none;
   outline: none;
 }
-#cards_landscape_wrap-2 .card-flyer {
+#gallery_cards_wrapper .card-flyer {
   border-radius: 5px;
 }
-#cards_landscape_wrap-2 .card-flyer .image-box{
+#gallery_cards_wrapper .card-flyer .image-box{
   background: #545454;
   overflow: hidden;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
@@ -106,11 +106,11 @@ img {
   height: 300px !important;
   width: 100%;
 }
-#cards_landscape_wrap-2 .card-flyer .image-box span{
+#gallery_cards_wrapper .card-flyer .image-box span{
   height: 300px !important;
   position: relative !important;
 }
-#cards_landscape_wrap-2 .card-flyer .image-box img{
+#gallery_cards_wrapper .card-flyer .image-box img{
   -webkit-transition:all .9s ease; 
   -moz-transition:all .9s ease; 
   -o-transition:all .9s ease;
@@ -120,21 +120,21 @@ img {
   position: relative !important;
   
 }
-#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
-  opacity: 0.7;
-  -webkit-transform:scale(1.15);
-  -moz-transform:scale(1.15);
-  -ms-transform:scale(1.15);
-  -o-transform:scale(1.15);
-  transform:scale(1.15);
+#gallery_cards_wrapper .card-flyer:hover .image-box img{
+  opacity: 0.85;
+  -webkit-transform:scale(1.05);
+  -moz-transform:scale(1.05);
+  -ms-transform:scale(1.05);
+  -o-transform:scale(1.05);
+  transform:scale(1.05);
 }
-#cards_landscape_wrap-2 .card-flyer .text-box{
+#gallery_cards_wrapper .card-flyer .text-box{
   text-align: center;
 }
-#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+#gallery_cards_wrapper .card-flyer .text-box .text-container{
   padding: 25px 18px;
 }
-#cards_landscape_wrap-2 .card-flyer{
+#gallery_cards_wrapper .card-flyer{
   background: #755b3e;
   margin-top: 50px;
   -webkit-transition: all 0.2s ease-in;
@@ -144,7 +144,7 @@ img {
   transition: all 0.2s ease-in;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
 }
-#cards_landscape_wrap-2 .card-flyer:hover{
+#gallery_cards_wrapper .card-flyer:hover{
   background: #755b3e;
   box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
   -webkit-transition: all 0.2s ease-in;
@@ -154,7 +154,7 @@ img {
   transition: all 0.2s ease-in;
   margin-top: 50px;
 }
-#cards_landscape_wrap-2 .card-flyer .text-box p{
+#gallery_cards_wrapper .card-flyer .text-box p{
   margin-top: 10px;
   margin-bottom: 0px;
   padding-bottom: 0px; 
@@ -162,7 +162,7 @@ img {
   letter-spacing: 1px;
   color: #000000;
 }
-#cards_landscape_wrap-2 .card-flyer .text-box h6{
+#gallery_cards_wrapper .card-flyer .text-box h6{
   margin-top: 0px;
   margin-bottom: 0px; 
   font-size: 18px;
@@ -267,6 +267,66 @@ img {
   border-bottom: 2px solid black;
 }
 
+#homepage_cards_wrapper{
+  text-align: center !important;
+}
+#homepage_cards_wrapper .carousel {
+  border-radius: 5px !important;
+}
+#homepage_cards_wrapper
+.carousel .slide .card-flyer.image-box{
+  /* background: #545454 !important; */
+  overflow: hidden !important;
+  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50) !important; */
+  width: 100% !important;
+}
+#homepage_cards_wrapper
+.carousel .slide .card-flyer.image-box span img{
+  -webkit-transition:all .9s ease !important; 
+  -moz-transition:all .9s ease !important; 
+  -o-transition:all .9s ease !important;
+  -ms-transition:all .9s ease !important;
+  transition:all .9s ease !important;
+  height: 100% !important;
+  position: relative !important;
+  
+}
+#homepage_cards_wrapper
+.carousel .slide .card-flyer:hover.image-box span img{
+  opacity: 0.85 !important;
+  -webkit-transform:scale(1.08) !important;
+  -moz-transform:scale(1.08) !important;
+  -ms-transform:scale(1.08) !important;
+  -o-transform:scale(1.08) !important;
+  transform:scale(1.08) !important;
+  cursor: pointer !important;
+}
+#homepage_cards_wrapper .card-flyer{
+  /* background: #755b3e !important; */
+  margin-top: 50px !important;
+}
+#homepage_cards_wrapper .card-flyer:hover{
+  /* background: #755b3e !important; */
+  margin-top: 50px !important;
+  cursor: pointer !important;
+}
+#homepage_cards_wrapper .carousel{
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40) !important;
+  -webkit-transition: all 0.2s ease-in !important;
+  -moz-transition: all 0.2s ease-in !important;
+  -ms-transition: all 0.2s ease-in !important;
+  -o-transition: all 0.2s ease-in !important;
+  transition: all 0.2s ease-in !important;
+}
+#homepage_cards_wrapper .carousel:hover{
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50) !important;
+  -webkit-transition: all 0.2s ease-in !important;
+  -moz-transition: all 0.2s ease-in !important;
+  -ms-transition: all 0.2s ease-in !important;
+  -o-transition: all 0.2s ease-in !important;
+  transition: all 0.2s ease-in !important;
+}
+
 /* ----- SCROLLDOWN ----- */
 
 .scrolldown {
@@ -354,26 +414,28 @@ img {
   transform: scaleX(1);
 }
 
-/* ----- CUSTOM BUTTON ----- */
+/* ----- CUSTOM BUTTONS ----- */
 
 .custom-button {
-  background: linear-gradient(#0000, rgb(0 0 0/40%)) top/100% 800% !important;
+  background: linear-gradient(#0000, rgb(0 0 0/14%)) top/100% 800% !important;
   transition: 0.5s !important;
   background-color: #8bcfe8 !important;
   color: black !important;
   border-color: black !important;
   border-radius: 0px !important;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .custom-button:hover {
   background-position: bottom !important;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .gallery-explorer-btn {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  bottom: 8%;
+  bottom: 6.5%;
 }
 
 /* ----- CAROUSEL ----- */
@@ -390,6 +452,7 @@ img {
 }
 
 .carousel .slide {
+  background: #545454 !important;
   height: 60vh;
 }
 
@@ -413,6 +476,6 @@ img {
 
 @media(max-width:395px){
   .gallery-explorer-btn {
-    bottom: 6% !important;
+    bottom: 4% !important;
   }
 }

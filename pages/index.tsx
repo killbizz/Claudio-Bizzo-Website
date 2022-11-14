@@ -42,23 +42,25 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
         <h2>LAVORI IN EVIDENZA</h2>
       </div>
       <div className="homepage-mid-2 mid-background-color">
-        <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={3500} transitionTime={1500} 
-          autoPlay infiniteLoop useKeyboardArrows 
-          onClickItem={(index, item) => {
-            // TODO : redirect to the item page
-            console.log(item);
-            // Router.push('/gallery');
-          }}
-        >
-          {
-            featuredArtworks.map((artwork) => 
-              <div key={artwork.publicId}>
-                <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
-                <p className="legend">{artwork.title}</p>
-              </div>
-            )
-          }
-        </Carousel>
+        <div id='homepage_cards_wrapper'>
+          <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={3500} transitionTime={1500} 
+            autoPlay infiniteLoop useKeyboardArrows
+            onClickItem={(index, item) => {
+              // TODO : redirect to the item page
+              console.log(item);
+              // Router.push('/gallery');
+            }}
+          >
+            {
+              featuredArtworks.map((artwork) => 
+                <div key={artwork.publicId} className='card-flyer image-box'>
+                  <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
+                  <p className="legend">{artwork.title}</p>
+                </div>
+              )
+            }
+          </Carousel>
+        </div>
         <button className="btn btn-lg custom-button gallery-explorer-btn" >Esplora la Galleria</button>
       </div>
     </Layout>
