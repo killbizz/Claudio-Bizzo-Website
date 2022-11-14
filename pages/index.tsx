@@ -61,7 +61,12 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
             }
           </Carousel>
         </div>
-        <button className="btn btn-lg custom-button gallery-explorer-btn" >Esplora la Galleria</button>
+        <button 
+          className="btn btn-lg custom-button gallery-explorer-btn"
+          onClick={() => Router.push('/gallery')}
+        >
+            Esplora la Galleria
+        </button>
       </div>
     </Layout>
   );
