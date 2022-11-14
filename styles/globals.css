@@ -86,8 +86,10 @@ img {
 #cards_landscape_wrap-2{
   text-align: center;
 }
-#cards_landscape_wrap-2 .container{
+#cards_landscape_wrap-2 .container-fluid{
   padding-bottom: 40px;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 #cards_landscape_wrap-2 a{
   text-decoration: none;
@@ -101,15 +103,22 @@ img {
   overflow: hidden;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
   border-radius: 5px;
+  height: 300px !important;
+  width: 100%;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box span{
+  height: 300px !important;
+  position: relative !important;
 }
 #cards_landscape_wrap-2 .card-flyer .image-box img{
   -webkit-transition:all .9s ease; 
   -moz-transition:all .9s ease; 
   -o-transition:all .9s ease;
   -ms-transition:all .9s ease;
-  transition:all .9s ease;  
-  width: 100%;
-  height: 300px;
+  transition:all .9s ease;
+  height: 100% !important;
+  position: relative !important;
+  
 }
 #cards_landscape_wrap-2 .card-flyer:hover .image-box img{
   opacity: 0.7;
@@ -386,10 +395,6 @@ img {
 
 .carousel .slide div {
   height: 100%;
-}
-
-.carousel .slide img {
-  
 }
 
 /* ----- MEDIA QUERY ----- */

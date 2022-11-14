@@ -3,10 +3,12 @@ import Layout from '../../components/Layout';
 import { getFolder, getPreviewArtwork } from '../../services/artwork';
 import { Artwork } from '../../types/Artwork';
 import Folder from '../../types/Folder';
-import { Image } from "cloudinary-react";
+// import { Image } from "cloudinary-react";
+import Image from "next/image";
 import { useState } from 'react';
 import { startLoadingBar, stopLoadingBar } from '../../lib/loading';
 import Router  from 'next/router';
+import Link from 'next/link';
 
 interface GalleryPageProps {
     initialArtworks: Artwork[],
@@ -52,40 +54,31 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
           <div className="mid mid-background-color">
             <h1 className="text-center mt-4 pt-4">Galleria dei Lavori</h1>
             <div id="cards_landscape_wrap-2">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                       {
                         artworks.map((artwork) => 
-                        <div key={artwork.publicId} className="col-md-4 col-lg-4">
-                          <a href='' onClick={(event: any) => {
-                            event.preventDefault();
-                            Router.push('/artwork/' + artwork.publicId.split("/")[1]);
-                          }}>
+                        <div key={artwork.publicId} className="col-lg-4">
+                          <Link href={'/artwork/' + artwork.publicId.split("/")[1]}>
+                            <a>
                               <div className="card-flyer card-block">
-                                  <div className="text-box">
-                                      <div className="image-box">
-                                          <Image
-                                            cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-                                            alt={artwork.title}
-                                            publicId={artwork.publicId}
-                                            height="300"
-                                            crop="fill"
-                                            loading="lazy"
-                                          />
-                                      </div>
-                                      <div className={"text-container"}>
-                                          <h6>{artwork.title}</h6>
-                                          <button 
-                                            className="btn btn-lg custom-button mt-4 mx-auto text-center d-block" 
-                                            onClick={() => Router.push('/artwork/' + artwork.publicId.split("/")[1])}
-                                          >
-                                            Esplora
-                                          </button>
-                                      </div>
-                                      
+                                <div className="text-box">
+                                  <div className="image-box">
+                                    <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
                                   </div>
+                                  <div className={"text-container"}>
+                                    <h6>{artwork.title}</h6>
+                                    <button 
+                                      className="btn btn-lg custom-button mt-4 mx-auto text-center d-block" 
+                                      onClick={() => Router.push('/artwork/' + artwork.publicId.split("/")[1])}
+                                    >
+                                      Esplora
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
-                          </a>
+                            </a>
+                          </Link>
                         </div>
                         )
                       }
