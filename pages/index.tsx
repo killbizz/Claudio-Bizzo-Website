@@ -53,32 +53,11 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
           {
             featuredArtworks.map((artwork) => 
               <div key={artwork.publicId}>
-                {/* <Image
-                  cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-                  alt={artwork.title}
-                  publicId={artwork.publicId}
-                  // height="550"
-                  crop="fill"
-                  loading="lazy"
-                  gravity="center"
-                /> */}
                 <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
                 <p className="legend">{artwork.title}</p>
               </div>
             )
           }
-          {/* <div key={1}>
-              <Image src={"/home_hq_blur.jpg"} layout='fill' objectFit="cover" />
-              <p className="legend">Legend 1</p>
-          </div>
-          <div key={2}>
-              <Image src={"/homepage.png"} layout='fill' objectFit="cover" />
-              <p className="legend">Legend 2</p>
-          </div>
-          <div key={3}>
-              <Image src={"/homepage.png"} layout='fill' objectFit="cover" />
-              <p className="legend">Legend 3</p>
-          </div> */}
         </Carousel>
         <button className="btn btn-lg custom-button gallery-explorer-btn" >Esplora la Galleria</button>
       </div>
