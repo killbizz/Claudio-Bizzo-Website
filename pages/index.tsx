@@ -9,6 +9,7 @@ import { GetStaticProps, GetStaticPropsResult } from 'next';
 import { Artwork } from '../types/Artwork';
 import Folder from '../types/Folder';
 import { getFolder, getPreviewArtwork } from '../services/artwork';
+import CustomCarousel from '../components/carousel/CustomCarousel';
 
 interface HomePageProps {
   featuredArtworks: Artwork[]
@@ -23,8 +24,15 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
           <div className='row homepage-title center-under-half-width'>
             <h1 className='col'>Claudio Bizzo,<br/>Artigiano e Creativo</h1>
           </div>
-          <div className='row homepage-description hide-under-half-width'>
-            <p className='col'>Nel mio sito troverai arredamento per interno/esterno,<br/> in modo completamente artigianale ed ecologico</p>
+          <div className='row justify-content-center homepage-description hide-under-half-width'>
+            <p className='col'>Nel mio sito troverai arredamento per interno ed esterno, in modo completamente artigianale ed ecologico</p>
+            <div className='w-100' />
+            <button 
+              className="col-sm-3 btn btn-lg custom-button about-explorer-btn"
+              onClick={() => Router.push('/about')}
+            >
+                Approfondisci
+            </button>
           </div>
           <div className='row homepage-citation hide-under-half-width'>
             <blockquote>
@@ -42,25 +50,7 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
         <h2>LAVORI IN EVIDENZA</h2>
       </div>
       <div className="homepage-mid-2 mid-background-color">
-        <div id='homepage_cards_wrapper'>
-          <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={3500} transitionTime={1500} 
-            autoPlay infiniteLoop useKeyboardArrows
-            onClickItem={(index, item) => {
-              // TODO : redirect to the item page
-              console.log(item);
-              // Router.push('/gallery');
-            }}
-          >
-            {
-              featuredArtworks.map((artwork) => 
-                <div key={artwork.publicId} className='card-flyer image-box'>
-                  <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
-                  <p className="legend">{artwork.title}</p>
-                </div>
-              )
-            }
-          </Carousel>
-        </div>
+        <CustomCarousel artworks={featuredArtworks} autoplay={true} handleOnClickItem={true} />
         <button 
           className="btn btn-lg custom-button gallery-explorer-btn"
           onClick={() => Router.push('/gallery')}
