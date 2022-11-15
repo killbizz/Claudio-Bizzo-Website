@@ -14,7 +14,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'e-Voting Web Application' }: Props) => {
+const Layout = ({ children, title = 'I Soli di Claudio' }: Props) => {
   return (
   <div className="wrap">
     <Head>
@@ -32,11 +32,11 @@ const Layout = ({ children, title = 'e-Voting Web Application' }: Props) => {
     <CookieConsent
       location="bottom"
       cookieName="CookieConsentBanner"
-      style={{ background: "#2B373B" }}
-      buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+      style={{ background: "#755b3e", color: "#000000", borderTop: '2px solid black' }}
+      buttonClasses="custom-button"
       expires={30}
     >
-      This website uses cookies only for purposes strictly necessary for its operation.
+      Il sito web utilizza i cookie per finalità strettamente necessarie al suo funzionamento.
     </CookieConsent>
     <Footer />
   </div>
