@@ -197,11 +197,18 @@ img {
 
 #nprogress .bar {
   height: 6px !important;
+  background: #326475 !important;
 }
 
 #nprogress .spinner-icon {
   width: 36px !important;
   height: 36px !important;
+  border-top-color: #326475 !important;
+  border-left-color: #326475 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #326475, 0 0 5px #326475 !important;
 }
 
 /* ----- HOMEPAGE ----- */
@@ -244,8 +251,9 @@ img {
 .homepage-description {
   color: white;
   position: absolute;
-  top: 50%;
+  top: 41%;
   right: 8%;
+  max-width: 32%;
 }
 
 .homepage-citation {
@@ -267,64 +275,43 @@ img {
   border-bottom: 2px solid black;
 }
 
-#homepage_cards_wrapper{
-  text-align: center !important;
+.homepage-mid-2 .carousel {
+  height: 75% !important;
+  bottom: 100px !important;
 }
-#homepage_cards_wrapper .carousel {
-  border-radius: 5px !important;
+
+.homepage-mid-2 .carousel .slide {
+  height: 60vh !important;
 }
-#homepage_cards_wrapper
-.carousel .slide .card-flyer.image-box{
-  /* background: #545454 !important; */
-  overflow: hidden !important;
-  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50) !important; */
-  width: 100% !important;
-}
-#homepage_cards_wrapper
-.carousel .slide .card-flyer.image-box span img{
-  -webkit-transition:all .9s ease !important; 
-  -moz-transition:all .9s ease !important; 
-  -o-transition:all .9s ease !important;
-  -ms-transition:all .9s ease !important;
-  transition:all .9s ease !important;
-  height: 100% !important;
-  position: relative !important;
-  
-}
-#homepage_cards_wrapper
-.carousel .slide .card-flyer:hover.image-box span img{
-  opacity: 0.85 !important;
-  -webkit-transform:scale(1.08) !important;
-  -moz-transform:scale(1.08) !important;
-  -ms-transform:scale(1.08) !important;
-  -o-transform:scale(1.08) !important;
-  transform:scale(1.08) !important;
+
+.homepage-mid-2 #carousel_cards_wrapper .card-flyer:hover{
   cursor: pointer !important;
 }
-#homepage_cards_wrapper .card-flyer{
-  /* background: #755b3e !important; */
-  margin-top: 50px !important;
+
+/* ----- ARTWORK PAGE ----- */
+
+.artwork-page-mid {
+  height: 82.4vh !important;
+  width: 100%;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  position:relative
 }
-#homepage_cards_wrapper .card-flyer:hover{
-  /* background: #755b3e !important; */
-  margin-top: 50px !important;
-  cursor: pointer !important;
+
+.artwork-page-carousel-container .carousel {
+  height: 62% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
-#homepage_cards_wrapper .carousel{
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40) !important;
-  -webkit-transition: all 0.2s ease-in !important;
-  -moz-transition: all 0.2s ease-in !important;
-  -ms-transition: all 0.2s ease-in !important;
-  -o-transition: all 0.2s ease-in !important;
-  transition: all 0.2s ease-in !important;
+
+.artwork-page-carousel-container .carousel .slide {
+  height: 51vh !important;
 }
-#homepage_cards_wrapper .carousel:hover{
-  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50) !important;
-  -webkit-transition: all 0.2s ease-in !important;
-  -moz-transition: all 0.2s ease-in !important;
-  -ms-transition: all 0.2s ease-in !important;
-  -o-transition: all 0.2s ease-in !important;
-  transition: all 0.2s ease-in !important;
+
+.artwork-page-carousel-container #carousel_cards_wrapper
+.carousel .slide .card-flyer.image-box .legend {
+  display: none !important;
 }
 
 /* ----- SCROLLDOWN ----- */
@@ -417,6 +404,8 @@ img {
 /* ----- CUSTOM BUTTONS ----- */
 
 .custom-button {
+  width: fit-content !important;
+  padding: 0px 10px;
   background: linear-gradient(#0000, rgb(0 0 0/14%)) top/100% 800% !important;
   transition: 0.5s !important;
   background-color: #8bcfe8 !important;
@@ -438,22 +427,84 @@ img {
   bottom: 6.5%;
 }
 
+.about-explorer-btn {
+  max-width: fit-content !important;
+}
+
 /* ----- CAROUSEL ----- */
 
+#carousel_cards_wrapper{
+  text-align: center !important;
+}
+#carousel_cards_wrapper .carousel {
+  border-radius: 5px !important;
+}
+#carousel_cards_wrapper
+.carousel .slide .card-flyer.image-box{
+  /* background: #545454 !important; */
+  overflow: hidden !important;
+  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50) !important; */
+  width: 100% !important;
+}
+#carousel_cards_wrapper
+.carousel .slide .card-flyer.image-box span img{
+  -webkit-transition:all .9s ease !important; 
+  -moz-transition:all .9s ease !important; 
+  -o-transition:all .9s ease !important;
+  -ms-transition:all .9s ease !important;
+  transition:all .9s ease !important;
+  height: 100% !important;
+  position: relative !important;
+  
+}
+#carousel_cards_wrapper
+.carousel .slide .card-flyer:hover.image-box span img{
+  opacity: 0.85 !important;
+  -webkit-transform:scale(1.08) !important;
+  -moz-transform:scale(1.08) !important;
+  -ms-transform:scale(1.08) !important;
+  -o-transform:scale(1.08) !important;
+  transform:scale(1.08) !important;
+  cursor: pointer !important;
+}
+#carousel_cards_wrapper .card-flyer{
+  /* background: #755b3e !important; */
+  margin-top: 50px !important;
+}
+#carousel_cards_wrapper .card-flyer:hover{
+  /* background: #755b3e !important; */
+  margin-top: 50px !important;
+}
+#carousel_cards_wrapper .carousel{
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40) !important;
+  -webkit-transition: all 0.2s ease-in !important;
+  -moz-transition: all 0.2s ease-in !important;
+  -ms-transition: all 0.2s ease-in !important;
+  -o-transition: all 0.2s ease-in !important;
+  transition: all 0.2s ease-in !important;
+}
+#carousel_cards_wrapper .carousel:hover{
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50) !important;
+  -webkit-transition: all 0.2s ease-in !important;
+  -moz-transition: all 0.2s ease-in !important;
+  -ms-transition: all 0.2s ease-in !important;
+  -o-transition: all 0.2s ease-in !important;
+  transition: all 0.2s ease-in !important;
+}
+
 .carousel {
+  /* NOTE: see homepage and artwork-page for height and bottom */
   width: 80% !important;
-  height: 75% !important;
   position: absolute !important;
   margin: auto !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  bottom: 100px !important;
 }
 
 .carousel .slide {
+  /* NOTE: see homepage and artwork-page for height */
   background: #545454 !important;
-  height: 60vh;
 }
 
 .carousel .slide div {
