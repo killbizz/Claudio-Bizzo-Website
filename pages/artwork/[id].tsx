@@ -17,7 +17,7 @@ const ArtworkPage = ({ artworkItems } : ArtworkPageProps) => {
 
   return(
       <Layout title = {`I Soli di Claudio | ${title}`}>
-          <div className="artwork-page-mid">
+          <div className="artwork-page-mid mid-background-color">
             <div className="container-fluid h-100">
               <div className="row h-100">
                 <div className='col-xl-5 border border-primary artwork-page-carousel-container h-100'>
