@@ -3,7 +3,6 @@ import Layout from '../../components/Layout';
 import { getFolder, getPreviewArtwork } from '../../services/artwork';
 import { Artwork } from '../../types/Artwork';
 import Folder from '../../types/Folder';
-// import { Image } from "cloudinary-react";
 import Image from "next/image";
 import { useState } from 'react';
 import { startLoadingBar, stopLoadingBar } from '../../lib/loading';

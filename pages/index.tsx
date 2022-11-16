@@ -25,7 +25,7 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
             <h1 className='col'>Claudio Bizzo,<br/>Artigiano e Creativo</h1>
           </div>
           <div className='row justify-content-center homepage-description hide-under-half-width'>
-            <p className='col'>Nel mio sito troverai arredamento per interno ed esterno, in modo completamente artigianale ed ecologico</p>
+            <p className='col'>Nel mio sito troverai arredamento per interno ed esterno, in modo completamente artigianale ed ecologico.</p>
             <div className='w-100' />
             <button 
               className="col-sm-3 btn btn-lg custom-button about-explorer-btn"

@@ -51,7 +51,7 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
       extension: imageList.resources[0].format,
       imageURL: imageList.resources[0].secure_url,
 
-      title: context.titolo,
+      title: context.titolo
     };
   
     return artwork;
