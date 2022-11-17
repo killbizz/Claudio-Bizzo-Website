@@ -17,19 +17,29 @@ const ArtworkPage = ({ artworkItems } : ArtworkPageProps) => {
 
   return(
       <Layout title = {`I Soli di Claudio | ${title}`}>
-          <div className="artwork-page-mid mid-background-color">
-            <div className="container-fluid h-100">
-              <div className="row h-100">
-                <div className='col-xl-5 border border-primary artwork-page-carousel-container h-100'>
-                  <h2 className='mx-auto text-center mt-5'>DAGHENEEEEEEEEEEEE eeeeeeeeeeeeeee EEEEEEEEEEEE</h2>
+        <div className="mid mid-background-color">
+          <div className="container-fluid h-100">
+            <div className="row h-100">
+              <div className='col-xl-5 border border-primary artwork-page-carousel-container h-100'>
+                <div className="artwork-page-mid">
+                  <div className='artwork-title-container'>
+                    <h2 className='artwork-title'>DAGHENEEEEEEEEEEEE eeeeeeeeeeeeeee EEEEEEEEEEEE</h2>
+                  </div>
                   <CustomCarousel artworks={artworkItems} autoplay={false} handleOnClickItem={false} />
                 </div>
-                <div className='col border border-primary'>
-                  DAGHE
-                </div>
+              </div>
+              <div className='col border border-primary artwork-page-carousel-container'>
+                <p>DAGHE</p>
+                <p>DAGHE</p>
+                <p>DAGHE</p>
+                <p>DAGHE</p>
+                <p>DAGHE</p>
+                <p>DAGHE</p>
+                <p>DAGHE</p>
               </div>
             </div>
           </div>
+        </div>
       </Layout>
   );
 }
