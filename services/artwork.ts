@@ -75,11 +75,12 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
           extension: element.format,
           imageURL: element.secure_url,
 
-          title: element.context ? element.context.titolo : undefined,
-          description: element.context ? element.context.descrizione : undefined,
-          materials: element.context ? element.context.materiali : undefined,
-          date: element.context ? element.context.data : undefined,
-          availability: element.context ? element.context.disponibilita : undefined
+          title: element.context ? element.context.titolo : "",
+          description: element.context ? element.context.descrizione : "",
+          materials: element.context ? element.context.materiali : "",
+          date: element.context ? element.context.data : "",
+          availability: element.context ? element.context.disponibilita : "",
+          dimensions: element.context ? element.context.dimensioni : ""
         };
         artworkList.push(artwork);
       }

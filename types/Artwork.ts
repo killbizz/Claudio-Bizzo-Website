@@ -9,4 +9,5 @@ export interface Artwork {
     readonly date?: string;
     readonly availability?: string;
     readonly materials?: string;
+    readonly dimensions?: string;
   }
