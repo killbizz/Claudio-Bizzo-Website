@@ -20,15 +20,15 @@ const ArtworkPage = ({ artworkItems } : ArtworkPageProps) => {
         <div className="mid mid-background-color">
           <div className="container-fluid h-100">
             <div className="row h-100">
-              <div className='col-xl-5 border border-primary artwork-page-carousel-container h-100'>
+              <div className='col-xl-5 border border-primary artwork-page-container h-100'>
                 <div className="artwork-page-mid">
                   <div className='artwork-title-container'>
-                    <h2 className='artwork-title'>DAGHENEEEEEEEEEEEE eeeeeeeeeeeeeee EEEEEEEEEEEE</h2>
+                    <h2 className='artwork-title my-auto'>DAGHENEEEE EEEEEEEE eeeee eeeeee eeee EEEEEE EEE EEE</h2>
                   </div>
                   <CustomCarousel artworks={artworkItems} autoplay={false} handleOnClickItem={false} />
                 </div>
               </div>
-              <div className='col border border-primary artwork-page-carousel-container'>
+              <div className='col border border-primary artwork-page-container'>
                 <p>DAGHE</p>
                 <p>DAGHE</p>
                 <p>DAGHE</p>

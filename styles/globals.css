@@ -4,7 +4,7 @@ body, html {
 }
 
 .wrap {
-  height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
 }
 
@@ -15,7 +15,7 @@ body, html {
 }
 
 .mid {
-  min-height: 82.4vh !important;
+  /* height: 82.4vh !important; */
   width: 100%;
   flex:1;
   display:flex;
@@ -59,6 +59,7 @@ body, html {
   background: linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c29f7a",endColorstr="#c29f7a",GradientType=1);
   height: 62px;
+  border-top: 2px solid #000000;
 }
 
 .copyright{
@@ -81,95 +82,9 @@ img {
   align-items: center;
 }
 
-/* ----- GALLERY PAGE ----- */
-
-#gallery_cards_wrapper{
-  text-align: center;
-}
-#gallery_cards_wrapper .container-fluid{
-  padding-bottom: 40px;
-  padding-left: 8%;
-  padding-right: 8%;
-}
-#gallery_cards_wrapper a{
-  text-decoration: none;
-  outline: none;
-}
-#gallery_cards_wrapper .card-flyer {
-  border-radius: 5px;
-}
-#gallery_cards_wrapper .card-flyer .image-box{
-  background: #545454;
-  overflow: hidden;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
-  border-radius: 5px;
-  height: 300px !important;
-  width: 100%;
-}
-#gallery_cards_wrapper .card-flyer .image-box span{
-  height: 300px !important;
-  position: relative !important;
-}
-#gallery_cards_wrapper .card-flyer .image-box img{
-  -webkit-transition:all .9s ease; 
-  -moz-transition:all .9s ease; 
-  -o-transition:all .9s ease;
-  -ms-transition:all .9s ease;
-  transition:all .9s ease;
-  height: 100% !important;
-  position: relative !important;
-  
-}
-#gallery_cards_wrapper .card-flyer:hover .image-box img{
-  opacity: 0.85;
-  -webkit-transform:scale(1.05);
-  -moz-transform:scale(1.05);
-  -ms-transform:scale(1.05);
-  -o-transform:scale(1.05);
-  transform:scale(1.05);
-}
-#gallery_cards_wrapper .card-flyer .text-box{
-  text-align: center;
-}
-#gallery_cards_wrapper .card-flyer .text-box .text-container{
-  padding: 25px 18px;
-}
-#gallery_cards_wrapper .card-flyer{
-  background: #755b3e;
-  margin-top: 50px;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -ms-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
-}
-#gallery_cards_wrapper .card-flyer:hover{
-  background: #755b3e;
-  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -ms-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  margin-top: 50px;
-}
-#gallery_cards_wrapper .card-flyer .text-box p{
-  margin-top: 10px;
-  margin-bottom: 0px;
-  padding-bottom: 0px; 
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: #000000;
-}
-#gallery_cards_wrapper .card-flyer .text-box h6{
-  margin-top: 0px;
-  margin-bottom: 0px; 
-  font-size: 18px;
-  font-weight: bold;
-  font-family: 'Roboto Black', sans-serif;
-  letter-spacing: 1px;
-  color: black;
+.page-title {
+  padding-top: 1.5rem !important;
+  margin-top: 1.5rem !important;
 }
 
 /* ----- LOGOS ----- */
@@ -291,25 +206,20 @@ img {
 /* ----- ARTWORK PAGE ----- */
 
 .artwork-page-mid {
-  height: 82.2vh !important;
-  /* width: 100%;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  position:relative */
+  /* height: 82.9vh !important; */
+  min-height: 83.5vh !important;
 }
 
-.artwork-page-carousel-container .carousel {
-  height: 62% !important;
+.artwork-page-container .carousel {
   top: 55% !important;
   transform: translateY(-45%) !important;
 }
 
-.artwork-page-carousel-container .carousel .slide {
+.artwork-page-container .carousel .slide {
   height: 51vh !important;
 }
 
-.artwork-page-carousel-container #carousel_cards_wrapper
+.artwork-page-container #carousel_cards_wrapper
 .carousel .slide .card-flyer.image-box .legend {
   display: none !important;
 }
@@ -318,7 +228,110 @@ img {
   display:flex;
   align-items: center;
   justify-content: center;
-  height: 27%;
+  position: absolute !important;
+  top: 3% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  height: 20%;
+  width: 80%;
+}
+
+.artwork-title {
+}
+
+/* ----- GALLERY PAGE ----- */
+
+.gallery-page-mid {
+  /* min-height: 83.137vh !important; */
+  min-height: 83.7vh !important;
+}
+
+#gallery_cards_wrapper{
+  text-align: center;
+}
+#gallery_cards_wrapper .container-fluid{
+  padding-bottom: 40px;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+#gallery_cards_wrapper a{
+  text-decoration: none;
+  outline: none;
+}
+#gallery_cards_wrapper .card-flyer {
+  border-radius: 5px;
+}
+#gallery_cards_wrapper .card-flyer .image-box{
+  background: #545454;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+  height: 300px !important;
+  width: 100%;
+}
+#gallery_cards_wrapper .card-flyer .image-box span{
+  height: 300px !important;
+  position: relative !important;
+}
+#gallery_cards_wrapper .card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease;
+  transition:all .9s ease;
+  height: 100% !important;
+  position: relative !important;
+  
+}
+#gallery_cards_wrapper .card-flyer:hover .image-box img{
+  opacity: 0.85;
+  -webkit-transform:scale(1.05);
+  -moz-transform:scale(1.05);
+  -ms-transform:scale(1.05);
+  -o-transform:scale(1.05);
+  transform:scale(1.05);
+}
+#gallery_cards_wrapper .card-flyer .text-box{
+  text-align: center;
+}
+#gallery_cards_wrapper .card-flyer .text-box .text-container{
+  padding: 25px 18px;
+}
+#gallery_cards_wrapper .card-flyer{
+  background: #755b3e;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#gallery_cards_wrapper .card-flyer:hover{
+  background: #755b3e;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#gallery_cards_wrapper .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#gallery_cards_wrapper .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 0px; 
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: black;
 }
 
 /* ----- SCROLLDOWN ----- */
@@ -395,7 +408,7 @@ img {
   width: 100%;
   height: 2px;
   border-radius: 2px;
-  background-color: #18272F;
+  background-color: #4e4e4e;
   bottom: 0;
   left: 0;
   transform-origin: right;
@@ -535,5 +548,16 @@ img {
 @media(max-width:395px){
   .gallery-explorer-btn {
     bottom: 4% !important;
+  }
+}
+
+@media(max-height:870px){
+  .page-title {
+    padding-top: 0.85rem !important;
+    margin-top: 0.85rem !important;
+  }
+
+  #gallery_cards_wrapper .card-flyer{
+    margin-top: 25px;
   }
 }
