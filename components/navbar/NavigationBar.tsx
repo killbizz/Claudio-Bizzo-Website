@@ -37,22 +37,26 @@ const NavigationBar = () => {
                         <Nav className="ml-auto d-flex justify-content-end">
                             <Nav.Item className=" mx-4">
                                 <Link href="/">
-                                    <a className="nav-link custom-link">Homepage</a>
+                                    <a className={"nav-link custom-link" 
+                                        + (router.pathname === "/" ? " active" : "")}>Homepage</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/gallery">
-                                    <a className="nav-link custom-link">Galleria</a>
+                                    <a className={"nav-link custom-link" 
+                                        + (router.pathname === "/gallery" ? " active" : "")}>Galleria</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/about">
-                                    <a className="nav-link custom-link">Chi Sono</a>
+                                    <a className={"nav-link custom-link" 
+                                        + (router.pathname === "/about" ? " active" : "")}>Chi Sono</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/contact">
-                                    <a className="nav-link custom-link">Contattami</a>
+                                    <a className={"nav-link custom-link" 
+                                        + (router.pathname === "/contact" ? " active" : "")}>Contattami</a>
                                 </Link>
                             </Nav.Item>
                         </Nav>
