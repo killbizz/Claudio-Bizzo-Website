@@ -33,9 +33,9 @@ body, html {
   background-color: blue;
 }
 
-.container{
+.container-footer{
   position: relative;
-  width: 100% !important;
+  /* width: 100% !important; */
   align-items: center;
   justify-content: center;
 }
@@ -58,12 +58,17 @@ body, html {
   background: -webkit-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
   background: linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c29f7a",endColorstr="#c29f7a",GradientType=1);
-  height: 62px;
+  height: 64px;
   border-top: 2px solid #000000;
 }
 
 .copyright{
   line-height: 62px;
+}
+
+.simpleLink:link, .simpleLink:visited, .simpleLink:hover {
+  color: black;
+  /* text-decoration: none; */
 }
 
 img {
@@ -106,6 +111,11 @@ img {
 
 .logos:hover {
   color: rgb(41, 41, 41);
+}
+
+.artwork-feature-icon {
+  background: transparent;
+  color: #326475;
 }
 
 /* ----- SPINNER-ICON ----- */
@@ -196,7 +206,7 @@ img {
 }
 
 .homepage-mid-2 .carousel .slide {
-  height: 60vh !important;
+  height: 60.3vh !important;
 }
 
 .homepage-mid-2 #carousel_cards_wrapper .card-flyer:hover{
@@ -211,8 +221,8 @@ img {
 }
 
 .artwork-page-container .carousel {
-  top: 55% !important;
-  transform: translateY(-45%) !important;
+  top: 52% !important;
+  transform: translateY(-48%) !important;
 }
 
 .artwork-page-container .carousel .slide {
@@ -229,14 +239,42 @@ img {
   align-items: center;
   justify-content: center;
   position: absolute !important;
-  top: 3% !important;
+  top: 1.65% !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   height: 20%;
   width: 80%;
 }
 
-.artwork-title {
+.artwork-right-section-background {
+  background-color: rgb(0, 0, 0, 0.25);
+  /* padding-left: 15% !important;
+  padding-right: 15%!important; */
+}
+
+.artwork-right-section-container {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.artwork-features-container {
+  background-color: rgb(0, 0, 0, 0.25);
+  color: white;
+  margin-left: 12%;
+  margin-right: 12%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.artwork-description-container {
+  background-color: rgb(0, 0, 0, 0.25);
+  color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.artwork-description-container div {
+  white-space: pre-line !important; 
 }
 
 /* ----- GALLERY PAGE ----- */
