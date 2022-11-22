@@ -1,13 +1,9 @@
-export interface Artwork {
-    readonly publicId: string;
-    readonly name: string;
-    readonly extension: string;
-    readonly imageURL: string;
+import { Metadata } from './Metadata';
+import { File } from "./File";
 
-    readonly title?: string;
-    readonly description?: string;
-    readonly date?: string;
-    readonly availability?: string;
-    readonly materials?: string;
-    readonly dimensions?: string;
-  }
+export interface Artwork {
+
+    readonly imageFiles: File[];
+    readonly data?: Metadata;
+  
+}

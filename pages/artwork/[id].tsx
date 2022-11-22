@@ -6,17 +6,15 @@ import { Artwork } from '../../types/Artwork';
 import Folder from '../../types/Folder';
 
 interface ArtworkPageProps {
-    artworkItems: Artwork[]
+    artwork: Artwork
 }
 
-const ArtworkPage = ({ artworkItems } : ArtworkPageProps) => {
+const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
 
-  console.log(artworkItems);
-
-  const artwork = artworkItems.filter((value) => value.title !== undefined || value.title !== null)[0];
+  // console.log(artwork);
 
   return(
-      <Layout title = {`I Soli di Claudio | ${artwork.title}`}>
+      <Layout title = {`I Soli di Claudio | ${artwork.data.title}`}>
         <div className="mid mid-background-color">
           <div className="container-fluid h-100">
             <div className="row h-100">
@@ -25,7 +23,7 @@ const ArtworkPage = ({ artworkItems } : ArtworkPageProps) => {
                   <div className='artwork-title-container'>
                     <h2 className='artwork-title my-auto'>DAGHENEEEE EEEEEEEE eeeee eeeeee eeee EEEEEE EEE EEE</h2>
                   </div>
-                  <CustomCarousel artworks={artworkItems} autoplay={false} handleOnClickItem={false} />
+                  <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} handleOnClickItem={false} />
                 </div>
               </div>
               <div className='col artwork-page-container artwork-right-section-background'>
@@ -78,7 +76,7 @@ const ArtworkPage = ({ artworkItems } : ArtworkPageProps) => {
                   </div>
                   <div className='artwork-description-container mt-4 pt-2'>
                     <div>
-                      {artwork.description}
+                      {artwork.data.description}
                     </div>
                   </div>
                 </div>
@@ -108,7 +106,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({ params 
   
   return {
     props: {
-      artworkItems: await getArtworkInFolder("soli-di-claudio/" + params.id.toString()),
+      artwork: await getArtworkInFolder("soli-di-claudio/" + params.id.toString()),
     },
     revalidate: 60 * 60 // 1 hour
   };

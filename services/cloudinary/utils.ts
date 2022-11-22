@@ -1,7 +1,7 @@
 import cloudinary from "./configuration";
 
 export const getImageList = (folderPath: string, tag: string = ""): Promise<any> => {
-    let expression: string = `folder:${folderPath}`;
+    let expression: string = `folder:${folderPath} OR format=txt`;
 
     if (tag !== "") {
         expression += ` AND tags=${tag}`;
@@ -9,14 +9,14 @@ export const getImageList = (folderPath: string, tag: string = ""): Promise<any>
 
     return cloudinary.search
         .expression(expression)
-        .with_field("context")
+        //.with_field("context")
         // .max_results(3)
         .execute()
         .then((result: any) => {
             return result;
         })
         .catch(() => {
-            throw Error("Failed to get image from cloudinary");
+            throw Error("Failed to get data from cloudinary");
     });
 };
 

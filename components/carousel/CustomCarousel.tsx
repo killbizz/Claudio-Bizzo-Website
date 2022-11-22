@@ -10,6 +10,18 @@ type Props = {
   }
   
   const CustomCarousel = ({ artworks, autoplay, handleOnClickItem }: Props) => {
+
+    let elements: JSX.Element[] = [];
+
+    artworks.forEach((artwork) => {
+      artwork.imageFiles.map(image => elements.push(
+        <div key={image.publicId} className='card-flyer image-box'>
+          <Image src={image.url} id={image.publicId} alt={artwork.data.title} layout='fill' objectFit='cover' />
+          <p className="legend">{artwork.data.title}</p>
+        </div>
+      ))
+    });
+
     return (
       <div id='carousel_cards_wrapper'>
         <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={3500} transitionTime={1500} 
@@ -23,12 +35,7 @@ type Props = {
           }}
         >
           {
-            artworks.map((artwork) => 
-              <div key={artwork.publicId} className='card-flyer image-box'>
-                <Image src={artwork.imageURL} id={artwork.publicId} alt={artwork.title} layout='fill' objectFit='cover' />
-                <p className="legend">{artwork.title}</p>
-              </div>
-            )
+            elements
           }
         </Carousel>
       </div>

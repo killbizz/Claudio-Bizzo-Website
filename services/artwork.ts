@@ -1,6 +1,9 @@
-import { Artwork } from './../types/Artwork';
+import { Metadata } from './../types/Metadata';
+import { Artwork } from '../types/Artwork';
 import Folder from "../types/Folder";
 import { getFolderList, getImageList, getSubfolderList } from "./cloudinary/utils";
+import { File } from '../types/File';
+import nthOccurrenceIndexOfString from '../lib/utility';
 
 
 export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
@@ -25,66 +28,116 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
       throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
     }
 
-    const imageList = await getImageList(folder, tag);
+    const fileList = await getImageList(folder, tag);
 
-    if(imageList === undefined || imageList === null){
-      throw Error("getPreviewArtwork Error : error retrieving imageList");
+    if(fileList === undefined || fileList === null){
+      throw Error("getPreviewArtwork Error : error retrieving fileList");
     }
 
-    // console.log("folder: " + folder);
-    // console.log("tag: " + tag);
-    // console.log(imageList);
+    console.log("folder: " + folder);
+    console.log("tag: " + tag);
+    console.log(fileList);
 
-    if(imageList.total_count === 0){
+    if(fileList.total_count === 0){
       return null;
     }
 
-    const context: any = imageList.resources[0].context;
+    let imageFile: File = null;
+    let data: Metadata = null;
 
-    if(context === undefined || context === null){
-      throw Error("getPreviewArtwork Error : context field is not present");
-    }
+    fileList.resources.forEach(
+      async (element: {
+        public_id: string;
+        filename: string;
+        format: string;
+        secure_url: string;
+      }) => {
+        // metadata file
+        if(element.format === "txt"){
+          // retrieving info from txt file
+          const dataString = await fetch(element.secure_url)
+            .then((response) => response.text())
+            .catch(reason => {throw Error(reason)})
+
+          console.log(dataString);
+          const dataJSON = JSON.parse(dataString);
+          data = {
+            title : dataJSON.titolo,
+            description : dataJSON.descrizione,
+            date : dataJSON.data,
+            materials : dataJSON.materiali,
+            availability : dataJSON.disponibilita,
+            dimensions : dataJSON.dimensioni
+          }
+        // image file
+        } else {
+          imageFile = {
+            publicId: element.public_id,
+            name: element.filename,
+            extension: element.format,
+            url: element.secure_url,
+          };
+        }
+      }
+    );
 
     const artwork: Artwork = {
-      publicId: imageList.resources[0].public_id,
-      name: imageList.resources[0].filename,
-      extension: imageList.resources[0].format,
-      imageURL: imageList.resources[0].secure_url,
-
-      title: context.titolo
+      imageFiles: Array<File>().concat(imageFile),
+      data
     };
   
     return artwork;
   };
   
-  export const getArtworkInFolder = async (folder: string): Promise<Artwork[]> => {
-    const imageList = await getImageList(folder);
-    const artworkList = new Array<Artwork>();
-  
-    imageList.resources.forEach(
-      (element: {
-        public_id: string;
-        filename: string;
-        format: string;
-        secure_url: string;
-        context: any;
-      }) => {
-        const artwork: Artwork = {
-          publicId: element.public_id,
-          name: element.filename,
-          extension: element.format,
-          imageURL: element.secure_url,
+  export const getArtworkInFolder = async (folder: string): Promise<Artwork> => {
 
-          title: element.context ? element.context.titolo : "",
-          description: element.context ? element.context.descrizione : "",
-          materials: element.context ? element.context.materiali : "",
-          date: element.context ? element.context.data : "",
-          availability: element.context ? element.context.disponibilita : "",
-          dimensions: element.context ? element.context.dimensioni : ""
-        };
-        artworkList.push(artwork);
-      }
-    );
+    const imageFileList = new Array<File>();
+    let finalMetadata: Metadata = undefined;
+
+    const fileList = await getImageList(folder);
+
+    for(const element of fileList.resources){
+          // metadata file
+          if(element.format === "txt"){
+            // retrieving info from txt file
+            let dataString = await fetch(element.secure_url)
+              .then((response) => response.text())
+              .catch(reason => {throw Error(reason)});
   
-    return artworkList;
+            // extracting the description in order to keep newLines
+            const descBegin = nthOccurrenceIndexOfString(dataString, '"', 5);
+            const descEnd = nthOccurrenceIndexOfString(dataString, '"', 8);
+            // +2 in order to keep the final '",' characters
+            let description: string = dataString.substring(descBegin, descEnd + 2);
+  
+            dataString = dataString.replace(description, '');
+  
+            description = description.replace('"descrizione" : "', '');
+            description = description.replace('",', '');
+  
+            const dataJSON = JSON.parse(dataString);
+  
+            finalMetadata = {
+              title : dataJSON.titolo,
+              description : description,
+              date : dataJSON.data,
+              materials : dataJSON.materiali,
+              availability : dataJSON.disponibilita,
+              dimensions : dataJSON.dimensioni
+            }
+          // image file
+          } else {
+            imageFileList.push({
+              publicId: element.public_id,
+              name: element.filename,
+              extension: element.format,
+              url: element.secure_url,
+            });
+          }
+    }
+    
+    return {
+      imageFiles : imageFileList,
+      data : finalMetadata
+    };
   };

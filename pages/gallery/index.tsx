@@ -57,19 +57,19 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                     <div className="row">
                       {
                         artworks.map((artwork) => 
-                        <div key={artwork.publicId} className="col-lg-4">
-                          <Link href={'/artwork/' + artwork.publicId.split("/")[1]}>
+                        <div key={artwork.imageFiles[0].publicId} className="col-lg-4">
+                          <Link href={'/artwork/' + artwork.imageFiles[0].publicId.split("/")[1]}>
                             <a>
                               <div className="card-flyer card-block">
                                 <div className="text-box">
                                   <div className="image-box">
-                                    <Image src={artwork.imageURL} alt={artwork.title} layout='fill' objectFit='cover' />
+                                    <Image src={artwork.imageFiles[0].url} alt={artwork.data.title} layout='fill' objectFit='cover' />
                                   </div>
                                   <div className={"text-container"}>
-                                    <h6>{artwork.title}</h6>
+                                    <h6>{artwork.data.title}</h6>
                                     <button 
                                       className="btn btn-lg custom-button mt-4 mx-auto text-center d-block" 
-                                      onClick={() => Router.push('/artwork/' + artwork.publicId.split("/")[1])}
+                                      onClick={() => Router.push('/artwork/' + artwork.imageFiles[0].publicId.split("/")[1])}
                                     >
                                       Esplora
                                     </button>
