@@ -1,10 +1,10 @@
 import cloudinary from "./configuration";
 
 export const getImageList = (folderPath: string, tag: string = ""): Promise<any> => {
-    let expression: string = `folder:${folderPath} OR format=txt`;
+    let expression: string = `folder:${folderPath}`;
 
     if (tag !== "") {
-        expression += ` AND tags=${tag}`;
+        expression += ` AND ( format=txt OR tags=${tag} )`;
     }
 
     return cloudinary.search
