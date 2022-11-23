@@ -24,7 +24,7 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
   
   export const getPreviewArtwork = async (folder: string, tag: string): Promise<Artwork> => {
 
-    if(!(tag === "anteprima_galleria" || tag === "evidenza_home")){
+    if(!(tag === "anteprima_galleria" || tag === "anteprima_home")){
       throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
     }
 
@@ -34,56 +34,61 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
       throw Error("getPreviewArtwork Error : error retrieving fileList");
     }
 
-    console.log("folder: " + folder);
-    console.log("tag: " + tag);
-    console.log(fileList);
+    // console.log("FOLDER: " + folder);
+    // console.log("TAG: " + tag);
+    // console.log(fileList);
 
-    if(fileList.total_count === 0){
+    // if aren't present at least an image file and a metadata file
+    if(fileList.total_count <= 1){
       return null;
     }
 
     let imageFile: File = null;
-    let data: Metadata = null;
+    let metadata: Metadata = null;
 
-    fileList.resources.forEach(
-      async (element: {
-        public_id: string;
-        filename: string;
-        format: string;
-        secure_url: string;
-      }) => {
-        // metadata file
-        if(element.format === "txt"){
-          // retrieving info from txt file
-          const dataString = await fetch(element.secure_url)
-            .then((response) => response.text())
-            .catch(reason => {throw Error(reason)})
+    for(const element of fileList.resources){
+      // metadata file
+      if(element.format === "txt"){
+        // retrieving info from txt file
+        let dataString = await fetch(element.secure_url)
+          .then((response) => response.text())
+          .catch(reason => {throw Error(reason)});
 
-          console.log(dataString);
-          const dataJSON = JSON.parse(dataString);
-          data = {
-            title : dataJSON.titolo,
-            description : dataJSON.descrizione,
-            date : dataJSON.data,
-            materials : dataJSON.materiali,
-            availability : dataJSON.disponibilita,
-            dimensions : dataJSON.dimensioni
-          }
-        // image file
-        } else {
-          imageFile = {
-            publicId: element.public_id,
-            name: element.filename,
-            extension: element.format,
-            url: element.secure_url,
-          };
+        // extracting the description in order to keep newLines
+        const descBegin = nthOccurrenceIndexOfString(dataString, '"', 5);
+        const descEnd = nthOccurrenceIndexOfString(dataString, '"', 8);
+        // +2 in order to keep the final '",' characters
+        let description: string = dataString.substring(descBegin, descEnd + 2);
+
+        dataString = dataString.replace(description, '');
+
+        description = description.replace('"descrizione" : "', '');
+        description = description.replace('",', '');
+
+        const dataJSON = JSON.parse(dataString);
+
+        metadata = {
+          title : dataJSON.titolo,
+          description : description,
+          date : dataJSON.data,
+          materials : dataJSON.materiali,
+          availability : dataJSON.disponibilita,
+          dimensions : dataJSON.dimensioni
         }
+      // image file
+      } else {
+        imageFile = {
+          publicId: element.public_id,
+          name: element.filename,
+          extension: element.format,
+          url: element.secure_url,
+        };
       }
-    );
+}
 
     const artwork: Artwork = {
       imageFiles: Array<File>().concat(imageFile),
-      data
+      data: metadata
     };
   
     return artwork;
