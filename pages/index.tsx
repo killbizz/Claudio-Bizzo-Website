@@ -1,9 +1,4 @@
-import dynamic from 'next/dynamic';
-import { Carousel } from 'react-responsive-carousel';
 import Layout from '../components/Layout'
-const Link = dynamic(() => import('next/link'), { ssr: false });
-// import { Image } from "cloudinary-react";
-import Image from "next/image";
 import Router  from 'next/router';
 import { GetStaticProps, GetStaticPropsResult } from 'next';
 import { Artwork } from '../types/Artwork';
@@ -67,7 +62,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<G
   const featuredArtworks: Artwork[] = [];
 
   for (let i = 0; i < folders.length; i++) {
-    const artwork: Artwork = await getPreviewArtwork(folders[i].path, "evidenza_home");
+    const artwork: Artwork = await getPreviewArtwork(folders[i].path, "anteprima_home");
     if(artwork !== null)
       featuredArtworks.push(artwork);
   };
