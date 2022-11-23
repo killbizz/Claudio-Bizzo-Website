@@ -217,12 +217,12 @@ img {
 
 .artwork-page-mid {
   /* height: 82.9vh !important; */
-  min-height: 83.5vh !important;
+  min-height: 83.3vh !important;
 }
 
 .artwork-page-container .carousel {
-  top: 52% !important;
-  transform: translateY(-48%) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 .artwork-page-container .carousel .slide {
@@ -239,11 +239,25 @@ img {
   align-items: center;
   justify-content: center;
   position: absolute !important;
-  top: 1.65% !important;
+  top: 0px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  height: 20%;
+  height: 19.3%;
   width: 80%;
+}
+
+.artwork-get-info-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute !important;
+  bottom: 3% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  height: 14%;
+  width: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .artwork-right-section-background {
@@ -260,8 +274,8 @@ img {
 .artwork-features-container {
   background-color: rgb(0, 0, 0, 0.25);
   color: white;
-  margin-left: 12%;
-  margin-right: 12%;
+  margin-left: 15%;
+  margin-right: 15%;
   padding-left: 4%;
   padding-right: 4%;
 }
@@ -281,7 +295,7 @@ img {
 
 .gallery-page-mid {
   /* min-height: 83.137vh !important; */
-  min-height: 83.7vh !important;
+  min-height: 83.3vh !important;
 }
 
 #gallery_cards_wrapper{
@@ -485,6 +499,14 @@ img {
   bottom: 6.5%;
 }
 
+.artwork-get-info-btn {
+  /* left: 50%;
+  transform: translateX(-50%); */
+  position: absolute;
+  top: 0;
+  max-width: fit-content !important;
+}
+
 .about-explorer-btn {
   max-width: fit-content !important;
 }
@@ -597,5 +619,29 @@ img {
 
   #gallery_cards_wrapper .card-flyer{
     margin-top: 25px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .bigScreen {
+    display:none;
+  }
+  .smallScreen {
+    display:block;
+  }
+}
+
+@media (min-width: 1001px) {
+  .bigScreen {
+    display:block;
+  }
+  .smallScreen {
+    display:none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .artwork-right-section-background {
+    border-top: 2px solid #000000;
   }
 }
