@@ -20,7 +20,7 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
               <div className='col-xl-5 artwork-page-container h-100'>
                 <div className="artwork-page-mid">
                   <div className='artwork-title-container'>
-                    <h2 className='my-auto'>{artwork.data.title}</h2>
+                    <h1 className='my-auto'>{artwork.data.title}</h1>
                   </div>
                   <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} handleOnClickItem={false} />
                   <div className='artwork-get-info-container row justify-content-center align-items-center'>
@@ -30,7 +30,7 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
                       className="btn btn-lg custom-button artwork-get-info-btn mx-auto text-center d-block col"
                       onClick={() => Router.push(`/contact?reason=${artwork.imageFiles[0].publicId.split("/")[1]}`)}
                     >
-                      Chiedi informazioni
+                      Chiedi Informazioni
                     </button>
                   </div>
                 </div>
@@ -100,8 +100,8 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
                     </div>
 
                   </div>
-                  <div className='artwork-description-container my-4 pt-2'>
-                    <div>
+                  <div className='artwork-description-container my-4 py-2'>
+                    <div className='my-auto'>
                       {artwork.data.description}
                     </div>
                   </div>

@@ -121,13 +121,13 @@ img {
 /* ----- SPINNER-ICON ----- */
 
 #nprogress .bar {
-  height: 6px !important;
+  height: 8px !important;
   background: #326475 !important;
 }
 
 #nprogress .spinner-icon {
-  width: 36px !important;
-  height: 36px !important;
+  width: 42px !important;
+  height: 42px !important;
   border-top-color: #326475 !important;
   border-left-color: #326475 !important;
 }
@@ -170,14 +170,14 @@ img {
   color: white;
   position: absolute;
   top: 12%;
-  left: 12%;
+  left: 5%;
 }
 
 .homepage-description {
   color: white;
   position: absolute;
-  top: 41%;
-  right: 8%;
+  top: 40%;
+  right: 3%;
   max-width: 32%;
 }
 
@@ -185,8 +185,8 @@ img {
   color: white;
   letter-spacing: 3px;
   position: absolute;
-  top: 78%;
-  left: 11%;
+  top: 72.4%;
+  left: 5.5%;
 }
 
 .homepage-separator {
@@ -274,8 +274,8 @@ img {
 .artwork-features-container {
   background-color: rgb(0, 0, 0, 0.25);
   color: white;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 18%;
+  margin-right: 18%;
   padding-left: 4%;
   padding-right: 4%;
 }
@@ -283,12 +283,16 @@ img {
 .artwork-description-container {
   background-color: rgb(0, 0, 0, 0.25);
   color: white;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  min-height: 50vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 .artwork-description-container div {
-  white-space: pre-line !important; 
+  white-space: pre-line !important;
 }
 
 /* ----- GALLERY PAGE ----- */
@@ -336,7 +340,7 @@ img {
   
 }
 #gallery_cards_wrapper .card-flyer:hover .image-box img{
-  opacity: 0.85;
+  opacity: 0.95;
   -webkit-transform:scale(1.05);
   -moz-transform:scale(1.05);
   -ms-transform:scale(1.05);
@@ -380,8 +384,8 @@ img {
   margin-top: 0px;
   margin-bottom: 0px; 
   font-size: 18px;
-  font-weight: bold;
-  font-family: 'Roboto Black', sans-serif;
+  /* font-weight: bold; */
+  font-style: italic;
   letter-spacing: 1px;
   color: black;
 }
@@ -390,8 +394,8 @@ img {
 
 .scrolldown {
   position: absolute;
-  bottom: 20px;
-  right: 8%;
+  bottom: 0%;
+  right: 6%;
   width: 40px;
   height: 40px;
   transform: translateY(-80px) translateX(-50%) rotate(45deg);
@@ -539,7 +543,7 @@ img {
 }
 #carousel_cards_wrapper
 .carousel .slide .card-flyer:hover.image-box span img{
-  opacity: 0.85 !important;
+  opacity: 0.95 !important;
   -webkit-transform:scale(1.08) !important;
   -moz-transform:scale(1.08) !important;
   -ms-transform:scale(1.08) !important;
@@ -591,16 +595,57 @@ img {
   height: 100%;
 }
 
+/* ----- FONTS ----- */
+
+button.custom-button {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+}
+
+h1, h6 a.nav-link {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+
+.homepage-title h1 {
+  font-size: 5em;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+
+h1.homepage-subtitle {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.homepage-citation {
+  font-size: 1.4em;
+}
+
+.homepage-description {
+  letter-spacing: 1.4px;
+  font-size: 1.1em;
+}
+
 /* ----- MEDIA QUERY ----- */
 
 @media(max-width:960px){
   .hide-under-half-width{
     display: none !important;
   }
-
   .center-under-half-width{
+    text-align: center;
     top: 35%;
-    left: 60% !important;
+    left: 54% !important;
+    transform: translateX(-50%);
+  }
+  .center-about-explorer-btn-under-half-width {
+    top: 77%;
+    left: 52.5% !important;
     transform: translateX(-50%);
   }
 }
@@ -608,6 +653,13 @@ img {
 @media(max-width:395px){
   .gallery-explorer-btn {
     bottom: 4% !important;
+  }
+}
+
+@media(max-width:500px){
+  .artwork-features-container {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 

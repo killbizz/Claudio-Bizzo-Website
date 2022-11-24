@@ -17,10 +17,13 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
       <div className="homepage-mid">
         <div className='homepage-background-image'>
           <div className='row homepage-title center-under-half-width'>
-            <h1 className='col'>Claudio Bizzo,<br/>Artigiano e Creativo</h1>
+            <div className='col'>
+              <h1>CLAUDIO BIZZO</h1>
+              <h1 className='homepage-subtitle'>Artigiano e Creativo</h1>
+            </div>
           </div>
-          <div className='row justify-content-center homepage-description hide-under-half-width'>
-            <p className='col'>Nel mio sito troverai arredamento per interno ed esterno, in modo completamente artigianale ed ecologico.</p>
+          <div className='row justify-content-center homepage-description center-about-explorer-btn-under-half-width'>
+            <p className='col hide-under-half-width'>Decorazioni per arredamento da interno ed esterno, create utilizzando tecniche produttive artigianali e completamente eco-sostenibili.</p>
             <div className='w-100' />
             <button 
               className="col-sm-3 btn btn-lg custom-button about-explorer-btn"

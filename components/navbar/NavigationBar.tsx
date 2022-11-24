@@ -38,25 +38,25 @@ const NavigationBar = () => {
                             <Nav.Item className=" mx-4">
                                 <Link href="/">
                                     <a className={"nav-link custom-link" 
-                                        + (router.pathname === "/" ? " active" : "")}>Homepage</a>
+                                        + (router.pathname === "/" ? " active" : "")}>HOMEPAGE</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/gallery">
                                     <a className={"nav-link custom-link" 
-                                        + (router.pathname === "/gallery" ? " active" : "")}>Galleria</a>
+                                        + (router.pathname === "/gallery" ? " active" : "")}>GALLERIA</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/about">
                                     <a className={"nav-link custom-link" 
-                                        + (router.pathname === "/about" ? " active" : "")}>Chi Sono</a>
+                                        + (router.pathname === "/about" ? " active" : "")}>CHI SONO</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
                                 <Link href="/contact">
                                     <a className={"nav-link custom-link" 
-                                        + (router.pathname === "/contact" ? " active" : "")}>Contattami</a>
+                                        + (router.pathname === "/contact" ? " active" : "")}>CONTATTAMI</a>
                                 </Link>
                             </Nav.Item>
                         </Nav>
