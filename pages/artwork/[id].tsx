@@ -17,12 +17,14 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
         <div className="mid mid-background-color">
           <div className="container-fluid h-100">
             <div className="row h-100">
-              <div className='col-xl-5 artwork-page-container h-100'>
+              <div className='col-xl artwork-page-container h-100'>
                 <div className="artwork-page-mid">
                   <div className='artwork-title-container'>
                     <h1 className='my-auto'>{artwork.data.title}</h1>
                   </div>
-                  <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} handleOnClickItem={false} />
+                  <div className='artwork-left-section-carousel-container row justify-content-center align-items-center'>
+                    <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} handleOnClickItem={false} />
+                  </div>
                   <div className='artwork-get-info-container row justify-content-center align-items-center'>
                     <p className='col text-center mb-0 pt-3'>Sei interessato?</p>
                     <div className='w-100' />

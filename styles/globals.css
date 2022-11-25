@@ -71,12 +71,6 @@ body, html {
   /* text-decoration: none; */
 }
 
-img {
-  width:100%;
-  max-width:400px;
-  max-height:300px;
-}
-
 .boxing-form {
   text-align: center;
   width: 80%;
@@ -153,7 +147,7 @@ img {
   flex:1;
   display:flex;
   flex-direction:column;
-  position:relative
+  position:relative;
 }
 
 .homepage-background-image {
@@ -200,9 +194,15 @@ img {
   border-bottom: 2px solid black;
 }
 
-.homepage-mid-2 .carousel {
+/* .homepage-mid-2 .carousel {
   height: 75% !important;
   bottom: 100px !important;
+} */
+
+.homepage-mid-2 .carousel {
+  width: 70% !important;
+  margin: auto !important;
+  margin-top: 4% !important;
 }
 
 .homepage-mid-2 .carousel .slide {
@@ -220,13 +220,31 @@ img {
   min-height: 83.3vh !important;
 }
 
+.artwork-page-container #carousel_cards_wrapper
+.carousel .slide .card-flyer.image-box img{
+  max-height: 52vh !important;
+  max-width: 60vw !important;
+}
+
 .artwork-page-container .carousel {
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+  height: fit-content !important;
+  width: 80% !important;
+  margin: auto !important;
+  padding-top: 34px !important;
+  padding-bottom: 34px !important;
 }
 
 .artwork-page-container .carousel .slide {
-  height: 51vh !important;
+  /* height: 51.5vh !important; */
+  /* height: fit-content !important; */
+  /* height: 100% !important; */
+  height: fit-content !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+}
+
+.artwork-page-container #carousel_cards_wrapper {
+  height: 100% !important;
 }
 
 .artwork-page-container #carousel_cards_wrapper
@@ -234,36 +252,43 @@ img {
   display: none !important;
 }
 
+.artwork-page-container #carousel_cards_wrapper .card-flyer:hover{
+  cursor: zoom-in !important;
+}
+
 .artwork-title-container {
   display:flex;
   align-items: center;
   justify-content: center;
-  position: absolute !important;
-  top: 0px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  height: 19.3%;
+  /* height: 19.3%; */
+  height: fit-content;
   width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
 }
 
 .artwork-get-info-container {
   display:flex;
   align-items: center;
   justify-content: center;
-  position: absolute !important;
-  bottom: 3% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+  position: relative !important;
   height: 14%;
   width: 100%;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 5vh;
+  margin-bottom: 2%;
+}
+
+.artwork-left-section-carousel-container {
+  min-height: 50vh !important;
+  max-height: 55vh !important;
+  margin-top: 5vh !important;
 }
 
 .artwork-right-section-background {
   background-color: rgb(0, 0, 0, 0.25);
-  /* padding-left: 15% !important;
-  padding-right: 15%!important; */
 }
 
 .artwork-right-section-container {
@@ -291,6 +316,7 @@ img {
   align-items: center; 
 }
 
+/* let the description section use the newLine char */
 .artwork-description-container div {
   white-space: pre-line !important;
 }
@@ -346,6 +372,11 @@ img {
   -ms-transform:scale(1.05);
   -o-transform:scale(1.05);
   transform:scale(1.05);
+}
+#gallery_cards_wrapper img {
+  width:100%;
+  max-width:400px;
+  max-height:300px;
 }
 #gallery_cards_wrapper .card-flyer .text-box{
   text-align: center;
@@ -527,37 +558,35 @@ img {
 .carousel .slide .card-flyer.image-box{
   /* background: #545454 !important; */
   overflow: hidden !important;
+  margin: auto;
+  /* width: 68.9vw !important; */
   /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50) !important; */
-  width: 100% !important;
+  /* width: 100% !important; */
 }
 #carousel_cards_wrapper
-.carousel .slide .card-flyer.image-box span img{
-  -webkit-transition:all .9s ease !important; 
+.carousel .slide .card-flyer.image-box img{
+  /* -webkit-transition:all .9s ease !important; 
   -moz-transition:all .9s ease !important; 
   -o-transition:all .9s ease !important;
   -ms-transition:all .9s ease !important;
-  transition:all .9s ease !important;
+  transition:all .9s ease !important; */
   height: 100% !important;
   position: relative !important;
-  
+  border-radius: 5px !important;
 }
 #carousel_cards_wrapper
-.carousel .slide .card-flyer:hover.image-box span img{
-  opacity: 0.95 !important;
+.carousel .slide .card-flyer.image-box{
+  position: relative !important;
+}
+#carousel_cards_wrapper
+.carousel .slide .card-flyer:hover.image-box img{
+  /* opacity: 0.95 !important;
   -webkit-transform:scale(1.08) !important;
   -moz-transform:scale(1.08) !important;
   -ms-transform:scale(1.08) !important;
   -o-transform:scale(1.08) !important;
-  transform:scale(1.08) !important;
+  transform:scale(1.08) !important; */
   cursor: pointer !important;
-}
-#carousel_cards_wrapper .card-flyer{
-  /* background: #755b3e !important; */
-  margin-top: 50px !important;
-}
-#carousel_cards_wrapper .card-flyer:hover{
-  /* background: #755b3e !important; */
-  margin-top: 50px !important;
 }
 #carousel_cards_wrapper .carousel{
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40) !important;
@@ -566,6 +595,7 @@ img {
   -ms-transition: all 0.2s ease-in !important;
   -o-transition: all 0.2s ease-in !important;
   transition: all 0.2s ease-in !important;
+  background: rgba(0, 0, 0, 0.25) !important;
 }
 #carousel_cards_wrapper .carousel:hover{
   box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50) !important;
@@ -576,20 +606,20 @@ img {
   transition: all 0.2s ease-in !important;
 }
 
-.carousel {
-  /* NOTE: see homepage and artwork-page for height and bottom */
+/* NOTE: see homepage and artwork-page for height and bottom */
+/* .carousel {
   width: 80% !important;
   position: absolute !important;
   margin: auto !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-}
+} */
 
-.carousel .slide {
-  /* NOTE: see homepage and artwork-page for height */
-  background: #545454 !important;
-}
+/* NOTE: see homepage and artwork-page for height */
+/* .carousel .slide {
+  background: rgba(0, 0, 0, 0.25) !important;
+} */
 
 .carousel .slide div {
   height: 100%;
