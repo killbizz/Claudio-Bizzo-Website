@@ -142,7 +142,8 @@ body, html {
 }
 
 .homepage-mid-2 {
-  height: 80vh;
+  /* height: 80vh; */
+  height: 83.3vh !important;
   width: 100%;
   flex:1;
   display:flex;
@@ -194,29 +195,68 @@ body, html {
   border-bottom: 2px solid black;
 }
 
-/* .homepage-mid-2 .carousel {
-  height: 75% !important;
-  bottom: 100px !important;
-} */
-
 .homepage-mid-2 .carousel {
+  /* width: 70% !important;
+  margin: auto !important;
+  margin-top: 4% !important; */
+  height: fit-content !important;
   width: 70% !important;
   margin: auto !important;
-  margin-top: 4% !important;
+  padding-top: 34px !important;
+  padding-bottom: 34px !important;
 }
 
 .homepage-mid-2 .carousel .slide {
-  height: 60.3vh !important;
+  /* height: 60.3vh !important; */
+  height: fit-content !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important;
 }
 
 .homepage-mid-2 #carousel_cards_wrapper .card-flyer:hover{
   cursor: pointer !important;
 }
 
+.homepage-mid-2 #carousel_cards_wrapper
+.carousel .slide .card-flyer.image-box img{
+  max-height: 45vh !important;
+  max-width: 65vh !important;
+}
+
+.homepage-carousel-container {
+  min-height: 50vh !important;
+  max-height: 52vh !important;
+  margin-top: 5vh !important;
+  max-width: 100% !important;
+}
+
+.homepage-title-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+
+.homepage-gallery-explorer-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: relative !important;
+  height: 14%;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 5vh;
+  margin-bottom: 2%;
+}
+
 /* ----- ARTWORK PAGE ----- */
 
 .artwork-page-mid {
-  /* height: 82.9vh !important; */
   min-height: 83.3vh !important;
 }
 
@@ -235,16 +275,9 @@ body, html {
 }
 
 .artwork-page-container .carousel .slide {
-  /* height: 51.5vh !important; */
-  /* height: fit-content !important; */
-  /* height: 100% !important; */
   height: fit-content !important;
   padding-left: 28px !important;
   padding-right: 28px !important;
-}
-
-.artwork-page-container #carousel_cards_wrapper {
-  height: 100% !important;
 }
 
 .artwork-page-container #carousel_cards_wrapper
@@ -260,7 +293,6 @@ body, html {
   display:flex;
   align-items: center;
   justify-content: center;
-  /* height: 19.3%; */
   height: fit-content;
   width: 80%;
   margin-left: auto;
@@ -281,7 +313,7 @@ body, html {
   margin-bottom: 2%;
 }
 
-.artwork-left-section-carousel-container {
+.artwork-page-carousel-container {
   min-height: 50vh !important;
   max-height: 55vh !important;
   margin-top: 5vh !important;
@@ -522,21 +554,22 @@ body, html {
   box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.custom-button-dark {
+  background-color: #326475 !important;
+}
+
 .custom-button:hover {
   background-position: bottom !important;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .gallery-explorer-btn {
-  left: 50%;
-  transform: translateX(-50%);
   position: absolute;
-  bottom: 6.5%;
+  top: 0;
+  max-width: fit-content !important;
 }
 
 .artwork-get-info-btn {
-  /* left: 50%;
-  transform: translateX(-50%); */
   position: absolute;
   top: 0;
   max-width: fit-content !important;
@@ -550,26 +583,18 @@ body, html {
 
 #carousel_cards_wrapper{
   text-align: center !important;
+  /* height: 100% !important; */
 }
 #carousel_cards_wrapper .carousel {
   border-radius: 5px !important;
 }
 #carousel_cards_wrapper
 .carousel .slide .card-flyer.image-box{
-  /* background: #545454 !important; */
   overflow: hidden !important;
   margin: auto;
-  /* width: 68.9vw !important; */
-  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50) !important; */
-  /* width: 100% !important; */
 }
 #carousel_cards_wrapper
 .carousel .slide .card-flyer.image-box img{
-  /* -webkit-transition:all .9s ease !important; 
-  -moz-transition:all .9s ease !important; 
-  -o-transition:all .9s ease !important;
-  -ms-transition:all .9s ease !important;
-  transition:all .9s ease !important; */
   height: 100% !important;
   position: relative !important;
   border-radius: 5px !important;
@@ -580,12 +605,6 @@ body, html {
 }
 #carousel_cards_wrapper
 .carousel .slide .card-flyer:hover.image-box img{
-  /* opacity: 0.95 !important;
-  -webkit-transform:scale(1.08) !important;
-  -moz-transform:scale(1.08) !important;
-  -ms-transform:scale(1.08) !important;
-  -o-transform:scale(1.08) !important;
-  transform:scale(1.08) !important; */
   cursor: pointer !important;
 }
 #carousel_cards_wrapper .carousel{
@@ -606,20 +625,18 @@ body, html {
   transition: all 0.2s ease-in !important;
 }
 
-/* NOTE: see homepage and artwork-page for height and bottom */
-/* .carousel {
-  width: 80% !important;
-  position: absolute !important;
-  margin: auto !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-} */
+#carousel_cards_wrapper
+.carousel .slide .card-flyer.image-box .legend {
+  background-color: rgba(0, 0, 0, 0.75);
+  bottom: 0.5em;
+  opacity: 0;
+  height: fit-content !important;
+}
 
-/* NOTE: see homepage and artwork-page for height */
-/* .carousel .slide {
-  background: rgba(0, 0, 0, 0.25) !important;
-} */
+#carousel_cards_wrapper
+.carousel:hover .slide .card-flyer.image-box .legend {
+  opacity: 1;
+}
 
 .carousel .slide div {
   height: 100%;
@@ -678,11 +695,23 @@ h1.homepage-subtitle {
     left: 52.5% !important;
     transform: translateX(-50%);
   }
+  .homepage-mid-2 .carousel {
+    width: 85% !important;
+  }
 }
 
-@media(max-width:395px){
-  .gallery-explorer-btn {
-    bottom: 4% !important;
+@media(max-width:990px){
+  #gallery_cards_wrapper{
+    margin-top: 2vh !important;
+  }
+}
+
+@media(max-width:437px){
+  .homepage-carousel-container {
+    margin-top: 1vh !important;
+  }
+  .homepage-gallery-explorer-container {
+    margin-top: 1vh;
   }
 }
 

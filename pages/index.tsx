@@ -13,7 +13,7 @@ interface HomePageProps {
 const IndexPage = ({ featuredArtworks }: HomePageProps) => {
 
   return (
-    <Layout title="I Soli di Claudio | Homepage">
+    <Layout title="Homepage | I Soli di Claudio">
       <div className="homepage-mid">
         <div className='homepage-background-image'>
           <div className='row homepage-title center-under-half-width'>
@@ -44,17 +44,22 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
           <span></span>
         </div>
       </div>
-      <div className="homepage-separator color-nav">
-        <h2>LAVORI IN EVIDENZA</h2>
-      </div>
+      <div className="homepage-separator color-nav" />
       <div className="homepage-mid-2 mid-background-color">
-        <CustomCarousel artworks={featuredArtworks} autoplay={true} handleOnClickItem={true} />
-        <button 
-          className="btn btn-lg custom-button gallery-explorer-btn"
-          onClick={() => Router.push('/gallery')}
-        >
-            Esplora la Galleria
-        </button>
+        <div className='homepage-title-container'>
+          <h1 className='my-auto text-center'>Lavori in evidenza</h1>
+        </div>
+        <div className='homepage-carousel-container row justify-content-center align-items-center mx-auto'>
+          <CustomCarousel artworks={featuredArtworks} autoplay={true} handleOnClickItem={true} />
+        </div>
+        <div className='homepage-gallery-explorer-container row justify-content-center align-items-center'>
+          <button 
+            className="btn btn-lg custom-button gallery-explorer-btn mx-auto text-center d-block col"
+            onClick={() => Router.push('/gallery')}
+          >
+              Esplora la Galleria
+          </button>
+        </div>
       </div>
     </Layout>
   );
@@ -74,7 +79,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<G
     props: {
       featuredArtworks
     },
-    revalidate: 60 * 60 * 2 // 2 hour
+    revalidate: 60 * 60 * 24 // 24 hour
   };
 };
 
