@@ -4,7 +4,7 @@ import Layout from '../../components/Layout';
 const ContactPage = () => {
 
   return(
-      <Layout title="I Soli di Claudio | Contattami">
+      <Layout title="Contattami | I Soli di Claudio">
           <div className="mid">
             <p>DAGHE</p>
           </div>

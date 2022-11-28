@@ -13,16 +13,16 @@ interface ArtworkPageProps {
 const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
 
   return(
-      <Layout title = {`I Soli di Claudio | ${artwork.data.title}`}>
+      <Layout title = {`${artwork.data.title} | I Soli di Claudio`}>
         <div className="mid mid-background-color">
           <div className="container-fluid h-100">
             <div className="row h-100">
               <div className='col-xl artwork-page-container h-100'>
                 <div className="artwork-page-mid">
                   <div className='artwork-title-container'>
-                    <h1 className='my-auto'>{artwork.data.title}</h1>
+                    <h1 className='my-auto text-center'>{artwork.data.title}</h1>
                   </div>
-                  <div className='artwork-left-section-carousel-container row justify-content-center align-items-center'>
+                  <div className='artwork-page-carousel-container row justify-content-center align-items-center'>
                     <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} handleOnClickItem={false} />
                   </div>
                   <div className='artwork-get-info-container row justify-content-center align-items-center'>
