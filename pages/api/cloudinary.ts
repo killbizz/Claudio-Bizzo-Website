@@ -1,5 +1,5 @@
 import { getPreviewArtwork } from './../../services/artwork';
-import { Artwork } from '../../types/Metadata';
+import { Artwork } from '../../types/Artwork';
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
