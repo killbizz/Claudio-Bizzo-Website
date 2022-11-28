@@ -38,7 +38,7 @@ const Layout = ({ children, title = 'I Soli di Claudio' }: Props) => {
       location="bottom"
       cookieName="CookieConsentBanner"
       style={{ background: "#755b3e", color: "#000000", borderTop: '2px solid black' }}
-      buttonClasses="custom-button"
+      buttonClasses="custom-button custom-button-dark"
       expires={30}
     >
       Il sito web utilizza i cookie per finalità strettamente necessarie al suo funzionamento.
