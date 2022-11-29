@@ -15,7 +15,8 @@ export const getImageList = (folderPath: string, tag: string = ""): Promise<any>
         .then((result: any) => {
             return result;
         })
-        .catch(() => {
+        .catch((e) => {
+            console.error(e);
             throw Error("Failed to get data from cloudinary");
     });
 };
@@ -26,7 +27,8 @@ export const getFolderList = (): Promise<any> => {
         .then((result: any) => {
             return result;
         })
-        .catch(() => {
+        .catch((e) => {
+            console.error(e);
             throw Error("Failed to get list of folder from cloudinary");
     });
 };
@@ -37,7 +39,8 @@ export const getSubfolderList = (folder: string): Promise<any> => {
         .then((result: any) => {
             return result;
         })
-        .catch(() => {
+        .catch((e) => {
+            console.error(e);
             throw Error(`Failed to get list of subfolder in ${folder} from cloudinary`);
     });
 };
