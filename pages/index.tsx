@@ -54,7 +54,7 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
         </div>
         <div className='homepage-gallery-explorer-container row justify-content-center align-items-center'>
           <button 
-            className="btn btn-lg custom-button gallery-explorer-btn mx-auto text-center d-block col"
+            className="btn btn-lg custom-button custom-button-dark gallery-explorer-btn mx-auto text-center d-block col"
             onClick={() => Router.push('/gallery')}
           >
               Esplora la Galleria
