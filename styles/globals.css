@@ -86,6 +86,15 @@ body, html {
   margin-top: 1.5rem !important;
 }
 
+.error-page-mid {
+  min-height: 83.3vh !important;
+  width: 100%;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
 /* ----- LOGOS ----- */
 
 .fa-facebook-square {
@@ -556,6 +565,7 @@ body, html {
 
 .custom-button-dark {
   background-color: #326475 !important;
+  color: white !important;
 }
 
 .custom-button:hover {
@@ -649,7 +659,7 @@ button.custom-button {
   font-weight: 400;
 }
 
-h1, h6 a.nav-link {
+h1, h2, h3, h4, h5, h6 a.nav-link {
   font-family: 'Lora', serif;
   font-weight: 600;
 }
