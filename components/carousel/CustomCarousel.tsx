@@ -1,7 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
 import { Artwork } from '../../types/Artwork';
-// import Image from "next/image";
-import {Image} from 'cloudinary-react';
+import Image from "next/image";
+import {Image as CloudinaryImage} from 'cloudinary-react';
 import Router  from 'next/router';
 import { useState } from 'react';
 import Lightbox from "react-18-image-lightbox";
@@ -30,7 +30,11 @@ type Props = {
     artworks.forEach((artwork) => {
       artwork.imageFiles.map(image => elements.push(
         <div key={image.publicId} className='card-flyer image-box' onClick={() => setIsModalOpen(true)}>
-          <Image src={image.url} id={image.publicId} alt={artwork.data.title} />
+          {
+            image.name === "no_image_available"
+              ? <img src={image.url} id={image.publicId} alt={"immagine non disponibile"} />
+              : <CloudinaryImage src={image.url} id={image.publicId} alt={artwork.data.title} />
+          }
           <p className="legend">{artwork.data.title}</p>
         </div>
       ))
@@ -42,9 +46,11 @@ type Props = {
           autoPlay={autoplay} infiniteLoop useKeyboardArrows swipeable dynamicHeight selectedItem={photoIndex}
           onClickItem={(index, item: any) => {
             if(handleOnClickItem){
-              // redirect to the item page
-              // key == publicId == 'soli-di-claudio/folder/filename'
-              Router.push('/artwork/' + item.key.split("/")[1]);
+              if(item.key.startsWith('soli-di-claudio')){
+                // redirect to the item page
+                // key == publicId == 'soli-di-claudio/folder/filename'
+                Router.push('/artwork/' + item.key.split("/")[1]);
+              }
             }
           }}
           onChange={(index) => {

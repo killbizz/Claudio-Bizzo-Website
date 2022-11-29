@@ -4,6 +4,7 @@ import Folder from "../types/Folder";
 import { getFolderList, getImageList, getSubfolderList } from "./cloudinary/utils";
 import { File } from '../types/File';
 import nthOccurrenceIndexOfString from '../lib/utility';
+import {v4 as uuidv4} from 'uuid';
 
 
 export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
@@ -22,127 +23,107 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
     return folders;
   };
   
-  export const getPreviewArtwork = async (folder: string, tag: string): Promise<Artwork> => {
+export const getPreviewArtwork = async (folder: string, tag: string): Promise<Artwork> => {
 
-    if(!(tag === "anteprima_galleria" || tag === "anteprima_home")){
-      throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
-    }
+  if(!(tag === "anteprima_galleria" || tag === "anteprima_home")){
+    console.error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
+    throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
+  }
 
-    const fileList = await getImageList(folder, tag);
+  const fileList = await getImageList(folder, tag);
 
-    if(fileList === undefined || fileList === null){
-      throw Error("getPreviewArtwork Error : error retrieving fileList");
-    }
+  // console.log("FOLDER: " + folder);
+  // console.log("TAG: " + tag);
+  // console.log(fileList);
 
-    // console.log("FOLDER: " + folder);
-    // console.log("TAG: " + tag);
-    // console.log(fileList);
+  // this artwork is not intended to be in the home artworks preview
+  if((fileList.total_count <= 1) && (tag === "anteprima_home"))
+    return null;
 
-    // if aren't present at least an image file and a metadata file
-    if(fileList.total_count <= 1){
-      return null;
-    }
+  return parseFileList(fileList);
+};
 
-    let imageFile: File = null;
-    let metadata: Metadata = null;
+export const getArtworkInFolder = async (folder: string): Promise<Artwork> => {
 
-    for(const element of fileList.resources){
-      // metadata file
-      if(element.format === "txt"){
-        // retrieving info from txt file
-        let dataString = await fetch(element.secure_url)
-          .then((response) => response.text())
-          .catch(reason => {throw Error(reason)});
+  const imageFileList = new Array<File>();
+  let metadata: Metadata = undefined;
 
-        // extracting the description in order to keep newLines
-        const descBegin = nthOccurrenceIndexOfString(dataString, '"', 5);
-        const descEnd = nthOccurrenceIndexOfString(dataString, '"', 8);
-        // +2 in order to keep the final '",' characters
-        let description: string = dataString.substring(descBegin, descEnd + 2);
+  const fileList = await getImageList(folder);
 
-        dataString = dataString.replace(description, '');
+  return parseFileList(fileList);
+};
 
-        description = description.replace('"descrizione" : "', '');
-        description = description.replace('",', '');
+const parseFileList = async (fileList: any): Promise<Artwork> => {
 
-        const dataJSON = JSON.parse(dataString);
+  const imageFileList = new Array<File>();
+  let metadata: Metadata = undefined;
 
-        metadata = {
-          title : dataJSON.titolo,
-          description : description,
-          date : dataJSON.data,
-          materials : dataJSON.materiali,
-          availability : dataJSON.disponibilita,
-          dimensions : dataJSON.dimensioni
-        }
-      // image file
-      } else {
-        imageFile = {
-          publicId: element.public_id,
-          name: element.filename,
-          extension: element.format,
-          url: element.secure_url,
-        };
-      }
-}
-
-    const artwork: Artwork = {
-      imageFiles: Array<File>().concat(imageFile),
-      data: metadata
-    };
-  
-    return artwork;
-  };
-  
-  export const getArtworkInFolder = async (folder: string): Promise<Artwork> => {
-
-    const imageFileList = new Array<File>();
-    let finalMetadata: Metadata = undefined;
-
-    const fileList = await getImageList(folder);
-
-    for(const element of fileList.resources){
-          // metadata file
-          if(element.format === "txt"){
-            // retrieving info from txt file
-            let dataString = await fetch(element.secure_url)
-              .then((response) => response.text())
-              .catch(reason => {throw Error(reason)});
-  
-            // extracting the description in order to keep newLines
-            const descBegin = nthOccurrenceIndexOfString(dataString, '"', 5);
-            const descEnd = nthOccurrenceIndexOfString(dataString, '"', 8);
-            // +2 in order to keep the final '",' characters
-            let description: string = dataString.substring(descBegin, descEnd + 2);
-  
-            dataString = dataString.replace(description, '');
-  
-            description = description.replace('"descrizione" : "', '');
-            description = description.replace('",', '');
-  
-            const dataJSON = JSON.parse(dataString);
-  
-            finalMetadata = {
-              title : dataJSON.titolo,
-              description : description,
-              date : dataJSON.data,
-              materials : dataJSON.materiali,
-              availability : dataJSON.disponibilita,
-              dimensions : dataJSON.dimensioni
-            }
-          // image file
-          } else {
-            imageFileList.push({
-              publicId: element.public_id,
-              name: element.filename,
-              extension: element.format,
-              url: element.secure_url,
+  for(const element of fileList.resources){
+        // metadata file
+        if(element.format === "txt"){
+          // retrieving info from txt file
+          let dataString = await fetch(element.secure_url)
+            .then((response) => response.text())
+            .catch(reason => {
+              console.error(reason);
+              throw Error(reason);
             });
+
+          // extracting the description in order to keep newLines
+          const descBegin = nthOccurrenceIndexOfString(dataString, '"', 5);
+          const descEnd = nthOccurrenceIndexOfString(dataString, '"', 8);
+          // +2 in order to keep the final '",' characters
+          let description: string = dataString.substring(descBegin, descEnd + 2);
+
+          dataString = dataString.replace(description, '');
+
+          description = description.replace('"descrizione" : "', '');
+          description = description.replace('",', '');
+
+          const dataJSON = JSON.parse(dataString);
+
+          metadata = {
+            title : dataJSON.titolo,
+            description : description,
+            date : dataJSON.data,
+            materials : dataJSON.materiali,
+            availability : dataJSON.disponibilita,
+            dimensions : dataJSON.dimensioni
           }
+        // image file
+        } else {
+          imageFileList.push({
+            publicId: element.public_id,
+            name: element.filename,
+            extension: element.format,
+            url: element.secure_url,
+          });
+        }
+  }
+
+  // missing data
+  if(metadata === undefined){
+    metadata = {
+      title : "informazioni non disponibili",
+      description : "informazioni non disponibili",
+      date : "informazioni non disponibili",
+      materials : "informazioni non disponibili",
+      availability : "informazioni non disponibili",
+      dimensions : "informazioni non disponibili"
     }
-    
-    return {
-      imageFiles : imageFileList,
-      data : finalMetadata
-    };
+  }
+  if(imageFileList.length < 1){
+    imageFileList.push({
+      publicId: uuidv4(),
+      name: "no_image_available",
+      extension: "png",
+      url: "/no_image_available.png"
+    })
+  }
+
+  return {
+    imageFiles : imageFileList,
+    data : metadata
   };
+
+};

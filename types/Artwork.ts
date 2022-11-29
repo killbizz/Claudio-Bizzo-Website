@@ -3,7 +3,7 @@ import { File } from "./File";
 
 export interface Artwork {
 
-    readonly imageFiles: File[];
-    readonly data?: Metadata;
+    imageFiles: File[];
+    data?: Metadata;
   
 }
