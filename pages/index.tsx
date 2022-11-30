@@ -16,25 +16,25 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
     <Layout title="Homepage | I Soli di Claudio">
       <div className="homepage-mid">
         <div className='homepage-background-image'>
-          <div className='row homepage-title center-under-half-width'>
+          <div className='row homepage-title resize-under-400-width'>
             <div className='col'>
               <h1>CLAUDIO BIZZO</h1>
-              <h1 className='homepage-subtitle'>Artigiano e Creativo</h1>
+              <h3 className='homepage-subtitle'>Artigiano e Creativo</h3>
             </div>
           </div>
-          <div className='row justify-content-center homepage-description center-about-explorer-btn-under-half-width'>
+          {/* <div className='row justify-content-center homepage-description center-about-explorer-btn-under-half-width'>
             <p className='col hide-under-half-width'>Decorazioni per arredamento da interno ed esterno, create utilizzando tecniche produttive artigianali e completamente eco-sostenibili.</p>
             <div className='w-100' />
             <button 
               className="col-sm-3 btn btn-lg custom-button about-explorer-btn"
               onClick={() => Router.push('/about')}
             >
-                Approfondisci
+              Approfondisci
             </button>
-          </div>
-          <div className='row homepage-citation hide-under-half-width'>
+          </div> */}
+          <div className='row homepage-citation justify-content-center hide-under-half-width'>
             <blockquote>
-              <p className='col' lang="it">“Spesso il mio cuore parla attraverso le mani.<br/>La creatività, la fantasia sono per me passione <br/>e gusto per la vita.”</p>
+              <p className='col text-center' lang="it">“Spesso il mio cuore parla attraverso le mani.<br/>La creatività, la fantasia sono per me passione <br/>e gusto per la vita.”</p>
             </blockquote>
           </div>
         </div>
@@ -44,10 +44,10 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
           <span></span>
         </div>
       </div>
-      <div className="homepage-separator color-nav" />
+      {/* <div className="homepage-separator color-nav" /> */}
       <div className="homepage-mid-2 mid-background-color">
         <div className='homepage-title-container'>
-          <h1 className='my-auto text-center'>Lavori in evidenza</h1>
+          <h1 className='my-auto text-center'>LAVORI IN EVIDENZA</h1>
         </div>
         <div className='homepage-carousel-container row justify-content-center align-items-center mx-auto'>
           <CustomCarousel artworks={featuredArtworks} autoplay={true} handleOnClickItem={true} />
@@ -57,7 +57,7 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
             className="btn btn-lg custom-button custom-button-dark gallery-explorer-btn mx-auto text-center d-block col"
             onClick={() => Router.push('/gallery')}
           >
-              Esplora la Galleria
+            Esplora la Galleria
           </button>
         </div>
       </div>

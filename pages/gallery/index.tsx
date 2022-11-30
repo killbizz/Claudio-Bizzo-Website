@@ -51,9 +51,11 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
   return(
       <Layout title="Galleria | I Soli di Claudio">
           <div className="mid mid-background-color gallery-page-mid">
-            <h1 className="page-title text-center">Galleria dei Lavori</h1>
+            <div className='gallery-title-container'>
+              <h1 className="my-auto text-center">GALLERIA DEI LAVORI</h1>
+            </div>
             <div id="gallery_cards_wrapper">
-                <div className="container-fluid">
+                <div className="container-fluid mt-2">
                     <div className="row">
                       {
                         artworks.map((artwork) => {
@@ -71,7 +73,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                     <div className={"text-container"}>
                                       <h6>{artwork.data.title}</h6>
                                       <button 
-                                        className="btn btn-lg custom-button custom-button-dark mt-4 mx-auto text-center d-block" 
+                                        className="btn btn-lg custom-button custom-button-dark-secondary mt-4 mx-auto text-center d-block" 
                                         onClick={() => Router.push('/artwork/' + name === "no_image_available" 
                                           ? "not_available" : artwork.imageFiles[0].publicId.split("/")[1])}
                                       >
@@ -90,7 +92,11 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                 </div>
             </div>
             {artworkIndex < folders.length &&
-              <button className="btn btn-lg custom-button mb-4 mx-auto text-center d-block" onClick={handleLoadMore} >Carica altri Lavori</button>
+              <button className="btn btn-lg custom-button custom-button-dark mb-5 mt-4 mx-auto text-center d-block" 
+              onClick={handleLoadMore} 
+              >
+                Carica altri Lavori
+              </button>
             }
           </div>
       </Layout>
