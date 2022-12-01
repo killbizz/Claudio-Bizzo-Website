@@ -27,6 +27,14 @@ body, html {
   background: radial-gradient(circle, rgba(255,239,222,1) 0%, rgba(255,236,217,1) 25%, rgba(255,233,211,1) 50%, rgba(255,231,206,1) 75%, rgba(255,228,200,1) 100%); 
 }
 
+.mid-dark-background-color {
+  background: rgb(117,91,62);
+  background: -moz-linear-gradient(45deg, rgba(117,91,62,1) 0%, rgba(131,107,81,1) 25%, rgba(117,91,62,1) 50%, rgba(105,82,56,1) 75%, rgba(117,91,62,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(117,91,62,1) 0%, rgba(131,107,81,1) 25%, rgba(117,91,62,1) 50%, rgba(105,82,56,1) 75%, rgba(117,91,62,1) 100%);
+  background: linear-gradient(45deg, rgba(117,91,62,1) 0%, rgba(131,107,81,1) 25%, rgba(117,91,62,1) 50%, rgba(105,82,56,1) 75%, rgba(117,91,62,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#755b3e",endColorstr="#755b3e",GradientType=1); 
+}
+
 .bottom {
   width: 100%;
   height: 50px;
@@ -137,7 +145,6 @@ body, html {
 /* ----- HOMEPAGE ----- */
 
 .homepage-mid {
-  /* height: 86.5vh; */
   height: 840px;
   width: 100%;
   flex:1;
@@ -147,9 +154,17 @@ body, html {
 }
 
 .homepage-mid-2 {
-  /* height: 80vh; */
-  /* height: 83.3vh !important; */
   height: 815px;
+  width: 100%;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  border-top: 2px solid #000000;
+}
+
+.homepage-mid-3 {
+  min-height: 815px;
   width: 100%;
   flex:1;
   display:flex;
@@ -176,6 +191,8 @@ body, html {
   top: 6%;
   left: 50%;
   transform: translateX(-50%);
+  margin-left: auto !important;
+  margin-right: auto !important;
   text-align: center;
   background: rgba(0, 0, 0, 0.20);
   border-radius: 12px;
@@ -716,7 +733,7 @@ h1, h2, h3, h4, h5, h6 a.nav-link {
 }
 
 a.nav-link {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .homepage-title h1 {
@@ -769,8 +786,6 @@ p {
 @media(max-width:400px){
   .resize-under-400-width {
     font-size: 0.7em !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
   }
 }
 
@@ -786,6 +801,9 @@ p {
   }
   .homepage-gallery-explorer-container {
     margin-top: 1vh;
+  }
+  #error_page_img {
+    margin-left: 0px !important;
   }
 }
 

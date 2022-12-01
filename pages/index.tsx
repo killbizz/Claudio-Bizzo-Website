@@ -33,8 +33,8 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
             </button>
           </div> */}
           <div className='row homepage-citation justify-content-center hide-under-half-width'>
-            <blockquote>
-              <p className='col text-center' lang="it">“Spesso il mio cuore parla attraverso le mani.<br/>La creatività, la fantasia sono per me passione <br/>e gusto per la vita.”</p>
+            <blockquote style={{marginBottom: "0px"}}>
+              <p className='col text-center' lang="it" style={{marginBottom: "0px"}}>“Spesso il mio cuore parla attraverso le mani.<br/>La creatività, la fantasia sono per me passione <br/>e gusto per la vita.”</p>
             </blockquote>
           </div>
         </div>
@@ -44,7 +44,6 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
           <span></span>
         </div>
       </div>
-      {/* <div className="homepage-separator color-nav" /> */}
       <div className="homepage-mid-2 mid-background-color">
         <div className='homepage-title-container'>
           <h1 className='my-auto text-center'>LAVORI IN EVIDENZA</h1>
@@ -60,6 +59,9 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
             Esplora la Galleria
           </button>
         </div>
+      </div>
+      <div className="homepage-mid-3 mid-dark-background-color">
+
       </div>
     </Layout>
   );

@@ -10,7 +10,7 @@ const CustomError500 = () => {
           <div className="container col-xxl-8">
             <div className="row flex-lg-row-reverse align-items-center g-5">
                 <div className="col-10 col-sm-8 col-lg-5 justify-content-center my-auto mx-auto pt-5">
-                    <img src="/500_mascotte.png" className="d-block img-fluid ml-4" alt="500 Internal Server Error" width="1200" height="900" loading="lazy" />
+                    <img src="/500_mascotte.png" className="d-block img-fluid ml-4 error_page_img" alt="500 Internal Server Error" width="1200" height="900" loading="lazy" />
                 </div>
                 <div className="col-lg-6">
                     <h1 className="display-5 text-center fw-bold lh-1 mb-5">Si è verificato un errore</h1>
