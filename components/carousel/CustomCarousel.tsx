@@ -1,16 +1,17 @@
 import { Carousel } from 'react-responsive-carousel';
 import { Artwork } from '../../types/Artwork';
-import Image from "next/image";
 import {Image as CloudinaryImage} from 'cloudinary-react';
 import Router  from 'next/router';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
+
+type CustomCarouselHandleOnClickItem = (index: number, item: ReactNode) => void;
 
 type Props = {
     artworks: Artwork[]
     autoplay: boolean,
-    handleOnClickItem: boolean
+    handleOnClickItem?: CustomCarouselHandleOnClickItem;
   }
   
   const CustomCarousel = ({ artworks, autoplay, handleOnClickItem }: Props) => {
@@ -44,24 +45,14 @@ type Props = {
       <div id='carousel_cards_wrapper'>
         <Carousel showArrows={true} showStatus={false} showThumbs={false} interval={3900} transitionTime={400} 
           autoPlay={autoplay} infiniteLoop useKeyboardArrows swipeable dynamicHeight selectedItem={photoIndex}
-          onClickItem={(index, item: any) => {
-            if(handleOnClickItem){
-              if(item.key.startsWith('soli-di-claudio')){
-                // redirect to the item page
-                // key == publicId == 'soli-di-claudio/folder/filename'
-                Router.push('/artwork/' + item.key.split("/")[1]);
-              }
-            }
-          }}
-          onChange={(index) => {
-            setPhotoIndex(index)
-          }}
+          onClickItem={handleOnClickItem}
+          onChange={(index) => setPhotoIndex(index)}
         >
           {
             elements
           }
         </Carousel>
-        {!handleOnClickItem && isModalOpen && (
+        {handleOnClickItem === undefined && isModalOpen && (
             <Lightbox
               mainSrc={photoUrlList[photoIndex]}
               nextSrc={photoUrlList[(photoIndex + 1) % photoUrlList.length]}
