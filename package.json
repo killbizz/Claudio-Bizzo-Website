@@ -23,6 +23,7 @@
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.2.0",
+    "react-vertical-timeline-component": "^3.5.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

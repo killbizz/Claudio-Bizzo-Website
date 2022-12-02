@@ -55,7 +55,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
               <h1 className="my-auto text-center">GALLERIA DEI LAVORI</h1>
             </div>
             <div id="gallery_cards_wrapper">
-                <div className="container-fluid mt-2">
+                <div className="container-fluid mt-2 mb-4">
                     <div className="row">
                       {
                         artworks.map((artwork) => {
@@ -63,7 +63,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                         return (
                           <div key={artwork.imageFiles[0].publicId} className="col-lg-4">
                             <Link href={'/artwork/' + ( name === "no_image_available" 
-                                          ? "not_available" : artwork.imageFiles[0].publicId.split("/")[1])}>
+                                          ? "not_available" : artwork.imageFiles[0].publicId.split("/")[2])}>
                               <a>
                                 <div className="card-flyer card-block">
                                   <div className="text-box">
@@ -75,7 +75,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                       <button 
                                         className="btn btn-lg custom-button custom-button-dark-secondary mt-4 mx-auto text-center d-block" 
                                         onClick={() => Router.push('/artwork/' + name === "no_image_available" 
-                                          ? "not_available" : artwork.imageFiles[0].publicId.split("/")[1])}
+                                          ? "not_available" : artwork.imageFiles[0].publicId.split("/")[2])}
                                       >
                                         Esplora
                                       </button>
@@ -92,7 +92,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                 </div>
             </div>
             {artworkIndex < folders.length &&
-              <button className="btn btn-lg custom-button custom-button-dark mb-5 mt-4 mx-auto text-center d-block" 
+              <button className="btn btn-lg custom-button custom-button-dark mb-5 mt-5 mx-auto text-center d-block" 
               onClick={handleLoadMore} 
               >
                 Carica altri Lavori
@@ -104,7 +104,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
 }
 
 export const getStaticProps: GetStaticProps<GalleryPageProps> = async (): Promise<GetStaticPropsResult<GalleryPageProps>> => {
-    const folders: Folder[] = await getFolder("soli-di-claudio");
+    const folders: Folder[] = await getFolder("soli-di-claudio/LAVORI");
     const initialArtworks: Artwork[] = [];
 
     for (let i = 0; i < 3; i++) {

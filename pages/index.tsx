@@ -49,7 +49,17 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
           <h1 className='my-auto text-center'>LAVORI IN EVIDENZA</h1>
         </div>
         <div className='homepage-carousel-container row justify-content-center align-items-center mx-auto'>
-          <CustomCarousel artworks={featuredArtworks} autoplay={true} handleOnClickItem={true} />
+          <CustomCarousel artworks={featuredArtworks} autoplay={true} 
+            handleOnClickItem={
+              (index, item: any) => {
+                  if(item.key.startsWith('soli-di-claudio')){
+                    // redirect to the item page
+                    // key == publicId == 'soli-di-claudio/LAVORI/folder/filename'
+                    Router.push('/artwork/' + item.key.split("/")[2]);
+                  }
+                }
+            }
+          />
         </div>
         <div className='homepage-gallery-explorer-container row justify-content-center align-items-center'>
           <button 
@@ -68,7 +78,7 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<GetStaticPropsResult<HomePageProps>> => {
-  const folders: Folder[] = await getFolder("soli-di-claudio");
+  const folders: Folder[] = await getFolder("soli-di-claudio/LAVORI");
   const featuredArtworks: Artwork[] = [];
 
   for (let i = 0; i < folders.length; i++) {
