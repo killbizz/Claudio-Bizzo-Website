@@ -142,6 +142,19 @@ body, html {
   box-shadow: 0 0 10px #326475, 0 0 5px #326475 !important;
 }
 
+/* ----- ARTWORK-MATERIALS-ICON ----- */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48;
+  width: 27.4333px !important;
+  height: 32px !important;
+  font-size: 30px !important;
+}
+
 /* ----- HOMEPAGE ----- */
 
 .homepage-mid {
@@ -289,7 +302,8 @@ body, html {
 /* ----- ARTWORK PAGE ----- */
 
 .artwork-page-mid {
-  min-height: 83.3vh !important;
+  /* min-height: 83.3vh !important; */
+  min-height: 809px;
 }
 
 .artwork-page-container #carousel_cards_wrapper
@@ -329,7 +343,7 @@ body, html {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5vh;
+  margin-top: 3.5em;
 }
 
 .artwork-get-info-container {
@@ -341,7 +355,7 @@ body, html {
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 5vh;
+  margin-top: 3.5em;
   margin-bottom: 2%;
 }
 
@@ -407,7 +421,7 @@ body, html {
   text-align: center;
 }
 #gallery_cards_wrapper .container-fluid{
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   padding-left: 8%;
   padding-right: 8%;
 }
