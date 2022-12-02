@@ -23,7 +23,7 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
                     <h1 className='my-auto text-center'>{artwork.data.title}</h1>
                   </div>
                   <div className='artwork-page-carousel-container row justify-content-center align-items-center'>
-                    <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} handleOnClickItem={false} />
+                    <CustomCarousel artworks={Array<Artwork>().concat(artwork)} autoplay={false} />
                   </div>
                   <div className='artwork-get-info-container row justify-content-center align-items-center'>
                     <p className='col text-center mb-0 pt-3'>Sei interessato?</p>
@@ -54,11 +54,17 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
                     </div>
 
                     <div className='row justify-content-center'>
-                      <div className='col bigScreen col-sm-auto'>
-                        <i className="fa fa-info-circle fa-2x artwork-feature-icon" />
+                      <div className='col bigScreen col-sm-auto pt-2'>
+                        {/* <i className="fa fa-info-circle fa-2x artwork-feature-icon" /> */}
+                        <span className="material-symbols-outlined artwork-feature-icon">
+                          handyman
+                        </span>
                       </div>
-                      <div className='col smallScreen col-3'>
-                        <i className="fa fa-info-circle fa-2x artwork-feature-icon" />
+                      <div className='col smallScreen col-3 pt-2'>
+                        {/* <i className="fa fa-info-circle fa-2x artwork-feature-icon" /> */}
+                        <span className="material-symbols-outlined artwork-feature-icon">
+                          handyman
+                        </span>
                       </div>
                       <div className='col'>
                         <p>{artwork.data.materials}</p>
@@ -118,7 +124,7 @@ const ArtworkPage = ({ artwork } : ArtworkPageProps) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 
-  const folders: Folder[] = await getFolder("soli-di-claudio");
+  const folders: Folder[] = await getFolder("soli-di-claudio/LAVORI");
 
   // Get the paths we want to pre-render
   const paths = folders.map((folder) => ({
@@ -134,7 +140,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({ params 
   
   return {
     props: {
-      artwork: await getArtworkInFolder("soli-di-claudio/" + params.id.toString()),
+      artwork: await getArtworkInFolder("soli-di-claudio/LAVORI/" + params.id.toString()),
     },
     revalidate: 60 * 60 // 1 hour
   };
