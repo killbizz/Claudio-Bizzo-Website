@@ -735,6 +735,38 @@ body, html {
   border-right: 8px solid rgb(0 0 0 / 90%) !important;
 }
 
+/* ----- VERTICAL-TIMELINE-COMPONENT ----- */
+
+.vertical-timeline-element-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2px;
+}
+
+/* .vertical-timeline-element-dark .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px black,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05);
+} */
+
+.vertical-timeline-element-dark .vertical-timeline-element-icon span {
+  color: black;
+}
+
+.vertical-timeline-element-content .vertical-timeline-element-date {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.vertical-timeline.vertical-timeline-custom-line::before {
+  background: #ffefde;
+}
+
+@media only screen and (min-width: 768px) {
+  .vertical-timeline-element-content h2 {
+    font-size: 2rem !important;
+  }
+}
+
 /* ----- FONTS ----- */
 
 button.custom-button {
@@ -755,13 +787,18 @@ a.nav-link {
   font-weight: 400;
 }
 
+.homepage-title-container h1 {
+  font-size: 3.5em;
+  font-weight: 400;
+}
+
 h3.homepage-subtitle {
   font-style: italic;
   font-weight: 400;
   font-size: 2em;
 }
 
-p {
+p, span {
   font-family: 'Merriweather', serif;
   font-weight: 300;
 }
@@ -809,13 +846,16 @@ p {
   }
 }
 
-@media(max-width:437px){
+@media(max-width:727px){
   .homepage-carousel-container {
     margin-top: 1vh !important;
   }
   .homepage-gallery-explorer-container {
     margin-top: 1vh;
   }
+}
+
+@media(max-width:437px){
   #error_page_img {
     margin-left: 0px !important;
   }
