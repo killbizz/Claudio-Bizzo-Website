@@ -1,6 +1,6 @@
 import cloudinary from "./configuration";
 
-export const getImageList = (folderPath: string, tag: string = ""): Promise<any> => {
+export const getFileList = (folderPath: string, tag: string = ""): Promise<any> => {
     let expression: string = `folder:${folderPath}`;
 
     if (tag !== "") {

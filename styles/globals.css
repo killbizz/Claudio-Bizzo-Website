@@ -744,10 +744,6 @@ body, html {
   padding-right: 2px;
 }
 
-/* .vertical-timeline-element-dark .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px black,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05);
-} */
-
 .vertical-timeline-element-dark .vertical-timeline-element-icon span {
   color: black;
 }
@@ -755,6 +751,11 @@ body, html {
 .vertical-timeline-element-content .vertical-timeline-element-date {
   color: white !important;
   opacity: 1 !important;
+  font-weight: bold !important;
+}
+
+.vertical-timeline-element-dark .vertical-timeline-element-content .vertical-timeline-element-date {
+  color: black !important;
 }
 
 .vertical-timeline.vertical-timeline-custom-line::before {

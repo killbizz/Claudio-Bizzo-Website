@@ -1,7 +1,7 @@
 import { Metadata } from './../types/Metadata';
 import { Artwork } from '../types/Artwork';
 import Folder from "../types/Folder";
-import { getFolderList, getImageList, getSubfolderList } from "./cloudinary/utils";
+import { getFolderList, getFileList, getSubfolderList } from "./cloudinary/utils";
 import { File } from '../types/File';
 import nthOccurrenceIndexOfString from '../lib/utility';
 import {v4 as uuidv4} from 'uuid';
@@ -30,7 +30,7 @@ export const getPreviewArtwork = async (folder: string, tag: string): Promise<Ar
     throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
   }
 
-  const fileList = await getImageList(folder, tag);
+  const fileList = await getFileList(folder, tag);
 
   // console.log("FOLDER: " + folder);
   // console.log("TAG: " + tag);
@@ -48,7 +48,7 @@ export const getArtworkInFolder = async (folder: string): Promise<Artwork> => {
   const imageFileList = new Array<File>();
   let metadata: Metadata = undefined;
 
-  const fileList = await getImageList(folder);
+  const fileList = await getFileList(folder);
 
   return parseFileList(fileList);
 };

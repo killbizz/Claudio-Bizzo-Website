@@ -6,12 +6,15 @@ import Folder from "../types/Folder";
 import { getFolder, getPreviewArtwork } from "../services/artwork";
 import CustomCarousel from "../components/carousel/CustomCarousel";
 import CustomTimeline from "../components/timeline/CustomTimeline";
+import { getEvents } from "../services/event";
+import { Event } from "../types/Event";
 
 interface HomePageProps {
   featuredArtworks: Artwork[];
+  events: Event[];
 }
 
-const IndexPage = ({ featuredArtworks }: HomePageProps) => {
+const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
   return (
     <Layout title="Homepage | I Soli di Claudio">
       <div className="homepage-mid">
@@ -83,7 +86,7 @@ const IndexPage = ({ featuredArtworks }: HomePageProps) => {
         <div className="homepage-title-container">
           <h1 className="text-center text-light mb-1">EVENTI</h1>
         </div>
-        <CustomTimeline events={null} />
+        <CustomTimeline events={events} />
       </div>
     </Layout>
   );
@@ -94,6 +97,8 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
 > => {
   const folders: Folder[] = await getFolder("soli-di-claudio/LAVORI");
   const featuredArtworks: Artwork[] = [];
+
+  const events: Event[] = await getEvents("soli-di-claudio/EVENTI");
 
   for (let i = 0; i < folders.length; i++) {
     const artwork: Artwork = await getPreviewArtwork(
@@ -106,8 +111,9 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
   return {
     props: {
       featuredArtworks,
+      events
     },
-    revalidate: 60 * 60 * 24, // 24 hour
+    revalidate: 60 * 60 * 6, // 6 hour
   };
 };
 
