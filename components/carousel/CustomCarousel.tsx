@@ -1,7 +1,6 @@
 import { Carousel } from 'react-responsive-carousel';
 import { Artwork } from '../../types/Artwork';
 import {Image as CloudinaryImage} from 'cloudinary-react';
-import Router  from 'next/router';
 import { ReactNode, useState } from 'react';
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
