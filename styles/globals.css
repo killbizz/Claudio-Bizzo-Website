@@ -751,7 +751,8 @@ body, html {
 .vertical-timeline-element-content .vertical-timeline-element-date {
   color: white !important;
   opacity: 1 !important;
-  font-weight: bold !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
 }
 
 .vertical-timeline-element-dark .vertical-timeline-element-content .vertical-timeline-element-date {
@@ -765,6 +766,13 @@ body, html {
 @media only screen and (min-width: 768px) {
   .vertical-timeline-element-content h2 {
     font-size: 2rem !important;
+  }
+}
+
+@media only screen and (max-width: 1169px) {
+  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in
+  .vertical-timeline-element-date {
+    margin-top: 1rem !important;
   }
 }
 

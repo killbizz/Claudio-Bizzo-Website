@@ -40,7 +40,7 @@ const CustomTimeline = ({ events }: Props) => {
                 <h3 className="vertical-timeline-element-title mb-3">
                   {value.nome_evento}
                 </h3>
-                <h4 className="vertical-timeline-element-subtitle mb-3">
+                <h4 className="vertical-timeline-element-subtitle mb-4">
                   {value.luogo}
                 </h4>
                 {value.descrizione !== "" && <p className="font-italic" >{value.descrizione}</p>}
@@ -73,7 +73,7 @@ const CustomTimeline = ({ events }: Props) => {
                 <h3 className="vertical-timeline-element-title mb-3">
                   {value.nome_evento}
                 </h3>
-                <h4 className="vertical-timeline-element-subtitle mb-3">
+                <h4 className="vertical-timeline-element-subtitle mb-4">
                   {value.luogo}
                 </h4>
                 {value.descrizione !== "" && <p className="font-italic" >{value.descrizione}</p>}
