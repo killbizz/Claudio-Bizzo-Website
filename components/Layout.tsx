@@ -38,7 +38,8 @@ const Layout = ({ children, title = 'I Soli di Claudio' }: Props) => {
     <CookieConsent
       location="bottom"
       cookieName="CookieConsentBanner"
-      style={{ background: "#755b3e", color: "#000000", borderTop: '2px solid black' }}
+      buttonText="Accetto"
+      style={{ background: "#c29f7a", color: "#000000", borderTop: '2px solid black' }}
       buttonClasses="custom-button custom-button-dark"
       expires={30}
     >
