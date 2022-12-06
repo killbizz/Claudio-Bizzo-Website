@@ -21,14 +21,14 @@ const NavigationBar = () => {
                     <Navbar.Brand>
                         <div>
                             <a href="https://www.facebook.com/profile.php?id=100009326235389">
-                                <i className="fa fa-facebook-square fa-2x logos copyright" />
+                                <i className="fa fa-facebook-square fa-2x logos" />
                             </a>
                         </div>  
                     </Navbar.Brand>
                     <Navbar.Brand>
                         <div>
                             <a href="https://www.instagram.com/claudiobizzo/">
-                                <i className="fa fa-instagram fa-2x logos copyright" />
+                                <i className="fa fa-instagram fa-2x logos" />
                             </a>
                         </div>
                     </Navbar.Brand>
