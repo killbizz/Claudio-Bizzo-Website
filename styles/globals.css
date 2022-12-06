@@ -437,16 +437,18 @@ body, html {
 }
 #gallery_cards_wrapper .card-flyer .image-box{
   /* background: #545454; */
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
   overflow: hidden;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   height: 300px !important;
   width: 100%;
+  /* padding: 7px; */
 }
 #gallery_cards_wrapper .card-flyer .image-box span{
   height: 300px !important;
   position: relative !important;
+  padding: 7px !important;
 }
 #gallery_cards_wrapper .card-flyer .image-box img{
   -webkit-transition:all .9s ease; 
@@ -456,6 +458,7 @@ body, html {
   transition:all .9s ease;
   height: 100% !important;
   position: relative !important;
+  border-radius: 5px !important;
   
 }
 #gallery_cards_wrapper .card-flyer:hover .image-box img{
@@ -602,15 +605,23 @@ body, html {
   transform: scaleX(1);
 }
 
+/* .simpleLink:link, .simpleLink:visited, .simpleLink:hover {
+  color: black;
+} */
+
 .simpleLink:link, .simpleLink:visited, .simpleLink:hover {
   color: black;
-  /* text-decoration: none; */
+  text-decoration: underline;
+  font-style: italic;
+  text-underline-offset: 4px;
 }
 
-.custom-darkblue-link:link, .custom-darkblue-link:visited, .custom-darkblue-link:hover {
+/* .custom-light-blue-link:link, .custom-light-blue-link:visited, .custom-light-blue-link:hover {
   color: #8bcfe8;
-  /* text-decoration: none; */
-}
+  text-decoration: underline;
+  text-underline-offset: 4px;
+} */
+
 
 /* ----- CUSTOM BUTTONS ----- */
 
