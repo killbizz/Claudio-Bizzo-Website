@@ -1,5 +1,7 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+/* eslint-disable @next/next/google-font-display */
+/* eslint-disable @next/next/no-page-custom-font */
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Footer from './footer/Footer'
