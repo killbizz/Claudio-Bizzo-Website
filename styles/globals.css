@@ -191,7 +191,7 @@ body, html {
 }
 
 .homepage-background-image {
-  background-image: url(/home_hq_blur.jpg);
+  background-image: url(/homepage_main_img.png);
   height: 100% !important;
   /* Center and scale the image nicely */
   background-position: center;
@@ -205,13 +205,13 @@ body, html {
   position: absolute;
   /* top: 12%;
   left: 5%; */
-  top: 6%;
+  top: 6.8%;
   left: 50%;
   transform: translateX(-50%);
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center;
-  background: rgba(0, 0, 0, 0.20);
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 12px;
 }
 
@@ -233,7 +233,7 @@ body, html {
   left: 50%;
   transform: translateX(-50%);
   width: 697.5px;
-  background: rgba(0, 0, 0, 0.20);
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 12px;
 }
 
