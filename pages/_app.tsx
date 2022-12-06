@@ -1,18 +1,15 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 import { AppProps } from "next/app";
-import Router from 'next/router';
-import NProgress from 'nprogress'; //nprogress module
-import 'nprogress/nprogress.css'; //styles of nprogress
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // styles for the react carousel
+import Router from "next/router";
+import NProgress from "nprogress"; //nprogress module
+import "nprogress/nprogress.css"; //styles of nprogress
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // styles for the react carousel
 
 //Binding events
-Router.events.on('routeChangeStart', () => NProgress.start()); 
-Router.events.on('routeChangeComplete', () => NProgress.done()); 
-Router.events.on('routeChangeError', () => NProgress.done());  
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 export default function SoliDiClaudioFE({ Component, pageProps }: AppProps) {
-
-  return (
-    <Component {...pageProps} />
-  );
+  return <Component {...pageProps} />;
 }

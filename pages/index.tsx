@@ -111,7 +111,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
   return {
     props: {
       featuredArtworks,
-      events
+      events,
     },
     revalidate: 60 * 60 * 6, // 6 hour
   };
