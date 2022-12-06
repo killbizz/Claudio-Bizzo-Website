@@ -44,6 +44,7 @@ body, html {
 .container-footer{
   position: relative;
   /* width: 100% !important; */
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -66,12 +67,15 @@ body, html {
   background: -webkit-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
   background: linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c29f7a",endColorstr="#c29f7a",GradientType=1);
-  height: 64px;
+  height: 86px;
   border-top: 2px solid #000000;
 }
 
 .copyright{
-  line-height: 62px;
+  font-family: 'Lora', serif;
+  /* line-height: 62px; */
+  /* height: fit-content;
+  width: fit-content; */
 }
 
 .boxing-form {
@@ -308,8 +312,8 @@ body, html {
 
 .artwork-page-container #carousel_cards_wrapper
 .carousel .slide .card-flyer.image-box img{
-  max-height: 52vh !important;
-  max-width: 60vw !important;
+  max-height: 424px !important;
+  max-width: 645px !important;
 }
 
 .artwork-page-container .carousel {
@@ -355,14 +359,14 @@ body, html {
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 3.5em;
+  margin-top: 3em;
   margin-bottom: 2%;
 }
 
 .artwork-page-carousel-container {
-  min-height: 50vh !important;
+  min-height: 449px !important;
   max-height: 55vh !important;
-  margin-top: 5vh !important;
+  margin-top: 3.5em !important;
 }
 
 .artwork-right-section-background {
@@ -402,7 +406,6 @@ body, html {
 /* ----- GALLERY PAGE ----- */
 
 .gallery-page-mid {
-  /* min-height: 83.3vh !important; */
   min-height: 809px;
 }
 
@@ -843,7 +846,7 @@ p, span {
   }
 }
 
-@media(max-width:400px){
+@media(max-width:410px){
   .resize-under-400-width {
     font-size: 0.7em !important;
   }
