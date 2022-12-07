@@ -279,7 +279,7 @@ body, html {
   max-width: 100% !important;
 }
 
-.homepage-title-container {
+.homepage-secondary-title-container {
   display:flex;
   align-items: center;
   justify-content: center;
@@ -810,7 +810,7 @@ a.nav-link {
   font-weight: 400;
 }
 
-.homepage-title-container h1 {
+.homepage-secondary-title-container h1 {
   font-size: 3.5em;
   font-weight: 400;
 }
@@ -836,6 +836,12 @@ p, span {
 }
 
 /* ----- MEDIA QUERY ----- */
+
+@media(max-width:1313px){
+  .homepage-title{
+    top: 4.2%;
+  }
+}
 
 @media(max-width:960px){
   .hide-under-half-width{
