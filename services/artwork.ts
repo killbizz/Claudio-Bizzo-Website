@@ -1,7 +1,7 @@
 import { Metadata } from './../types/Metadata';
 import { Artwork } from '../types/Artwork';
 import Folder from "../types/Folder";
-import { getFolderList, getFileList, getSubfolderList } from "./cloudinary/utils";
+import { getFolderList, getFileList, getSubfolderList } from "../lib/cloudinary/utils";
 import { File } from '../types/File';
 import nthOccurrenceIndexOfString from '../lib/utility';
 import {v4 as uuidv4} from 'uuid';
