@@ -24,9 +24,11 @@ const parseFileList = async (fileList: any): Promise<Event[]> => {
         });
 
       let dataJSON: any;
+
       try {
         dataJSON = JSON.parse(dataString);
       } catch (error) {
+        console.error(dataString);
         console.error(error);
         throw error;
       }
