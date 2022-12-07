@@ -18,11 +18,14 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
   const [artworks, setArtworks] = useState(initialArtworks);
   // index to find the first new artwork in folders[i]
   const [artworkIndex, setArtworkIndex] = useState(3);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   async function handleLoadMore(event: any) {
     event.preventDefault();
 
     startLoadingBar();
+
+    setIsLoadingMore(true);
 
     // showing 3 more artworks or the remaining ones
     const newIndex: number =
@@ -41,6 +44,8 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
     setArtworks((prev) => {
       return [...prev, ...result.newArtworks];
     });
+
+    setIsLoadingMore(false);
 
     stopLoadingBar();
   }
@@ -108,13 +113,19 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
           </div>
         </div>
         {artworkIndex < folders.length && (
-          <button
-            className="btn btn-lg custom-button custom-button-dark mb-5 mt-5 mx-auto text-center d-block"
-            onClick={handleLoadMore}
-          >
-            Carica altri Lavori
-          </button>
+          <>
+            <button
+              className="btn btn-lg custom-button custom-button-dark mb-4 mt-5 mx-auto text-center d-block"
+              onClick={handleLoadMore}
+              disabled={isLoadingMore}
+            >
+              Carica altri Lavori
+            </button>
+          </>         
         )}
+        {artworkIndex >= folders.length &&
+          <div className="w-100 my-4" />
+        }
       </div>
     </Layout>
   );
