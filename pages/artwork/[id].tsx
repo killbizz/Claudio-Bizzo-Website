@@ -62,13 +62,11 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
 
                   <div className="row justify-content-center">
                     <div className="col bigScreen col-sm-auto pt-2">
-                      {/* <i className="fa fa-info-circle fa-2x artwork-feature-icon" /> */}
                       <span className="material-symbols-outlined artwork-feature-icon">
                         handyman
                       </span>
                     </div>
                     <div className="col smallScreen col-3 pt-2">
-                      {/* <i className="fa fa-info-circle fa-2x artwork-feature-icon" /> */}
                       <span className="material-symbols-outlined artwork-feature-icon">
                         handyman
                       </span>
