@@ -8,7 +8,7 @@ export const emailToAdminHTMLTemplate = (emailInfo: EmailInfo): string => {
   </head>
   
   <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #ffffff;color: #34495e">
-    
+    <h1> DAGHE </h1>
   </body>
   
   </html>
