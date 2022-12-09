@@ -1,8 +1,8 @@
-import { sendCustomerEmail } from "./../../services/email";
+import { sendAdminEmail, sendCustomerEmail } from "./../../services/email";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { EmailInfo } from "../../types/Email";
 
-const validateHuman = async (token: string): Promise<boolean> => {
+const validateHuman = async (): Promise<boolean> => {
   return true;
 };
 
@@ -19,7 +19,7 @@ const validateForm = (infoForm: EmailInfo): boolean => {
 };
 
 const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
-  const human: boolean = await validateHuman(req.body.token);
+  const human: boolean = await validateHuman();
 
   if (!human) {
     return res.status(429).json("Bot not allowed!");
@@ -37,9 +37,10 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).json("Fill in all the required data.");
   }
 
-  const isSent = await sendCustomerEmail(infoEmail);
+  const isAdminEmailSent = await sendAdminEmail(infoEmail);
+  const isCustomerEmailSent = await sendCustomerEmail(infoEmail);
 
-  if (!isSent) {
+  if (!isAdminEmailSent || !isCustomerEmailSent) {
     return res.status(502).json({ error: "Failed to send email" });
   }
 
