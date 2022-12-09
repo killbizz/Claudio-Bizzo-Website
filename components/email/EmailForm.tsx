@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Router from "next/router";
 import React, { useState } from "react";
 import {
   FormGroup,
@@ -41,7 +42,7 @@ const FormEmail = () => {
       message: event.target.messageValue.value,
     };
 
-    const data = await fetch("/api/nodemailer", {
+    const data = await fetch("/api/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,12 +71,21 @@ const FormEmail = () => {
 
   if (submitted) {
     return (
-      <div className="infoMessage">
-        <p className="text-success">sendEmail.successSend</p>
+      <div className="infoMessage row">
+        <p className="text-success col">Messaggio inviato con successo! Il sistema ti ha inviato un&apos;email di conferma, se non la trovi per favore controlla nella posta indesiderata.</p>
 
-        <Link href="/" className="simpleLink" title="Home">
+        {/* <Link href="/" className="simpleLink" title="Home">
           sendEmail.buttonBack
-        </Link>
+        </Link> */}
+        <div className="w-100" />
+        <button
+          className="btn btn-lg custom-button about-explorer-btn mx-auto text-center d-block col"
+          onClick={() =>
+            Router.push("/")
+          }
+        >
+          Torna alla Homepage
+        </button>
       </div>
     );
   }
@@ -83,17 +93,17 @@ const FormEmail = () => {
   return (
     <Form onSubmit={sendInformation}>
 
-      <p className="my-5">
+      <p className="my-5 text-center">
         Completa i campi per inviarmi un messaggio
       </p>
 
       {failed ? (
-        <div>
+        <div className="text-center">
           <p className="text-danger">errori se email non viene inviata</p>
         </div>
       ) : null}
 
-      <FormText>I campi con * sono necessari</FormText>
+      <FormText className="text-center mb-5">I campi con * sono necessari</FormText>
       <FormGroup>
         <div className="form-row">
           <div className="col">
@@ -101,7 +111,7 @@ const FormEmail = () => {
             <FormControl
               type="text"
               required
-              placeholder="ex. Galileo"
+              placeholder="Mario"
               value={nameForm}
               onChange={(e) => {
                 setNameForm(e.target.value);
@@ -116,7 +126,7 @@ const FormEmail = () => {
             <FormControl
               type="text"
               required
-              placeholder="ex. Galilei"
+              placeholder="Rossi"
               value={surnameForm}
               onChange={(e) => {
                 setSurnameForm(e.target.value);
@@ -132,7 +142,7 @@ const FormEmail = () => {
             <FormControl
               type="email"
               required
-              placeholder="ex. galileo@address.com"
+              placeholder="mario.rossi@email.it"
               value={emailForm}
               onChange={(e) => {
                 setEmailForm(e.target.value);
@@ -146,7 +156,7 @@ const FormEmail = () => {
             <FormLabel>TELEFONO</FormLabel>
             <FormControl
               type="tel"
-              placeholder="ex. 1234567890"
+              placeholder="+39 XXX-XXX-XXXX"
               value={phoneForm}
               onChange={(e) => {
                 setPhoneForm(e.target.value);
