@@ -82,7 +82,7 @@ const FormEmail = () => {
           className="btn btn-lg custom-button about-explorer-btn mx-auto text-center d-block col"
           onClick={() =>
             Router.push("/")
-          }
+          } 
         >
           Torna alla Homepage
         </button>
