@@ -57,7 +57,7 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
         </div>
       </div>
       <div className="homepage-mid-2 mid-background-color">
-        <div className="homepage-secondary-title-container">
+        <div className="title-container">
           <h1 className="my-auto text-center">LAVORI IN EVIDENZA</h1>
         </div>
         <div className="homepage-carousel-container row justify-content-center align-items-center mx-auto">
@@ -75,7 +75,7 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
         </div>
         <div className="homepage-gallery-explorer-container row justify-content-center align-items-center">
           <button
-            className="btn btn-lg custom-button custom-button-dark gallery-explorer-btn mx-auto text-center d-block col"
+            className="btn btn-lg custom-button custom-button-dark gallery-explorer-btn mx-auto mb-5 text-center d-block col"
             onClick={() => Router.push("/gallery")}
           >
             Esplora la Galleria
@@ -83,7 +83,7 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
         </div>
       </div>
       <div className="homepage-mid-3 mid-dark-background-color">
-        <div className="homepage-secondary-title-container">
+        <div className="title-container">
           <h1 className="text-center text-light mb-1">EVENTI</h1>
         </div>
         <CustomTimeline events={events} />

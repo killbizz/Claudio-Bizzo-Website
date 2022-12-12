@@ -18,7 +18,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
           <div className="row h-100">
             <div className="col-xl artwork-page-container h-100">
               <div className="artwork-page-mid">
-                <div className="artwork-title-container">
+                <div className="title-container">
                   <h1 className="my-auto text-center">{artwork.data.title}</h1>
                 </div>
                 <div className="artwork-page-carousel-container row justify-content-center align-items-center">
@@ -31,7 +31,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                   <p className="col text-center mb-0 pt-3">Sei interessato?</p>
                   <div className="w-100" />
                   <button
-                    className="btn btn-lg custom-button artwork-get-info-btn mx-auto text-center d-block col"
+                    className="btn btn-lg custom-button artwork-get-info-btn mx-auto mb-5 text-center d-block col"
                     onClick={() =>
                       Router.push(
                         `/contact?reason=${

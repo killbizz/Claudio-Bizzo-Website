@@ -53,7 +53,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
   return (
     <Layout title="Galleria | I Soli di Claudio">
       <div className="mid mid-background-color gallery-page-mid">
-        <div className="gallery-title-container">
+        <div className="title-container">
           <h1 className="my-auto text-center">GALLERIA DEI LAVORI</h1>
         </div>
         <div id="gallery_cards_wrapper">
@@ -115,7 +115,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
         {artworkIndex < folders.length && (
           <>
             <button
-              className="btn btn-lg custom-button custom-button-dark mb-4 mt-5 mx-auto text-center d-block"
+              className="btn btn-lg custom-button custom-button-dark my-5 mx-auto text-center d-block"
               onClick={handleLoadMore}
               disabled={isLoadingMore}
             >
