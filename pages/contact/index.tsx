@@ -7,7 +7,10 @@ const ContactPage = () => {
     <Layout title="Contattami | I Soli di Claudio">
       <div className="mid mid-background-color">
         <div className="artwork-page-mid">
-          <div className="container">
+          <div className="title-container">
+            <h1 className="my-auto text-center">CONTATTAMI</h1>
+          </div>
+          <div className="container text-center">
             <EmailForm />
           </div>
         </div>

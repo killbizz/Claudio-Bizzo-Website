@@ -102,6 +102,17 @@ body, html {
   position:relative;
 }
 
+.title-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.5em;
+}
+
 /* ----- LOGOS ----- */
 
 .fa-facebook-square {
@@ -171,7 +182,7 @@ body, html {
 }
 
 .homepage-mid-2 {
-  height: 815px;
+  min-height: 815px;
   width: 100%;
   flex:1;
   display:flex;
@@ -279,17 +290,6 @@ body, html {
   max-width: 100% !important;
 }
 
-.homepage-secondary-title-container {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  height: fit-content;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3.5em;
-}
-
 .homepage-gallery-explorer-container {
   display:flex;
   align-items: center;
@@ -337,17 +337,6 @@ body, html {
 
 .artwork-page-container #carousel_cards_wrapper .card-flyer:hover{
   cursor: zoom-in !important;
-}
-
-.artwork-title-container {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  height: fit-content;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3.5em;
 }
 
 .artwork-get-info-container {
@@ -409,22 +398,10 @@ body, html {
   min-height: 809px;
 }
 
-.gallery-title-container {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  height: fit-content;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3.5em;
-}
-
 #gallery_cards_wrapper{
   text-align: center;
 }
 #gallery_cards_wrapper .container-fluid{
-  /* padding-bottom: 40px; */
   padding-left: 8%;
   padding-right: 8%;
 }
@@ -436,14 +413,12 @@ body, html {
   border-radius: 5px;
 }
 #gallery_cards_wrapper .card-flyer .image-box{
-  /* background: #545454; */
   background: rgba(0, 0, 0, 0.25) !important;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   height: 300px !important;
   width: 100%;
-  /* padding: 7px; */
 }
 #gallery_cards_wrapper .card-flyer .image-box span{
   height: 300px !important;
@@ -481,7 +456,6 @@ body, html {
   padding: 25px 18px;
 }
 #gallery_cards_wrapper .card-flyer{
-  /* background: #755b3e; */
   background: rgba(0, 0, 0, 0.05) !important;
   margin-top: 50px;
   -webkit-transition: all 0.2s ease-in;
@@ -512,10 +486,22 @@ body, html {
   margin-top: 0px;
   margin-bottom: 0px; 
   font-size: 18px;
-  /* font-weight: bold; */
   font-style: italic;
   letter-spacing: 1px;
   color: black;
+}
+
+/* ----- CONTACT PAGE ----- */
+
+.infoMessage {
+  height: 600px !important;
+
+}
+
+.form-group {
+  background-color: rgb(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-bottom: 3rem !important;
 }
 
 /* ----- SCROLLDOWN ----- */
@@ -797,11 +783,11 @@ button.custom-button {
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 a.nav-link {
+h1, h2, h3, h4, h5, h6 a.nav-link, label {
   font-family: 'Lora', serif;
 }
 
-a.nav-link {
+a.nav-link, label {
   font-weight: 400;
 }
 
@@ -810,9 +796,11 @@ a.nav-link {
   font-weight: 400;
 }
 
-.homepage-secondary-title-container h1 {
+.title-container h1 {
   font-size: 3.5em;
   font-weight: 400;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 h3.homepage-subtitle {
@@ -821,7 +809,7 @@ h3.homepage-subtitle {
   font-size: 2em;
 }
 
-p, span {
+p, span, input.form-control, textarea.form-control, small {
   font-family: 'Merriweather', serif;
   font-weight: 300;
 }
