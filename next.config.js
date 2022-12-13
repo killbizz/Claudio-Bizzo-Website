@@ -1,5 +1,7 @@
 // next.config.js
 
+const { withAxiom } = require('next-axiom');
+
 const securityHeaders = [
   {
       key: 'X-XSS-Protection',
@@ -11,7 +13,7 @@ const securityHeaders = [
   }   
 ];
 
-module.exports = {
+module.exports = withAxiom({
   async headers() {
     return [
       {
@@ -25,4 +27,4 @@ module.exports = {
   images: {
     domains: ['res.cloudinary.com'],
   }
-}
+})
