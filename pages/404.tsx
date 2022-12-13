@@ -31,7 +31,7 @@ const CustomError404 = () => {
                 </p>
                 <p className="lead">
                   In caso di problemi per favore
-                  <Link legacyBehavior href="/contact?reason=errore-sito">
+                  <Link legacyBehavior href="/contact">
                     <a className="simpleLink"> contattami </a>
                   </Link>
                   spiegando il problema che hai incontrato per permettermi di
