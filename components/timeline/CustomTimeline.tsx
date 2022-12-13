@@ -34,6 +34,7 @@ const CustomTimeline = ({ events }: Props) => {
                 <VerticalTimelineElement
                   id={value.nome_evento}
                   className="vertical-timeline-element--work"
+                  visible
                   contentStyle={{ background: "#326475", color: "#fff" }}
                   date={value.data_inizio + "   -   " + value.data_fine}
                   iconStyle={{ background: "#326475", color: "#fff" }}
@@ -78,6 +79,7 @@ const CustomTimeline = ({ events }: Props) => {
               <VerticalTimelineElement
                 id={value.nome_evento}
                 className="vertical-timeline-element--work vertical-timeline-element-dark"
+                visible
                 contentStyle={{ background: "#ffefde", color: "black" }}
                 date={value.data_inizio + "   -   " + value.data_fine}
                 iconStyle={{ background: "#c29f7a", color: "#fff" }}
