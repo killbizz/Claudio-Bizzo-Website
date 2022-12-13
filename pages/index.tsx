@@ -16,7 +16,7 @@ interface HomePageProps {
 
 const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
   return (
-    <Layout title="Homepage | I Soli di Claudio">
+    <Layout title="Claudio Bizzo">
       <div className="homepage-mid">
         <div className="homepage-background-image">
           <div className="row homepage-title resize-under-400-width">

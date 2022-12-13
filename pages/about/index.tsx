@@ -7,7 +7,7 @@ interface AboutPageProps {
 const AboutPage = ({ userId }: AboutPageProps) => {
 
   return(
-      <Layout title="Chi Sono | I Soli di Claudio">
+      <Layout title="Chi Sono | Claudio Bizzo">
           <div className="mid">
             <p>DAGHE</p>
           </div>

@@ -12,7 +12,7 @@ interface ArtworkPageProps {
 
 const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
   return (
-    <Layout title={`${artwork.data.title} | I Soli di Claudio`}>
+    <Layout title={`${artwork.data.title} | Claudio Bizzo`}>
       <div className="mid mid-background-color">
         <div className="container-fluid h-100">
           <div className="row h-100">
@@ -32,13 +32,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                   <div className="w-100" />
                   <button
                     className="btn btn-lg custom-button artwork-get-info-btn mx-auto mb-5 text-center d-block col"
-                    onClick={() =>
-                      Router.push(
-                        `/contact?reason=${
-                          artwork.imageFiles[0].publicId.split("/")[1]
-                        }`
-                      )
-                    }
+                    onClick={() => Router.push("/contact")}
                   >
                     Chiedi Informazioni
                   </button>

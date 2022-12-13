@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 
 const ContactPage = () => {
   return (
-    <Layout title="Contattami | I Soli di Claudio">
+    <Layout title="Contattami | Claudio Bizzo">
       <div className="mid mid-background-color">
         <div className="artwork-page-mid">
           <div className="title-container">

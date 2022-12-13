@@ -51,7 +51,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
   }
 
   return (
-    <Layout title="Galleria | I Soli di Claudio">
+    <Layout title="Galleria | Claudio Bizzo">
       <div className="mid mid-background-color gallery-page-mid">
         <div className="title-container">
           <h1 className="my-auto text-center">GALLERIA DEI LAVORI</h1>
