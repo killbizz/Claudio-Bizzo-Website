@@ -7,6 +7,7 @@ const Nodemailer = {
       transporter.sendMail(mailOption, (error: any) => {
         if (error !== null) {
           console.error(error);
+          console.log(mailOption);
           resolve(false);
         } else {
           resolve(true);
