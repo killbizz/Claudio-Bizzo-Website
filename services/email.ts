@@ -13,7 +13,7 @@ export const sendAdminEmail = async (
   emailInfo: EmailInfo
 ): Promise<boolean> => {
   const mailOption: EmailOption = {
-    from: `"I Soli Di Claudio" <${process.env.NODEMAILER_EMAIL}>`, // sender address
+    from: `"claudiobizzo.com" <${process.env.NODEMAILER_EMAIL}>`, // sender address
     to: process.env.NODEMAILER_EMAIL, // list of receivers
     subject: `${emailInfo.name} ${emailInfo.surname} ti ha mandato un messaggio`, // Subject line
     text: emailToAdminTXTTemplate(emailInfo), // plaintext body
@@ -27,7 +27,7 @@ export const sendCustomerEmail = async (
   emailInfo: EmailInfo
 ): Promise<boolean> => {
   const mailOption: EmailOption = {
-    from: `"I Soli Di Claudio" <${process.env.NODEMAILER_EMAIL}>`, // sender address
+    from: `"Claudio Bizzo" <${process.env.NODEMAILER_EMAIL}>`, // sender address
     to: emailInfo.email, // list of receivers
     subject: "Grazie per avermi contattato", // Subject line
     text: emailToCustomerTXTTemplate(emailInfo), // plaintext body
