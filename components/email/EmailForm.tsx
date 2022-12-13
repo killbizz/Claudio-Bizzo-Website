@@ -234,6 +234,14 @@ const FormEmail = () => {
             name="messageValue"
             className="form-control"
             value={msgForm}
+            placeholder={
+              `Buongiorno,
+
+vorrei chiedere maggiori informazioni riguardo al lavoro "X".
+
+Cordiali Saluti,
+Mario Rossi.`
+          }
             onChange={(e) => {
               setMsgForm(e.target.value);
             }}
@@ -242,7 +250,7 @@ const FormEmail = () => {
         </Col>
 
         <Button type="submit" className="custom-button mt-4 mb-4 px-5" disabled={sending}>
-          INVIO
+          Invio
         </Button>
       </FormGroup>
     </Form>
