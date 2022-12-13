@@ -55,7 +55,7 @@ export function validateEmailForm(infoForm: EmailInfo): Map<string, string> {
   }
 
   // phone
-  if (!phoneRegexp.test(infoForm.phone)) {
+  if (infoForm.phone != "" && !phoneRegexp.test(infoForm.phone)) {
     errors.set(
       "phone",
       "Il campo Telefono deve contenere un numero telefonico valido"
