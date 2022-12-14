@@ -125,7 +125,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const folders: Folder[] = await getFolder("soli-di-claudio/LAVORI");
+  const folders: Folder[] = await getFolder(`${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI`);
 
   // Get the paths we want to pre-render
   const paths = folders.map((folder) => ({
@@ -143,7 +143,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({
   return {
     props: {
       artwork: await getArtworkInFolder(
-        "soli-di-claudio/LAVORI/" + params.id.toString()
+        `${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI/` + params.id.toString()
       ),
     },
     revalidate: 60 * 60, // 1 hour

@@ -65,7 +65,7 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
             artworks={featuredArtworks}
             autoplay={true}
             handleOnClickItem={(index, item: any) => {
-              if (item.key.startsWith("soli-di-claudio")) {
+              if (item.key.startsWith(process.env.CLOUDINARY_MAIN_FOLDER)) {
                 // redirect to the item page
                 // key == publicId == 'soli-di-claudio/LAVORI/folder/filename'
                 Router.push("/artwork/" + item.key.split("/")[2]);
@@ -95,10 +95,11 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
 export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
   GetStaticPropsResult<HomePageProps>
 > => {
-  const folders: Folder[] = await getFolder("soli-di-claudio/LAVORI");
+  console.log(process.env.CLOUDINARY_MAIN_FOLDER);
+  const folders: Folder[] = await getFolder(`${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI`);
   const featuredArtworks: Artwork[] = [];
 
-  const events: Event[] = await getEvents("soli-di-claudio/EVENTI");
+  const events: Event[] = await getEvents(`${process.env.CLOUDINARY_MAIN_FOLDER}/EVENTI`);
 
   for (let i = 0; i < folders.length; i++) {
     const artwork: Artwork = await getPreviewArtwork(
