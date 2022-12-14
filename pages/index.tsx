@@ -95,7 +95,6 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
 export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
   GetStaticPropsResult<HomePageProps>
 > => {
-  console.log(process.env.CLOUDINARY_MAIN_FOLDER);
   const folders: Folder[] = await getFolder(`${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI`);
   const featuredArtworks: Artwork[] = [];
 
