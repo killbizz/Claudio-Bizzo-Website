@@ -12,7 +12,7 @@ const ContactPage = () => {
           </div>
           <div className="container text-center">
             <EmailForm />
-          </div>
+          </div> 
         </div>
       </div>
     </Layout>
