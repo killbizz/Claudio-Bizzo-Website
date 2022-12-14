@@ -11,10 +11,10 @@ const NavigationBar = () => {
         <>
             <Navbar className="nav color-nav" collapseOnSelect expand="lg" variant="light">
                 <Container>
-                    <Navbar.Brand>
+                    <Navbar.Brand className='mr-5 pt-2'>
                         <Link href="/">
                             <a className="nav-link active" aria-current="page">
-                                <Image id="VotingOnlineWebApplication" src="/voting-box.png" alt="Online Voting Web Application Logo" width="45" height="45" />
+                                <Image id="ClaudioBizzoImg" src="/logo_full_2.png" alt="Claudio Bizzo Website Logo" width="52" height="52" />
                             </a>
                         </Link>
                     </Navbar.Brand>

@@ -53,6 +53,10 @@ body, html {
   border-bottom: 2px solid #000000;
 }
 
+.navbar-brand .nav-link {
+  padding: 0px !important;
+}
+
 .color-nav {
   background: rgb(194,159,122);
   background: -moz-linear-gradient(45deg, rgba(194,159,122,1) 0%, rgba(206,178,149,1) 25%, rgba(194,159,122,1) 50%, rgba(175,143,110,1) 75%, rgba(194,159,122,1) 100%);
@@ -216,7 +220,7 @@ body, html {
   position: absolute;
   /* top: 12%;
   left: 5%; */
-  top: 6.8%;
+  top: 8%;
   left: 50%;
   transform: translateX(-50%);
   margin-left: auto !important;
@@ -854,6 +858,9 @@ p, span, input.form-control, textarea.form-control, small {
 @media(max-width:410px){
   .resize-under-400-width {
     font-size: 0.7em !important;
+  }
+  .homepage-title{
+    top: 8%;
   }
 }
 
