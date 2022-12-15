@@ -134,7 +134,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
 export const getStaticProps: GetStaticProps<
   GalleryPageProps
 > = async (): Promise<GetStaticPropsResult<GalleryPageProps>> => {
-  const folders: Folder[] = await getFolder(`${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI`);
+  const folders: Folder[] = await getFolder(`${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI`);
   const initialArtworks: Artwork[] = [];
 
   for (let i = 0; i < 3; i++) {

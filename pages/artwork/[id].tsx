@@ -55,7 +55,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                   </div>
 
                   <div className="row justify-content-center">
-                    <div className="col bigScreen col-sm-auto pt-2">
+                    <div className="col bigScreen col-sm-auto pt-1">
                       <span className="material-symbols-outlined artwork-feature-icon">
                         handyman
                       </span>
@@ -71,10 +71,10 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                   </div>
 
                   <div className="row justify-content-center">
-                    <div className="col bigScreen col-sm-auto">
+                    <div className="col bigScreen col-sm-auto pt-1">
                       <i className="fa fa-arrows-alt fa-2x artwork-feature-icon" />
                     </div>
-                    <div className="col smallScreen col-3">
+                    <div className="col smallScreen col-3 pt-2">
                       <i className="fa fa-arrows-alt fa-2x artwork-feature-icon" />
                     </div>
                     <div className="col">
@@ -125,7 +125,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const folders: Folder[] = await getFolder(`${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI`);
+  const folders: Folder[] = await getFolder(`${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI`);
 
   // Get the paths we want to pre-render
   const paths = folders.map((folder) => ({
@@ -143,7 +143,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({
   return {
     props: {
       artwork: await getArtworkInFolder(
-        `${process.env.CLOUDINARY_MAIN_FOLDER}/LAVORI/` + params.id.toString()
+        `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI/` + params.id.toString()
       ),
     },
     revalidate: 60 * 60, // 1 hour
