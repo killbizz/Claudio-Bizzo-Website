@@ -508,6 +508,30 @@ body, html {
   margin-bottom: 3rem !important;
 }
 
+/* ----- ABOUT PAGE ----- */
+
+.about-image {
+  height: 750px !important;
+  width: 100% !important;
+  margin: auto;
+  position: relative !important;
+}
+
+.about-history-container {
+  margin-top: 3.5em;
+  padding: 10px !important;
+  color: white;
+  position: relative !important;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+/* let the description section use the newLine char */
+.about-history-container div {
+  white-space: pre-line !important;
+}
+
 /* ----- SCROLLDOWN ----- */
 
 .scrolldown {
