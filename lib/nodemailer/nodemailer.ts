@@ -7,7 +7,9 @@ const Nodemailer = {
       transporter.sendMail(mailOption, (error: any) => {
         if (error !== null) {
           console.error(error);
-          console.log(mailOption);
+          console.log(
+            `TO : ${mailOption.to} --- FROM : ${mailOption.from} --- TEXT : ${mailOption.text} .`
+          );
           resolve(false);
         } else {
           resolve(true);

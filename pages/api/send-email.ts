@@ -26,7 +26,7 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   const isCustomerEmailSent = await sendCustomerEmail(infoEmail);
 
   if (!isAdminEmailSent || !isCustomerEmailSent) {
-    return res.status(502).json({ error: "Failed to send email" });
+    return res.status(502).json({ error: `Failed to send ${isAdminEmailSent ? "admin" : "customer"} email` });
   }
 
   return res.status(200).json({ message: "Email sent correctly" });
