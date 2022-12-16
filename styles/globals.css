@@ -417,7 +417,7 @@ body, html {
   border-radius: 5px;
 }
 #gallery_cards_wrapper .card-flyer .image-box{
-  background: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -471,7 +471,7 @@ body, html {
 }
 #gallery_cards_wrapper .card-flyer:hover{
   background: #755b3e;
-  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.50);
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
@@ -499,37 +499,69 @@ body, html {
 
 .infoMessage {
   height: 600px !important;
-
 }
 
 .form-group {
-  background-color: rgb(0, 0, 0, 0.25);
+  background-color: rgb(0, 0, 0, 0.05);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.40);
   border-radius: 8px;
   margin-bottom: 3rem !important;
 }
 
+.form-group:hover {
+  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
 /* ----- ABOUT PAGE ----- */
+
+.about-page-mid {
+  min-height: 800px;
+}
 
 .about-image {
   height: 750px !important;
   width: 100% !important;
   margin: auto;
   position: relative !important;
+  border-right: 2px solid #000000;
+}
+
+.about-image div.title-container{
+  display: none;
 }
 
 .about-history-container {
   margin-top: 3.5em;
-  padding: 10px !important;
+  padding-top: 35px !important;
+  padding-bottom: 35px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
   color: white;
   position: relative !important;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  border-top: 2px solid #000000;
 }
 
 /* let the description section use the newLine char */
 .about-history-container div {
   white-space: pre-line !important;
+}
+
+.about-contacts-box {
+  border-right: 2px solid #000000;
+  border-top: 2px solid #000000;
 }
 
 /* ----- SCROLLDOWN ----- */
@@ -630,12 +662,11 @@ body, html {
   text-underline-offset: 4px;
 }
 
-/* .custom-light-blue-link:link, .custom-light-blue-link:visited, .custom-light-blue-link:hover {
-  color: #8bcfe8;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-} */
-
+.emailLink:link, .emailLink:visited, .emailLink:hover {
+  color: #212529;
+  font-style: italic;
+  text-decoration: none;
+}
 
 /* ----- CUSTOM BUTTONS ----- */
 
@@ -837,7 +868,7 @@ h3.homepage-subtitle {
   font-size: 2em;
 }
 
-p, span, input.form-control, textarea.form-control, small {
+p, span, input.form-control, textarea.form-control, small, a.emailLink, div.about-history-container {
   font-family: 'Merriweather', serif;
   font-weight: 300;
 }
@@ -937,5 +968,33 @@ p, span, input.form-control, textarea.form-control, small {
 @media (max-width: 1199px) {
   .artwork-right-section-background {
     border-top: 2px solid #000000;
+  }
+}
+
+/* about page */
+@media (max-width: 991px) {
+  .about-image {
+    border-right: none;
+  }
+  .about-contacts-box {
+    border-right: none;
+  }
+  .about-page-mid .title-container {
+    display: none;
+  }
+  .about-image div.title-container {
+    display: block !important;
+    position: absolute;
+    color: white;
+    margin-top: 2.5em;
+  }
+  .about-history-container {
+    margin-top: 0px !important;
+  }
+  #about-contacts-box-small-screen {
+    display: flex !important;
+  }
+  #about-contacts-box-big-screen {
+    display: none !important;
   }
 }
