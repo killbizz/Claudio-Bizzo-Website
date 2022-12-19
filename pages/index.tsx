@@ -25,16 +25,6 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
               <h3 className="homepage-subtitle">Artigiano e Creativo</h3>
             </div>
           </div>
-          {/* <div className='row justify-content-center homepage-description center-about-explorer-btn-under-half-width'>
-            <p className='col hide-under-half-width'>Decorazioni per arredamento da interno ed esterno, create utilizzando tecniche produttive artigianali e completamente eco-sostenibili.</p>
-            <div className='w-100' />
-            <button 
-              className="col-sm-3 btn btn-lg custom-button about-explorer-btn"
-              onClick={() => Router.push('/about')}
-            >
-              Approfondisci
-            </button>
-          </div> */}
           <div className="row homepage-citation justify-content-center hide-under-half-width">
             <blockquote style={{ marginBottom: "0px" }}>
               <p
