@@ -17,8 +17,8 @@ const AboutPage = () => {
               <div className="about-image my-0">
                 <Image
                   src="/about_main_img.jpg"
-                  id="aboutImg"
-                  alt="Claudio Bizzo about image"
+                  id="aboutMainImg"
+                  alt="Claudio Bizzo ad un mercatino"
                   priority
                   layout="fill"
                   objectFit="cover"
@@ -41,7 +41,7 @@ const AboutPage = () => {
                   </div>
                   <div className="row mx-0">
                     <div className="col-12 text-center mt-4 mb-2">
-                      <span className="font-italic text-center">
+                      <span className="text-center">
                         30037 , Scorzè (VE) , Italia
                       </span>
                     </div>
@@ -79,7 +79,19 @@ const AboutPage = () => {
               </div>
               {/* flex element with flex-grow-1 to fill all the vertical remaining space of the column */}
               <div className="about-history-container mid-dark-background-color flex-grow-1">
-                <div>{history}</div>
+                <div className="font-italic">{history}</div>
+              </div>
+              {/* flex element with flex-grow-1 to fill all the vertical remaining space of the column */}
+              <div className="lab-image my-0 flex-grow-1">
+                <Image
+                  src="/about_lab_img.png"
+                  id="aboutLabImg"
+                  alt="Claudio Bizzo nel suo laboratorio"
+                  priority
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition={"0% 15%"}
+                />
               </div>
               {/* about-contacts-box for small screen */}
               {/* flex element with flex-grow-1 to fill all the vertical remaining space of the column */}
@@ -92,9 +104,11 @@ const AboutPage = () => {
                       </span>
                     </div>
                   </div>
+                  {/* TODO : aggiungere frase */}
+                  {/* Decorazioni per arredamento da interno ed esterno, create utilizzando tecniche produttive artigianali e completamente eco-sostenibili */}
                   <div className="row mx-0">
                     <div className="col-12 text-center mt-4 mb-2">
-                      <span className="font-italic text-center">
+                      <span className="text-center">
                         30037 , Scorzè (VE) , Italia
                       </span>
                     </div>

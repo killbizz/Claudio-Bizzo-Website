@@ -536,16 +536,28 @@ body, html {
   border-right: 2px solid #000000;
 }
 
+.lab-image {
+  height: 550px !important;
+  width: 100% !important;
+  margin: auto;
+  position: relative !important;
+  border-top: 2px solid #000000;
+}
+
 .about-image div.title-container{
   display: none;
 }
 
+.about-page-mid .title-container {
+  margin-top: 4em;
+}
+
 .about-history-container {
-  margin-top: 3.5em;
+  margin-top: 4em;
   padding-top: 35px !important;
   padding-bottom: 35px !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
   color: white;
   position: relative !important;
   display: flex;
@@ -562,6 +574,14 @@ body, html {
 .about-contacts-box {
   border-right: 2px solid #000000;
   border-top: 2px solid #000000;
+}
+
+.about-contacts-container {
+  padding: 10px;
+  background-color: rgb(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.40);
+  border-radius: 8px;
+  max-width: 90% !important;
 }
 
 /* ----- SCROLLDOWN ----- */
@@ -691,20 +711,23 @@ body, html {
 
 .custom-button-dark-secondary {
   color: #326475 !important;
-  /* font-weight: bold !important; */
   background-color: transparent !important;
   border: 1px solid #326475 !important;
 }
 
-.custom-button-dark-secondary:hover {
-  color: white !important;
-  /* font-weight: normal !important; */
-  background-color: #326475 !important;
+.custom-button:hover {
+  background-position: bottom !important;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.custom-button:hover {
-  background-position: bottom !important;
+.custom-button-dark:hover {
+  background-position:initial !important;
+  filter: brightness(115%);
+}
+
+.custom-button-dark-secondary:hover {
+  color: white !important;
+  background-color: #326475 !important;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
