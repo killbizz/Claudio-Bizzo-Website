@@ -4,7 +4,6 @@ body, html {
 }
 
 .wrap {
-  /* min-height: 100vh; */
   width: 100%;
 }
 
@@ -15,7 +14,6 @@ body, html {
 }
 
 .mid {
-  /* height: 82.4vh !important; */
   width: 100%;
   flex:1;
   display:flex;
@@ -43,7 +41,6 @@ body, html {
 
 .container-footer{
   position: relative;
-  /* width: 100% !important; */
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -77,9 +74,6 @@ body, html {
 
 .copyright{
   font-family: 'Lora', serif;
-  /* line-height: 62px; */
-  /* height: fit-content;
-  width: fit-content; */
 }
 
 .boxing-form {
@@ -351,7 +345,6 @@ body, html {
 /* ----- ARTWORK PAGE ----- */
 
 .artwork-page-mid {
-  /* min-height: 83.3vh !important; */
   min-height: 800px;
 }
 
@@ -722,10 +715,6 @@ body, html {
   transform: scaleX(1);
 }
 
-/* .simpleLink:link, .simpleLink:visited, .simpleLink:hover {
-  color: black;
-} */
-
 .simpleLink:link, .simpleLink:visited, .simpleLink:hover {
   color: black;
   text-decoration: underline;
@@ -746,7 +735,6 @@ body, html {
   height: fit-content !important;
   padding: 0px 10px;
   background: linear-gradient(#0000, rgb(0 0 0/14%)) top/100% 800% !important;
-  /* transition: 0.5s !important; */
   background-color: #8bcfe8 !important;
   color: black !important;
   border-color: black !important;
@@ -802,7 +790,6 @@ body, html {
 
 #carousel_cards_wrapper{
   text-align: center !important;
-  /* height: 100% !important; */
 }
 #carousel_cards_wrapper .carousel {
   border-radius: 5px !important;
@@ -1070,5 +1057,11 @@ p, span, input.form-control, textarea.form-control, small, a.emailLink, div.abou
   }
   #about-contacts-box-big-screen {
     display: none !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .lab-image {
+    height: 370px !important;
   }
 }
