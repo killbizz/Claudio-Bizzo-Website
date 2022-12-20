@@ -8,6 +8,8 @@ import CustomCarousel from "../components/carousel/CustomCarousel";
 import CustomTimeline from "../components/timeline/CustomTimeline";
 import { getEvents } from "../services/event";
 import { Event } from "../types/Event";
+import Image from "next/image";
+import Link from "next/link";
 
 interface HomePageProps {
   featuredArtworks: Artwork[];
@@ -55,7 +57,11 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
             artworks={featuredArtworks}
             autoplay={true}
             handleOnClickItem={(index, item: any) => {
-              if (item.key.startsWith(process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER)) {
+              if (
+                item.key.startsWith(
+                  process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER
+                )
+              ) {
                 // redirect to the item page
                 Router.push("/artwork/" + item.key.split("/")[2]);
               }
@@ -77,6 +83,47 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
         </div>
         <CustomTimeline events={events} />
       </div>
+      <div className="homepage-sponsors mid-background-color">
+        <div className="title-container">
+          <h1 className="my-auto text-center">SPONSORS</h1>
+        </div>
+        <div className="container-fluid sponsors-container px-0">
+          <div className="row" 
+          // style={{paddingBottom: "3em", paddingTop: "3em"}}
+          >
+            <div className="col-md-6 d-flex my-2 justify-content-center align-items-center">
+              <Link href="https://www.trevigianacollanti.it/">
+                <a>
+                  <div>
+                    <Image
+                      src="/trevigiana_collanti_logo.webp"
+                      alt="Trevigiana Collanti logo"
+                      priority
+                      width={167}
+                      height={110}
+                    />
+                  </div>
+                </a>
+              </Link>
+            </div>
+            <div className="col-md-6 d-flex my-2 justify-content-center align-items-center">
+              <Link href="http://www.rubyklein.it/">
+                <a>
+                  <div>
+                  <Image
+                      src="/ruby_klein_logo.png"
+                      alt="Ruby Klein logo"
+                      priority
+                      width={167}
+                      height={110}
+                    />
+                  </div>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
@@ -84,10 +131,14 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
 export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
   GetStaticPropsResult<HomePageProps>
 > => {
-  const folders: Folder[] = await getFolder(`${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI`);
+  const folders: Folder[] = await getFolder(
+    `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI`
+  );
   const featuredArtworks: Artwork[] = [];
 
-  const events: Event[] = await getEvents(`${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/EVENTI`);
+  const events: Event[] = await getEvents(
+    `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/EVENTI`
+  );
 
   for (let i = 0; i < folders.length; i++) {
     const artwork: Artwork = await getPreviewArtwork(
