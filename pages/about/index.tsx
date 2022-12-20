@@ -104,7 +104,6 @@ const AboutPage = () => {
                       </span>
                     </div>
                   </div>
-                  {/* TODO : aggiungere frase */}
                   {/* Decorazioni per arredamento da interno ed esterno, create utilizzando tecniche produttive artigianali e completamente eco-sostenibili */}
                   <div className="row mx-0">
                     <div className="col-12 text-center mt-4 mb-2">
