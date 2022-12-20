@@ -1,6 +1,6 @@
 const history: string = `Sono Claudio Bizzo, un artigiano e creativo risiedente nell'area metropolitana di Venezia.
 
-Provengo da una famiglia semplice, la quale mi ha permesso di crescere immerso nella natura, a contatto con la vegetazione e gli animali presenti nella fattoria dei miei nonni.
+Provengo da una famiglia semplice, che mi ha permesso di crescere immerso nella natura, a contatto con la vegetazione e gli animali presenti nella fattoria dei miei nonni.
 In questo contesto ho potuto coltivare fin da piccolo la passione per l'artigianato, creando ed aggiustando qualsiasi tipologia di oggetto nel tempo libero.
 Con il passare degli anni ho progressivamente perfezionato le tecniche produttive, continuando ad alimentare la mia passione nel contesto familiare.
 Tuttavia al raggiungimento della pensione, scoprendo il mondo dei mercatini dell'artigianato, ho deciso finalmente di mettermi in gioco mostrando i miei lavori al pubblico.
