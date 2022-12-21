@@ -1,5 +1,7 @@
 // next.config.js
 
+const { withAxiom } = require('next-axiom');
+
 const securityHeaders = [
   {
       key: 'X-XSS-Protection',
@@ -11,14 +13,18 @@ const securityHeaders = [
   }   
 ];
 
-module.exports = {
-async headers() {
-  return [
-    {
-      // Apply these headers to all routes in your application.
-      source: '/:path*',
-      headers: securityHeaders,
-    },
-  ]
-},
-}
+module.exports = withAxiom({
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+    ]
+  },
+  reactStrictMode: false, 
+  images: {
+    domains: ['res.cloudinary.com'],
+  }
+})
