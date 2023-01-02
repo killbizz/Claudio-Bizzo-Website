@@ -91,11 +91,10 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                 className="btn btn-lg custom-button custom-button-dark-secondary mt-4 mx-auto text-center d-block"
                                 onClick={() =>
                                   Router.push(
-                                    "/artwork/" + name === "no_image_available"
+                                    "/artwork/" +
+                                    (name === "no_image_available"
                                       ? "not_available"
-                                      : artwork.imageFiles[0].publicId.split(
-                                          "/"
-                                        )[2]
+                                      : artwork.imageFiles[0].publicId.split("/")[2])
                                   )
                                 }
                               >
