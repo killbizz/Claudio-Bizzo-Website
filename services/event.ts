@@ -79,9 +79,9 @@ const parseFileList = async (fileList: any): Promise<Event[]> => {
   }
 
   return events.sort((a: Event, b: Event) => {
-    if(new Date(a.data_inizio) < new Date(b.data_inizio)){
+    if(new Date(a.data_inizio) > new Date(b.data_inizio)){
       return -1;
-    } else if(new Date(a.data_inizio) > new Date(b.data_inizio)) {
+    } else if(new Date(a.data_inizio) < new Date(b.data_inizio)) {
       return 1;
     } else {
       return 0;
