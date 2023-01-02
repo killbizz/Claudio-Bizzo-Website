@@ -31,7 +31,7 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                   <p className="col text-center mb-0 pt-3">Sei interessato?</p>
                   <div className="w-100" />
                   <button
-                    className="btn btn-lg custom-button artwork-get-info-btn mx-auto mb-5 text-center d-block col"
+                    className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mx-auto mb-5 text-center d-block col"
                     onClick={() => Router.push("/contact")}
                   >
                     Chiedi Informazioni

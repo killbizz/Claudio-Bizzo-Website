@@ -249,7 +249,7 @@ Mario Rossi.`
           />
         </Col>
 
-        <Button type="submit" className="custom-button mt-4 mb-4 px-5" disabled={sending}>
+        <Button type="submit" className="custom-button custom-button-dark mt-4 mb-4 px-5" disabled={sending}>
           Invio
         </Button>
       </FormGroup>
