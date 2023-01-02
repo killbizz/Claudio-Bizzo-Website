@@ -153,7 +153,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
       featuredArtworks,
       events,
     },
-    revalidate: 60 * 60 * 6, // 6 hour
+    revalidate: 60 * 60, // 1 hour
   };
 };
 
