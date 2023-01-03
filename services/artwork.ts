@@ -20,24 +20,33 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
       folders.push(folderElement);
     });
   
-    return folders;
+    // sorting folders alphabetically
+    return folders.sort((a: Folder, b: Folder) => {
+      if(a.name < b.name){
+        return -1;
+      } else if(a.name > b.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   };
   
-export const getPreviewArtwork = async (folder: string, tag: string): Promise<Artwork> => {
+export const getPreviewArtwork = async (folder: string, filter: string): Promise<Artwork> => {
 
-  if(!(tag === "anteprima_galleria" || tag === "anteprima_home")){
+  if(!(filter === "anteprima_galleria" || filter === "anteprima_home")){
     console.error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
     throw Error("getPreviewArtwork Error : wrong tag used to search for cloudinary images");
   }
 
-  const fileList = await getFileList(folder, tag);
+  const fileList = await getFileList(folder, filter);
 
   // console.log("FOLDER: " + folder);
   // console.log("TAG: " + tag);
   // console.log(fileList);
 
   // this artwork is not intended to be in the home artworks preview
-  if((fileList.total_count <= 1) && (tag === "anteprima_home"))
+  if((fileList.total_count <= 1) && (filter === "anteprima_home"))
     return null;
 
   return parseFileList(fileList);
@@ -120,6 +129,15 @@ const parseFileList = async (fileList: any): Promise<Artwork> => {
       url: "/no_image_available.png"
     })
   }
+
+  // imageList sorting
+  imageFileList.sort((a: File, b: File) => {
+    if(a.name.startsWith("anteprima")){
+      return -1;
+    } else {
+      return 1;
+    }
+  });
 
   return {
     imageFiles : imageFileList,

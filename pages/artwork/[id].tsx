@@ -27,21 +27,11 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                     autoplay={false}
                   />
                 </div>
-                <div className="artwork-get-info-container row justify-content-center align-items-center">
-                  <p className="col text-center mb-0 pt-3">Sei interessato?</p>
-                  <div className="w-100" />
-                  <button
-                    className="btn btn-lg custom-button artwork-get-info-btn mx-auto mb-5 text-center d-block col"
-                    onClick={() => Router.push("/contact")}
-                  >
-                    Chiedi Informazioni
-                  </button>
-                </div>
               </div>
             </div>
             <div className="col artwork-page-container artwork-right-section-background">
               <div className="artwork-right-section-container">
-                <div className="artwork-features-container mt-4 pt-2">
+                <div className="artwork-features-container pt-2">
                   <div className="row justify-content-center">
                     <div className="col bigScreen col-sm-auto">
                       <i className="fa fa-info-circle fa-2x artwork-feature-icon" />
@@ -112,8 +102,18 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                     </div>
                   </div>
                 </div>
-                <div className="artwork-description-container my-4 py-2">
+                <div className="artwork-description-container py-3">
                   <div className="my-auto">{artwork.data.description}</div>
+                </div>
+                <div className="artwork-get-info-container row justify-content-center align-items-center">
+                  <p className="col text-center mb-2">Sei interessato?</p>
+                  <div className="w-100" />
+                  <button
+                    className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mx-auto text-center d-block col"
+                    onClick={() => Router.push("/contact")}
+                  >
+                    Chiedi Informazioni
+                  </button>
                 </div>
               </div>
             </div>

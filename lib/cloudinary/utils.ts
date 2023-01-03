@@ -1,10 +1,14 @@
 import cloudinary from "./configuration";
 
-export const getFileList = (folderPath: string, tag: string = ""): Promise<any> => {
+export const getFileList = (folderPath: string, filter: string = ""): Promise<any> => {
     let expression: string = `folder:${folderPath}`;
 
-    if (tag !== "") {
-        expression += ` AND ( format=txt OR tags=${tag} )`;
+    if (filter === "anteprima_home") {
+        expression += ` AND ( format=txt OR tags=${filter} )`;
+    }
+
+    if (filter === "anteprima_galleria") {
+        expression += ` AND ( format=txt OR filename:anteprima* )`;
     }
 
     return cloudinary.search

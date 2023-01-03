@@ -345,13 +345,13 @@ body, html {
 /* ----- ARTWORK PAGE ----- */
 
 .artwork-page-mid {
-  min-height: 800px;
+  min-height: 780px;
 }
 
 .artwork-page-container #carousel_cards_wrapper
 .carousel .slide .card-flyer.image-box img{
   max-height: 424px !important;
-  max-width: 645px !important;
+  max-width: 605px !important;
 }
 
 .artwork-page-container .carousel {
@@ -386,8 +386,8 @@ body, html {
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 3em;
-  margin-bottom: 2%;
+  margin-top: 0px !important;
+  margin-bottom: 4.35rem !important;
 }
 
 .artwork-page-carousel-container {
@@ -408,6 +408,7 @@ body, html {
 .artwork-features-container {
   background-color: rgb(0, 0, 0, 0.25);
   color: white;
+  margin-top: 4.35rem !important;
   margin-left: 18%;
   margin-right: 18%;
   padding-left: 4%;
@@ -419,7 +420,9 @@ body, html {
   color: white;
   padding-left: 3%;
   padding-right: 3%;
-  min-height: 50vh !important;
+  margin-top: 4.35rem !important;
+  margin-bottom: 4.35rem !important;
+  min-height: 25vh !important;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -1005,6 +1008,12 @@ p, span, input.form-control, textarea.form-control, small, a.emailLink, div.abou
   .artwork-features-container {
     margin-left: 10%;
     margin-right: 10%;
+  }
+  .artwork-page-mid {
+    min-height: 600px;
+  }
+  .artwork-page-carousel-container {
+    margin-top: 0px !important;
   }
 }
 
