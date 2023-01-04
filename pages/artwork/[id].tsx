@@ -125,7 +125,16 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const folders: Folder[] = await getFolder(`${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI`);
+  let folders: Folder[] = [];
+
+  try {
+    folders = await getFolder(
+      `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI`
+    );
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 
   // Get the paths we want to pre-render
   const paths = folders.map((folder) => ({
@@ -133,18 +142,29 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 
   // pre-render only these paths at build time.
-  // { fallback: false } => other routes should 404.
-  return { paths, fallback: false };
+  // { fallback: "blocking" } => new paths not returned by getStaticPaths will wait for the HTML to be generated, identical to SSR (hence why blocking), 
+  // and then be cached for future requests so it only happens once per path
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({
   params,
 }): Promise<GetStaticPropsResult<ArtworkPageProps>> => {
+  let a: Artwork = null;
+  try {
+    a = await getArtworkInFolder(
+      `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI/` +
+        params.id.toString()
+    );
+  } catch (error) {
+    console.error(error);
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
-      artwork: await getArtworkInFolder(
-        `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI/` + params.id.toString()
-      ),
+      artwork: a,
     },
     revalidate: 60 * 60, // 1 hour
   };
