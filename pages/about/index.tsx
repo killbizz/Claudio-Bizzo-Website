@@ -1,4 +1,6 @@
 import Image from "next/image";
+import aboutMain from '../../public/about_main_img.jpg'
+import aboutLab from '../../public/about_lab_img.png'
 import Layout from "../../components/Layout";
 import history from "../../data/about";
 import Router from "next/router";
@@ -16,10 +18,11 @@ const AboutPage = () => {
               {/* flex element with fixed height */}
               <div className="about-image my-0">
                 <Image
-                  src="/about_main_img.jpg"
+                  src={aboutMain}
                   id="aboutMainImg"
                   alt="Claudio Bizzo ad un mercatino"
-                  priority
+                  // priority
+                  placeholder="blur"
                   layout="fill"
                   objectFit="cover"
                   objectPosition={"0% 25%"}
@@ -84,10 +87,11 @@ const AboutPage = () => {
               {/* flex element with flex-grow-1 to fill all the vertical remaining space of the column */}
               <div className="lab-image my-0 flex-grow-1">
                 <Image
-                  src="/about_lab_img.png"
+                  src={aboutLab}
                   id="aboutLabImg"
                   alt="Claudio Bizzo nel suo laboratorio"
-                  priority
+                  // priority
+                  placeholder="blur"
                   layout="fill"
                   objectFit="cover"
                   objectPosition={"0% 15%"}
