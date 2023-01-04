@@ -10,6 +10,7 @@ import { getEvents } from "../services/event";
 import { Event } from "../types/Event";
 import Image from "next/image";
 import Link from "next/link";
+import backgroundImage from "../public/homepage_main_img.png";
 
 interface HomePageProps {
   featuredArtworks: Artwork[];
@@ -21,6 +22,17 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
     <Layout title="Claudio Bizzo">
       <div className="homepage-mid">
         <div className="homepage-background-image">
+          <Image
+            src={backgroundImage}
+            alt="Claudio Bizzo"
+            className="homepage-background-image"
+            priority
+            unoptimized
+            placeholder="blur"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
           <div className="row homepage-title resize-under-400-width">
             <div className="col">
               <h1>CLAUDIO BIZZO</h1>
@@ -88,8 +100,9 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
           <h1 className="my-auto text-center">SPONSORS</h1>
         </div>
         <div className="container-fluid sponsors-container px-0">
-          <div className="row" 
-          // style={{paddingBottom: "3em", paddingTop: "3em"}}
+          <div
+            className="row"
+            // style={{paddingBottom: "3em", paddingTop: "3em"}}
           >
             <div className="col-md-6 d-flex my-2 justify-content-center align-items-center">
               <Link href="https://www.trevigianacollanti.it/">
@@ -110,7 +123,7 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
               <Link href="http://www.rubyklein.it/">
                 <a>
                   <div>
-                  <Image
+                    <Image
                       src="/ruby_klein_logo.png"
                       alt="Ruby Klein logo"
                       priority

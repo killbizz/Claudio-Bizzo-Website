@@ -200,13 +200,14 @@ body, html {
 }
 
 .homepage-background-image {
-  background-image: url(/homepage_main_img.png);
+  /* background-image: url(/homepage_main_img.png); */
   height: 100% !important;
+  position: relative;
   /* Center and scale the image nicely */
-  background-position: center;
+  /* background-position: center;
   background-repeat: repeat;
   background-size:cover;
-  position: relative;
+  position: relative; */
 }
 
 .homepage-title {
