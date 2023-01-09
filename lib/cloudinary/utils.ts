@@ -11,6 +11,10 @@ export const getFileList = (folderPath: string, filter: string = ""): Promise<an
         expression += ` AND ( format=txt OR filename:anteprima* )`;
     }
 
+    if (filter === "anteprima_eventi") {
+        expression += ` AND tags=anteprima_home `;
+    }
+
     return cloudinary.search
         .expression(expression)
         //.with_field("context")
