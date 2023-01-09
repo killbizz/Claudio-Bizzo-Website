@@ -5,12 +5,17 @@ import { Artwork } from "../types/Artwork";
 import Folder from "../types/Folder";
 import { getFolder, getPreviewArtwork } from "../services/artwork";
 import CustomCarousel from "../components/carousel/CustomCarousel";
-import CustomTimeline from "../components/timeline/CustomTimeline";
 import { getEvents } from "../services/event";
 import { Event } from "../types/Event";
 import Image from "next/image";
 import Link from "next/link";
 import backgroundImage from "../public/homepage_main_img.png";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { Fragment } from "react";
 
 interface HomePageProps {
   featuredArtworks: Artwork[];
@@ -91,9 +96,64 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
       </div>
       <div className="homepage-mid-3 mid-dark-background-color">
         <div className="title-container">
-          <h1 className="text-center text-light mb-1">EVENTI</h1>
+          <h1 className="text-center mb-5" style={{"color" : "white"}}>EVENTI PRINCIPALI</h1>
         </div>
-        <CustomTimeline events={events} />
+        {/* <h3 className="homepage-subtitle text-light text-center my-5">
+          Dove sono stato
+        </h3> */}
+        <VerticalTimeline className="vertical-timeline-custom-line mt-2 ">
+          {events.map((value) => (
+            <Fragment key={value.nome_evento}>
+              <VerticalTimelineElement
+                id={value.nome_evento}
+                className="vertical-timeline-element--work vertical-timeline-element-dark"
+                visible
+                contentStyle={{ background: "#ffefde", color: "black" }}
+                date={
+                  value.data_inizio.split("/").reverse().join("/") + ( 
+                    value.data_inizio !== value.data_fine ? "   -   " + value.data_fine.split("/").reverse().join("/") : "")
+                }
+                iconStyle={{ background: "#c29f7a", color: "#ffefde" }}
+                icon={
+                  <span
+                    key={value.nome_evento}
+                    className="material-symbols-outlined"
+                  >
+                    location_on
+                  </span>
+                }
+              >
+                <h3 className="vertical-timeline-element-title mb-4">
+                  {value.nome_evento}
+                </h3>
+                <p className="vertical-timeline-element-subtitle mb-4 font-italic">
+                  {value.luogo}
+                </p>
+                {value.descrizione !== "" && (
+                  <p>{value.descrizione}</p>
+                )}
+              </VerticalTimelineElement>
+            </Fragment>
+          ))}
+        </VerticalTimeline>
+        <div className="artwork-get-info-container w-50 row justify-content-center align-items-center">
+          <h3 className="homepage-subtitle text-center mb-4" style={{"color" : "white"}}>
+            Vuoi incontrarmi?
+          </h3>
+          <div className="w-100" />
+          <button
+            className="btn btn-lg custom-button custom-button-dark-secondary artwork-get-info-btn mt-4 mx-auto text-center d-block col"
+            onClick={() => Router.push("/contact")}
+          >
+            Contattami
+          </button>
+          <button
+            className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mt-4 mx-auto text-center d-block col"
+            onClick={() => Router.push("/events")}
+          >
+            Eventi Futuri
+          </button>
+        </div>
       </div>
       <div className="homepage-sponsors mid-background-color">
         <div className="title-container">
@@ -102,7 +162,6 @@ const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
         <div className="container-fluid sponsors-container px-0">
           <div
             className="row"
-            // style={{paddingBottom: "3em", paddingTop: "3em"}}
           >
             <div className="col-md-6 d-flex my-2 justify-content-center align-items-center">
               <Link href="https://www.trevigianacollanti.it/">
@@ -150,7 +209,8 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (): Promise<
   const featuredArtworks: Artwork[] = [];
 
   const events: Event[] = await getEvents(
-    `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/EVENTI`
+    `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/EVENTI`,
+    "anteprima_eventi"
   );
 
   for (let i = 0; i < folders.length; i++) {
