@@ -31,46 +31,51 @@ const CustomTimeline = ({ events }: Props) => {
 
   return (
     <>
-      {events.some(isEventDateAfterToday) && (
+      <h3 className="homepage-subtitle text-center my-5" style={{"color" : "white"}}>
+        Dove possiamo incontrarci
+      </h3>
+      {events.some(isEventDateAfterToday) ? (
+        <VerticalTimeline className="vertical-timeline-custom-line mt-2">
+          {events.filter(isEventDateAfterToday).map((value) => (
+            <Fragment key={value.nome_evento}>
+              <VerticalTimelineElement
+                id={value.nome_evento}
+                className="vertical-timeline-element--work"
+                visible
+                contentStyle={{ background: "#326475", color: "#ffefde" }}
+                date={
+                  value.data_inizio.split("/").reverse().join("/") + ( 
+                    value.data_inizio !== value.data_fine ? "   -   " + value.data_fine.split("/").reverse().join("/") : "")
+                }
+                iconStyle={{ background: "#326475", color: "#ffefde" }}
+                icon={
+                  <span
+                    key={value.nome_evento}
+                    className="material-symbols-outlined"
+                  >
+                    location_on
+                  </span>
+                }
+              >
+                <h3 className="vertical-timeline-element-title mb-4">
+                  {value.nome_evento}
+                </h3>
+                <p className="vertical-timeline-element-subtitle mb-4 font-italic">
+                  {value.luogo}
+                </p>
+                {value.descrizione !== "" && (
+                  <p>{value.descrizione}</p>
+                )}
+              </VerticalTimelineElement>
+            </Fragment>
+          ))}
+        </VerticalTimeline>
+      ) : (
         <>
-          <h3 className="homepage-subtitle text-light text-center my-5">
-            Dove possiamo incontrarci
-          </h3>
-          <VerticalTimeline className="vertical-timeline-custom-line mt-2">
-            {events.filter(isEventDateAfterToday).map((value) => (
-              <Fragment key={value.nome_evento}>
-                <VerticalTimelineElement
-                  id={value.nome_evento}
-                  className="vertical-timeline-element--work"
-                  visible
-                  contentStyle={{ background: "#326475", color: "#fff" }}
-                  date={value.data_inizio + "   -   " + value.data_fine}
-                  iconStyle={{ background: "#326475", color: "#fff" }}
-                  icon={
-                    <span
-                      key={value.nome_evento}
-                      className="material-symbols-outlined"
-                    >
-                      location_on
-                    </span>
-                  }
-                >
-                  <h3 className="vertical-timeline-element-title mb-3">
-                    {value.nome_evento}
-                  </h3>
-                  <h4 className="vertical-timeline-element-subtitle mb-4">
-                    {value.luogo}
-                  </h4>
-                  {value.descrizione !== "" && (
-                    <p className="font-italic">{value.descrizione}</p>
-                  )}
-                </VerticalTimelineElement>
-              </Fragment>
-            ))}
-          </VerticalTimeline>
+          <p className="text-center mt-3" style={{"color" : "black"}}>Nessun evento attualmente in programma.</p>
         </>
       )}
-      <h3 className="homepage-subtitle text-light text-center my-5">
+      <h3 className="homepage-subtitle text-center my-5" style={{"color" : "white"}}>
         Dove sono stato
       </h3>
       <VerticalTimeline className="vertical-timeline-custom-line mt-2 mb-5">
@@ -81,8 +86,11 @@ const CustomTimeline = ({ events }: Props) => {
               className="vertical-timeline-element--work vertical-timeline-element-dark"
               visible
               contentStyle={{ background: "#ffefde", color: "black" }}
-              date={value.data_inizio + "   -   " + value.data_fine}
-              iconStyle={{ background: "#c29f7a", color: "#fff" }}
+              date={
+                value.data_inizio.split("/").reverse().join("/") + ( 
+                  value.data_inizio !== value.data_fine ? "   -   " + value.data_fine.split("/").reverse().join("/") : "")
+              }
+              iconStyle={{ background: "#c29f7a", color: "#ffefde" }}
               icon={
                 <span
                   key={value.nome_evento}
@@ -92,14 +100,14 @@ const CustomTimeline = ({ events }: Props) => {
                 </span>
               }
             >
-              <h3 className="vertical-timeline-element-title mb-3">
+              <h3 className="vertical-timeline-element-title mb-4">
                 {value.nome_evento}
               </h3>
-              <h4 className="vertical-timeline-element-subtitle mb-4">
+              <p className="vertical-timeline-element-subtitle mb-4 font-italic">
                 {value.luogo}
-              </h4>
+              </p>
               {value.descrizione !== "" && (
-                <p className="font-italic">{value.descrizione}</p>
+                <p>{value.descrizione}</p>
               )}
             </VerticalTimelineElement>
           </Fragment>
