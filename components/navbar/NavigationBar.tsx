@@ -48,6 +48,12 @@ const NavigationBar = () => {
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
+                                <Link href="/events">
+                                    <a className={"nav-link custom-link" 
+                                        + (router.pathname === "/events" ? " active" : "")}>EVENTI</a>
+                                </Link>
+                            </Nav.Item>
+                            <Nav.Item className=" mx-4">
                                 <Link href="/about">
                                     <a className={"nav-link custom-link" 
                                         + (router.pathname === "/about" ? " active" : "")}>CHI SONO</a>

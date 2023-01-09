@@ -1,8 +1,8 @@
 import { Event } from "../types/Event";
 import { getFileList } from "../lib/cloudinary/utils";
 
-export const getEvents = async (folder: string): Promise<Event[]> => {
-  const fileList = await getFileList(folder);
+export const getEvents = async (folder: string, filter: string = ""): Promise<Event[]> => {
+  const fileList = await getFileList(folder, filter);
 
   // console.log(fileList);
 

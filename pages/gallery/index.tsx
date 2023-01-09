@@ -83,9 +83,11 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                 alt={artwork.data.title}
                                 layout="fill"
                                 objectFit="cover"
+                                placeholder="blur"
+                                blurDataURL="/spinner-1s-200px.gif"
                               />
                             </div>
-                            <div className={"text-container"}>
+                            <div className="text-container">
                               <h6>{artwork.data.title}</h6>
                               <button
                                 className="btn btn-lg custom-button custom-button-dark-secondary mt-4 mx-auto text-center d-block"

@@ -31,6 +31,16 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
             </div>
             <div className="col artwork-page-container artwork-right-section-background">
               <div className="artwork-right-section-container">
+                <div className="artwork-get-info-container row justify-content-center align-items-center">
+                  <p className="col text-center mb-2">Sei interessato?</p>
+                  <div className="w-100" />
+                  <button
+                    className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mx-auto text-center d-block col"
+                    onClick={() => Router.push("/contact")}
+                  >
+                    Chiedi Informazioni
+                  </button>
+                </div>
                 <div className="artwork-features-container pt-2">
                   <div className="row justify-content-center">
                     <div className="col bigScreen col-sm-auto">
@@ -105,16 +115,6 @@ const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
                 <div className="artwork-description-container py-3">
                   <div className="my-auto">{artwork.data.description}</div>
                 </div>
-                <div className="artwork-get-info-container row justify-content-center align-items-center">
-                  <p className="col text-center mb-2">Sei interessato?</p>
-                  <div className="w-100" />
-                  <button
-                    className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mx-auto text-center d-block col"
-                    onClick={() => Router.push("/contact")}
-                  >
-                    Chiedi Informazioni
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 
   // pre-render only these paths at build time.
-  // { fallback: "blocking" } => new paths not returned by getStaticPaths will wait for the HTML to be generated, identical to SSR (hence why blocking), 
+  // { fallback: "blocking" } => new paths not returned by getStaticPaths will wait for the HTML to be generated, identical to SSR (hence why blocking),
   // and then be cached for future requests so it only happens once per path
   return { paths, fallback: "blocking" };
 };
