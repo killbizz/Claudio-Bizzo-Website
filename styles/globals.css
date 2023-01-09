@@ -213,8 +213,6 @@ body, html {
 .homepage-title {
   color: white;
   position: absolute;
-  /* top: 12%;
-  left: 5%; */
   top: 8%;
   left: 50%;
   transform: translateX(-50%);
@@ -237,8 +235,6 @@ body, html {
   color: white;
   letter-spacing: 3px;
   position: absolute;
-  /* top: 72.4%;
-  left: 5.5%; */
   top: 82%;
   left: 50%;
   transform: translateX(-50%);
@@ -259,7 +255,8 @@ body, html {
 } */
 
 .homepage-mid-2 .carousel {
-  height: fit-content !important;
+  height: 508px !important;
+  max-height: 508px !important;
   width: 70% !important;
   margin: auto !important;
   padding-top: 34px !important;
@@ -267,7 +264,8 @@ body, html {
 }
 
 .homepage-mid-2 .carousel .slide {
-  height: fit-content !important;
+  height: 100% !important;
+  max-height: 508px !important;
   padding-left: 28px !important;
   padding-right: 28px !important;
 }
@@ -276,17 +274,11 @@ body, html {
   cursor: pointer !important;
 }
 
-.homepage-mid-2 #carousel_cards_wrapper
-.carousel .slide .card-flyer.image-box img{
-  max-height: 436px !important;
-  max-width: 630px !important;
-}
-
 .homepage-carousel-container {
+  width: 100% !important;
   min-height: 485px !important;
-  max-height: 52vh !important;
+  /* max-height: 52vh !important; */
   margin-top: 3.5em !important;
-  max-width: 100% !important;
 }
 
 .homepage-gallery-explorer-container {
@@ -299,7 +291,7 @@ body, html {
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 3.5em;
-  margin-bottom: 2%;
+  margin-bottom: 1em;
 }
 
 /* ----- SPONSORS ----- */
@@ -349,22 +341,23 @@ body, html {
   min-height: 780px;
 }
 
-.artwork-page-container #carousel_cards_wrapper
-.carousel .slide .card-flyer.image-box img{
-  max-height: 424px !important;
-  max-width: 605px !important;
+.artwork-page-container .title-container {
+  margin-top: 4.2em !important;
 }
 
 .artwork-page-container .carousel {
-  height: fit-content !important;
-  width: 80% !important;
+  height: 508px !important;
+  max-height: 508px !important;
+  width: 85% !important;
   margin: auto !important;
   padding-top: 34px !important;
   padding-bottom: 34px !important;
 }
 
 .artwork-page-container .carousel .slide {
-  height: fit-content !important;
+  height: 100% !important;
+  max-height: 508px !important;
+  max-width: 605px !important;
   padding-left: 28px !important;
   padding-right: 28px !important;
 }
@@ -387,14 +380,14 @@ body, html {
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 0px !important;
+  margin-top: 4.35rem !important;
   margin-bottom: 4.35rem !important;
 }
 
 .artwork-page-carousel-container {
   min-height: 449px !important;
-  max-height: 55vh !important;
-  margin-top: 3.5em !important;
+  margin-top: 4.2em !important;
+  padding-bottom: 4.2em !important;
 }
 
 .artwork-right-section-background {
@@ -632,6 +625,17 @@ body, html {
   max-width: 90% !important;
 }
 
+/* ----- EVENTS PAGE ----- */
+
+.events-page-mid {
+  min-height: 815px;
+  width: 100%;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
 /* ----- SCROLLDOWN ----- */
 
 .scrolldown {
@@ -758,6 +762,10 @@ body, html {
   border: 1px solid #326475 !important;
 }
 
+.homepage-mid-3 .custom-button-dark-secondary {
+  background-color: rgb(255,239,222) !important;
+}
+
 .custom-button:hover {
   background-position: bottom !important;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -802,16 +810,11 @@ body, html {
 .carousel .slide .card-flyer.image-box{
   overflow: hidden !important;
   margin: auto;
+  position: relative !important;
 }
 #carousel_cards_wrapper
 .carousel .slide .card-flyer.image-box img{
-  height: 100% !important;
-  position: relative !important;
   border-radius: 5px !important;
-}
-#carousel_cards_wrapper
-.carousel .slide .card-flyer.image-box{
-  position: relative !important;
 }
 #carousel_cards_wrapper
 .carousel .slide .card-flyer:hover.image-box img{
@@ -849,7 +852,13 @@ body, html {
 }
 
 .carousel .slide div {
-  height: 100%;
+  height: 100% !important;
+}
+.slider-wrapper {
+  height: 100% !important;
+}
+.slider {
+  height: 100% !important;
 }
 
 .carousel .control-next.control-arrow:before {
@@ -990,15 +999,6 @@ p, span, input.form-control, textarea.form-control, small, a.emailLink, div.abou
   }
 }
 
-@media(max-width:727px){
-  .homepage-carousel-container {
-    margin-top: 1vh !important;
-  }
-  .homepage-gallery-explorer-container {
-    margin-top: 1vh;
-  }
-}
-
 @media(max-width:437px){
   #error_page_img {
     margin-left: 0px !important;
@@ -1011,10 +1011,7 @@ p, span, input.form-control, textarea.form-control, small, a.emailLink, div.abou
     margin-right: 10%;
   }
   .artwork-page-mid {
-    min-height: 600px;
-  }
-  .artwork-page-carousel-container {
-    margin-top: 0px !important;
+    min-height: 650px;
   }
 }
 

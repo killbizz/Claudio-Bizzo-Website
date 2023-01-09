@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { Carousel } from "react-responsive-carousel";
 import { Artwork } from "../../types/Artwork";
-import { Image as CloudinaryImage } from "cloudinary-react";
+import Image from "next/image";
 import { ReactNode, useState } from "react";
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
@@ -36,16 +35,22 @@ const CustomCarousel = ({ artworks, autoplay, handleOnClickItem }: Props) => {
           onClick={() => setIsModalOpen(true)}
         >
           {image.name === "no_image_available" ? (
-            <img
+            <Image
               src={image.url}
               id={image.publicId}
               alt={"immagine non disponibile"}
+              layout="fill"
+              objectFit="contain"
             />
           ) : (
-            <CloudinaryImage
+            <Image
               src={image.url}
               id={image.publicId}
               alt={artwork.data.title}
+              layout="fill"
+              objectFit="contain"
+              placeholder="blur"
+              blurDataURL="/spinner-1s-200px.gif"
             />
           )}
           <p className="legend">{artwork.data.title}</p>
