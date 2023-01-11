@@ -71,6 +71,9 @@ const CustomCarousel = ({ artworks, autoplay, handleOnClickItem }: Props) => {
         infiniteLoop
         useKeyboardArrows
         swipeable
+        preventMovementUntilSwipeScrollTolerance={true}
+        swipeScrollTolerance={50}
+        emulateTouch={autoplay}
         dynamicHeight
         selectedItem={photoIndex}
         onClickItem={handleOnClickItem}
