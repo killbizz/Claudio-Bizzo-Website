@@ -13,14 +13,16 @@ const NavigationBar = dynamic(() => import('./navbar/NavigationBar'), { ssr: fal
 
 type Props = {
   children?: ReactNode
-  title?: string
+  title: string
+  description: string
 }
 
-const Layout = ({ children, title = 'I Soli di Claudio' }: Props) => {
+const Layout = ({ children, title, description }: Props) => {
   return (
   <div className="wrap">
     <Head>
       <title>{title}</title>
+      <meta name="description" content={description} />
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" type="image/x-icon" href='/favicon.ico' />
