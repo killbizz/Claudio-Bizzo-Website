@@ -1,10 +1,14 @@
-import { GetServerSideProps, GetStaticPropsResult } from "next";
 import EmailForm from "../../components/email/EmailForm";
 import Layout from "../../components/Layout";
 
+// SEO
+const title: string = "Contattami | Claudio Bizzo";
+const description: string = `Nella pagina web Contattami è possibile contattare direttamente Claudio Bizzo.
+Attraverso la compilazione dell'apposito form è possibile richiedere informazioni, preventivi e personalizzazioni dei lavori.`;
+
 const ContactPage = () => {
   return (
-    <Layout title="Contattami | Claudio Bizzo">
+    <Layout title={title} description={description}>
       <div className="mid mid-background-color">
         <div className="artwork-page-mid">
           <div className="title-container">

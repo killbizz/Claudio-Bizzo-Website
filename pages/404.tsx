@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 const CustomError404 = () => {
   return (
     <>
-      <Layout title="Pagina non trovata | I Soli di Claudio">
+      <Layout title="Pagina non trovata | I Soli di Claudio" description="404 Error - Page Not Found">
         <div className="error-page-mid mid-background-color justify-content-center">
           <div className="container col-xxl-8">
             <div className="row flex-lg-row-reverse align-items-center g-5">

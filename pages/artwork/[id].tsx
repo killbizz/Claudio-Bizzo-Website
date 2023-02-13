@@ -12,7 +12,8 @@ interface ArtworkPageProps {
 
 const ArtworkPage = ({ artwork }: ArtworkPageProps) => {
   return (
-    <Layout title={`${artwork.data.title} | Claudio Bizzo`}>
+    <Layout title={`${artwork.data.title} | Claudio Bizzo`} 
+            description={`${artwork.data.title} : ${artwork.data.description}`}>
       <div className="mid mid-background-color">
         <div className="container-fluid h-100">
           <div className="row h-100">

@@ -5,9 +5,14 @@ import Layout from "../../components/Layout";
 import history from "../../data/about";
 import Router from "next/router";
 
+// SEO
+const title: string = "Chi Sono | Claudio Bizzo";
+const description: string = `Nella pagina web Chi Sono è presente una breve biografia di Claudio Bizzo.
+Sono inoltre presenti delle immagini che ritraggono Claudio e il suo laboratorio.`;
+
 const AboutPage = () => {
   return (
-    <Layout title="Chi Sono | Claudio Bizzo">
+    <Layout title={title} description={description}>
       <div className="mid about-page-mid mid-background-color">
         {/* grid layout */}
         <div className="row mx-0">

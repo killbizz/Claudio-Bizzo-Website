@@ -17,6 +17,13 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { Fragment } from "react";
 
+// SEO
+const title: string = "Homepage | Claudio Bizzo";
+const description: string = `Claudio Bizzo è un artigiano e creativo risiedente nell'area metropolitana di Venezia.
+In questo sito web Claudio mette in mostra le proprie creazioni artigianali, pensate e realizzate a mano nel suo laboratorio utilizzando materiali provenienti dal proprio territorio.
+I prodotti realizzati sono tutti pezzi unici e riguardano principalmente cornici per specchi o quadri, coroncine, festoni, lampade e oggetti ornamentali per interni di diverse forme.
+Attraverso l'apposita sezione Contattami è possibile richiedere preventivi e/o personalizzazioni dei lavori.`;
+
 interface HomePageProps {
   featuredArtworks: Artwork[];
   events: Event[];
@@ -24,7 +31,7 @@ interface HomePageProps {
 
 const IndexPage = ({ featuredArtworks, events }: HomePageProps) => {
   return (
-    <Layout title="Claudio Bizzo">
+    <Layout title={title} description={description}>
       <div className="homepage-mid">
         <div className="homepage-background-image">
           <Image

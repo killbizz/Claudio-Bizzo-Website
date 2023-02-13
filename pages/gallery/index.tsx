@@ -9,6 +9,13 @@ import { startLoadingBar, stopLoadingBar } from "../../lib/loading";
 import Router from "next/router";
 import Link from "next/link";
 
+// SEO
+const title: string = "Galleria dei Lavori | Claudio Bizzo";
+const description: string = `Nella Galleria dei Lavori vengono messe in mostra tutte le creazioni artigianali di Claudio Bizzo.
+Ogni prodotto è un pezzo unico ed è stato pensato e realizzato a mano nel suo laboratorio.
+Tra le opere elencate sono presenti cornici per specchi o quadri, coroncine, festoni, lampade e oggetti ornamentali per interni di diverse forme.
+Seleziona un lavoro per visualizzarne i dettagli.`;
+
 interface GalleryPageProps {
   initialArtworks: Artwork[];
   folders: Folder[];
@@ -51,7 +58,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
   }
 
   return (
-    <Layout title="Galleria | Claudio Bizzo">
+    <Layout title={title} description={description}>
       <div className="mid mid-background-color gallery-page-mid">
         <div className="title-container">
           <h1 className="my-auto text-center">GALLERIA DEI LAVORI</h1>

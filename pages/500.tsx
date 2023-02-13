@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 const CustomError500 = () => {
   return (
     <>
-      <Layout title="Errore | I Soli di Claudio">
+      <Layout title="Errore | I Soli di Claudio" description="500 Error - Internal Server Error">
         <div className="error-page-mid mid-background-color justify-content-center">
           <div className="container col-xxl-8">
             <div className="row flex-lg-row-reverse align-items-center g-5">
