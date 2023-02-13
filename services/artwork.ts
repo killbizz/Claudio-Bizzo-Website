@@ -54,9 +54,6 @@ export const getPreviewArtwork = async (folder: string, filter: string): Promise
 
 export const getArtworkInFolder = async (folder: string): Promise<Artwork> => {
 
-  const imageFileList = new Array<File>();
-  let metadata: Metadata = undefined;
-
   const fileList = await getFileList(folder);
 
   return parseFileList(fileList);
