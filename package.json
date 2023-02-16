@@ -16,6 +16,7 @@
     "js-cookie": "^2.2.1",
     "next": "latest",
     "next-axiom": "^0.16.0",
+    "next-seo": "^5.15.0",
     "nodemailer": "^6.6.1",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
