@@ -2,11 +2,16 @@
 import Link from "next/link";
 import Router from "next/router";
 import Layout from "../components/Layout";
+import { NextSeo } from "next-seo";
+
+// SEO
+const title: string = "Errore | Claudio Bizzo";
 
 const CustomError500 = () => {
   return (
     <>
-      <Layout title="Errore | I Soli di Claudio" description="500 Error - Internal Server Error">
+      <NextSeo title={title} noindex={true} />
+      <Layout>
         <div className="error-page-mid mid-background-color justify-content-center">
           <div className="container col-xxl-8">
             <div className="row flex-lg-row-reverse align-items-center g-5">
