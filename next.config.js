@@ -26,5 +26,9 @@ module.exports = withAxiom({
   reactStrictMode: false, 
   images: {
     domains: ['res.cloudinary.com'],
+  },
+  i18n: {
+    locales: ["it"],
+    defaultLocale: "it",
   }
 })
