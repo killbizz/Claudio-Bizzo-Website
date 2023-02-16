@@ -4,7 +4,7 @@ const Footer = () => {
             <div className="container-footer container text-center">
                 <div className="row justify-content-center align-items-center h-100">
                     <div className="col-sm-6">
-                        <span className="copyright" >&copy; 2022 Claudio Bizzo</span>
+                        <span className="copyright" >&copy; 2023 Claudio Bizzo</span>
                     </div>
                     <div className="col-sm-6">
                         <span className="copyright" >
