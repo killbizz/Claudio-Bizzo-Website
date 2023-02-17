@@ -4,8 +4,7 @@ import Layout from "../../components/Layout";
 
 // SEO
 const title: string = "Contattami | Claudio Bizzo";
-const description: string = `Nella pagina web Contattami è possibile contattare direttamente Claudio Bizzo.
-Attraverso la compilazione dell'apposito form è possibile richiedere informazioni, un preventivo o personalizzazioni sui lavori.`;
+const description: string = `Contatta direttamente Claudio Bizzo per chiedere informazioni, un preventivo o personalizzazioni sui lavori compilando l'apposito form online.`;
 
 const ContactPage = () => {
   return (
@@ -21,11 +20,11 @@ const ContactPage = () => {
           description: description,
           images: [
             {
-              url: "https://www.claudiobizzo.com/homepage_zoom_img.png",
-              width: 1350,
-              height: 1350,
+              url: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
+              width: 1527,
+              height: 1527,
               alt: "Claudio Bizzo",
-              type: "image/png",
+              type: "image/jpeg",
             },
           ],
           siteName: "Claudio Bizzo",

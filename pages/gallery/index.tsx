@@ -12,8 +12,8 @@ import { NextSeo } from "next-seo";
 
 // SEO
 const title: string = "Galleria dei Lavori | Claudio Bizzo";
-const description: string = `Nella Galleria dei Lavori vengono messe in mostra tutte le creazioni artigianali di Claudio Bizzo.
-Ogni prodotto è un pezzo unico ed è stato pensato e realizzato a mano nel suo laboratorio.
+const description: string = `Scopri tutte le creazioni artigianali di Claudio Bizzo.
+Ogni prodotto in mostra nel sito web è un pezzo unico ed è stato pensato e realizzato a mano nel suo laboratorio.
 Tra le opere elencate sono presenti cornici per specchi o quadri, coroncine, festoni, lampade e oggetti ornamentali per interni di diverse forme.
 Seleziona un lavoro per visualizzarne i dettagli.`;
 
@@ -71,11 +71,11 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
           description: description,
           images: [
             {
-              url: "https://www.claudiobizzo.com/homepage_zoom_img.png",
-              width: 1350,
-              height: 1350,
+              url: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
+              width: 1527,
+              height: 1527,
               alt: "Claudio Bizzo",
-              type: "image/png",
+              type: "image/jpeg",
             },
           ],
           siteName: "Claudio Bizzo",

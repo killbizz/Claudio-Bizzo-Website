@@ -8,8 +8,7 @@ import { NextSeo } from "next-seo";
 
 // SEO
 const title: string = "Chi Sono | Claudio Bizzo";
-const description: string = `Nella pagina web Chi Sono è presente una breve biografia di Claudio Bizzo.
-Sono inoltre presenti delle immagini che ritraggono Claudio e il suo laboratorio.`;
+const description: string = `Scopri la storia di Claudio Bizzo attraverso una sua breve biografia e delle immagini che ritraggono Claudio nel suo laboratorio.`;
 
 const AboutPage = () => {
   return (

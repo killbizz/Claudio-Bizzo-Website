@@ -8,7 +8,7 @@ import { EventJsonLd, NextSeo } from "next-seo";
 
 // SEO
 const title: string = "Eventi | Claudio Bizzo";
-const description: string = `Nella pagina web Eventi sono presenti tutti gli eventi passati e futuri di Claudio Bizzo.`;
+const description: string = `Scopri tutti gli eventi passati e futuri di Claudio Bizzo.`;
 
 interface EventsPageProps {
   events: Event[];
@@ -28,11 +28,11 @@ const EventsPage = ({ events }: EventsPageProps) => {
           description: description,
           images: [
             {
-              url: "https://www.claudiobizzo.com/homepage_zoom_img.png",
-              width: 1350,
-              height: 1350,
+              url: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
+              width: 1527,
+              height: 1527,
               alt: "Claudio Bizzo",
-              type: "image/png",
+              type: "image/jpeg",
             },
           ],
           siteName: "Claudio Bizzo",
