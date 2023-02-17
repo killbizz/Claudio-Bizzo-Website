@@ -46,6 +46,16 @@ const EventsPage = ({ events }: EventsPageProps) => {
             keyOverride={value.nome_evento}
             startDate={`${value.data_inizio.split("/").join("-")}T00:00:00.000Z`}
             endDate={`${value.data_fine.split("/").join("-")}T00:00:00.000Z`}
+            performers={[
+              {
+                name: 'Claudio Bizzo',
+              }
+            ]}
+            organizer={{
+              type: 'Organization',
+              name: 'Claudio Bizzo',
+              url: 'https://www.claudiobizzo.com',
+            }}
             location={{
               name: value.nome_evento,
               address: value.luogo,
