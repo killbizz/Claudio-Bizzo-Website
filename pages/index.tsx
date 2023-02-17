@@ -93,7 +93,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
               src={backgroundImage}
               alt="Claudio Bizzo"
               className="homepage-background-image"
-              // priority
+              priority={true}
               unoptimized
               placeholder="blur"
               layout="fill"
