@@ -4,8 +4,7 @@ import Layout from "../../components/Layout";
 
 // SEO
 const title: string = "Contattami | Claudio Bizzo";
-const description: string = `Nella pagina web Contattami è possibile contattare direttamente Claudio Bizzo.
-Attraverso la compilazione dell'apposito form è possibile richiedere informazioni, un preventivo o personalizzazioni sui lavori.`;
+const description: string = `Contatta direttamente Claudio Bizzo per chiedere informazioni, un preventivo o personalizzazioni sui lavori compilando l'apposito form online.`;
 
 const ContactPage = () => {
   return (

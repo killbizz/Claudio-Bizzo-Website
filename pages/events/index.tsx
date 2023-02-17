@@ -8,7 +8,7 @@ import { EventJsonLd, NextSeo } from "next-seo";
 
 // SEO
 const title: string = "Eventi | Claudio Bizzo";
-const description: string = `Nella pagina web Eventi sono presenti tutti gli eventi passati e futuri di Claudio Bizzo.`;
+const description: string = `Scopri tutti gli eventi passati e futuri di Claudio Bizzo.`;
 
 interface EventsPageProps {
   events: Event[];
