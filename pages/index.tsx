@@ -44,9 +44,9 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
           description: description,
           images: [
             {
-              url: "https://www.claudiobizzo.com/homepage_main_img.png",
-              width: 4032,
-              height: 3024,
+              url: "https://www.claudiobizzo.com/homepage_zoom_img.png",
+              width: 1350,
+              height: 1350,
               alt: "Claudio Bizzo",
               type: "image/png",
             },
@@ -94,7 +94,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
               alt="Claudio Bizzo"
               className="homepage-background-image"
               priority
-              // unoptimized
+              unoptimized
               placeholder="blur"
               layout="fill"
               objectFit="cover"
