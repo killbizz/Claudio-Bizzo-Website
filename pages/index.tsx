@@ -44,11 +44,11 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
           description: description,
           images: [
             {
-              url: "https://www.claudiobizzo.com/homepage_zoom_img.png",
-              width: 1350,
-              height: 1350,
+              url: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
+              width: 1527,
+              height: 1527,
               alt: "Claudio Bizzo",
-              type: "image/png",
+              type: "image/jpeg",
             },
           ],
           siteName: "Claudio Bizzo",
