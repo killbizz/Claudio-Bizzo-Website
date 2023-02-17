@@ -21,10 +21,10 @@ const ContactPage = () => {
           description: description,
           images: [
             {
-              url: "https://www.claudiobizzo.com/logo_full_2.png",
-              width: 790,
-              height: 790,
-              alt: "Logo di Claudio Bizzo",
+              url: "https://www.claudiobizzo.com/homepage_zoom_img.png",
+              width: 1350,
+              height: 1350,
+              alt: "Claudio Bizzo",
               type: "image/png",
             },
           ],
