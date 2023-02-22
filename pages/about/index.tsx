@@ -26,7 +26,7 @@ const AboutPage = () => {
               url: 'https://www.claudiobizzo.com/about_main_img.jpg',
               width: 3024,
               height: 4032,
-              alt: 'Claudio Bizzo',
+              alt: 'Claudio Bizzo, artigiano e creativo di opere in legno della provincia di Venezia',
               type: 'image/jpeg',
             },
           ],

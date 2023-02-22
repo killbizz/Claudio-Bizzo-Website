@@ -46,7 +46,7 @@ const CustomCarousel = ({ artworks, autoplay, handleOnClickItem }: Props) => {
             <Image
               src={image.url}
               id={image.publicId}
-              alt={artwork.data.title}
+              alt={artwork.data.title + " : opera di Claudio Bizzo, artigiano e creativo della provincia di Venezia"}
               layout="fill"
               objectFit="contain"
               placeholder="blur"

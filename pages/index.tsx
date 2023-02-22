@@ -47,7 +47,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
               url: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
               width: 1527,
               height: 1527,
-              alt: "Claudio Bizzo",
+              alt: "Claudio Bizzo, artigiano e creativo di opere in legno della provincia di Venezia",
               type: "image/jpeg",
             },
           ],
@@ -101,10 +101,11 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
           <div className="homepage-background-image">
             <Image
               src={backgroundImage}
-              alt="Claudio Bizzo"
+              alt="Claudio Bizzo, artigiano e creativo di opere in legno della provincia di Venezia"
               className="homepage-background-image"
               priority={true}
-              unoptimized
+              // unoptimized
+              sizes={"100vw"}
               placeholder="blur"
               layout="fill"
               objectFit="cover"
@@ -172,9 +173,6 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
               EVENTI PRINCIPALI
             </h1>
           </div>
-          {/* <h3 className="homepage-subtitle text-light text-center my-5">
-            Dove sono stato
-          </h3> */}
           <VerticalTimeline className="vertical-timeline-custom-line mt-2 ">
             {featuredEvents.map((value) => (
               <Fragment key={value.nome_evento}>

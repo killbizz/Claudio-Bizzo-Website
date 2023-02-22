@@ -27,7 +27,7 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
           images: [
             {
               url: artwork.imageFiles[0].url,
-              alt: artwork.imageFiles[0].name,
+              alt: artwork.imageFiles[0].name + " : opera di Claudio Bizzo, artigiano e creativo della provincia di Venezia",
               type: `image/${artwork.imageFiles[0].extension}`,
             },
           ],
