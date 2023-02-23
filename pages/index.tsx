@@ -16,7 +16,13 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { Fragment } from "react";
-import { EventJsonLd, NextSeo, ProductJsonLd } from "next-seo";
+import {
+  BreadcrumbJsonLd,
+  ImageJsonLd,
+  NextSeo,
+  OrganizationJsonLd,
+  WebPageJsonLd,
+} from "next-seo";
 
 // SEO
 const title: string = "Homepage | Claudio Bizzo";
@@ -54,47 +60,57 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
           siteName: "Claudio Bizzo",
         }}
       />
-      {/* ARTWORKS JSON-LD */}
-      {featuredArtworks.map((value) => (
-        <Fragment key={value.data.title}>
-          <ProductJsonLd
-            productName={value.data.title}
-            keyOverride={value.data.title}
-            images={Array.from(value.imageFiles, (v) => v.url)}
-            description={value.data.description}
-            brand="Claudio Bizzo"
-            manufacturerName="Claudio Bizzo"
-            manufacturerLogo="https://www.claudiobizzo.com/logo_full_2.png"
-            material={value.data.materials}
-          />
-        </Fragment>
-      ))}
-      {/* EVENTS JSON-LD */}
-      {featuredEvents.map((value) => (
-        <Fragment key={value.nome_evento}>
-          <EventJsonLd
-            name={value.nome_evento}
-            keyOverride={value.nome_evento}
-            startDate={`${value.data_inizio.split("/").join("-")}T00:00:00.000Z`}
-            endDate={`${value.data_fine.split("/").join("-")}T00:00:00.000Z`}
-            performers={[
-              {
-                name: 'Claudio Bizzo',
-              }
-            ]}
-            organizer={{
-              type: 'Organization',
-              name: 'Claudio Bizzo',
-              url: 'https://www.claudiobizzo.com',
-            }}
-            location={{
-              name: value.nome_evento,
-              address: value.luogo,
-            }}
-            description={value.descrizione}
-          />
-        </Fragment>
-      ))}
+      {/* JSON-LD */}
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "Homepage",
+            item: "https://www.claudiobizzo.com",
+          },
+        ]}
+        key="homepageBreadcrumb"
+      />
+      <OrganizationJsonLd
+        type="Corporation"
+        logo="https://www.claudiobizzo.com/logo_full_2.png"
+        legalName="Claudio Bizzo"
+        name="Claudio Bizzo"
+        address={{
+          addressLocality: "Scorze",
+          addressRegion: "VE",
+          postalCode: "30037",
+          addressCountry: "IT",
+        }}
+        contactPoint={[
+          {
+            telephone: "+39-345-283-9043",
+            contactType: "customer service",
+            email: "claudio.bizzo58@gmail.com",
+            areaServed: "IT",
+            availableLanguage: ["Italian"],
+          },
+        ]}
+        // sameAs={["LINK SOCIAL (Facebook + Pinterest"]}
+        url="https://www.claudiobizzo.com"
+      />
+      <WebPageJsonLd
+        description={description}
+        id="https://www.claudiobizzo.com/"
+      />
+      <ImageJsonLd
+        images={[
+          {
+            contentUrl: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
+            creator: {
+              "@type": "Person",
+              name: "Claudio Bizzo",
+            },
+            creditText: "Claudio Bizzo",
+            copyrightNotice: "© Claudio Bizzo",
+          },
+        ]}
+      />
       {/* PAGE */}
       <Layout>
         <div className="homepage-mid">
@@ -104,8 +120,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
               alt="Claudio Bizzo, artigiano e creativo di opere in legno della provincia di Venezia"
               className="homepage-background-image"
               priority={true}
-              // unoptimized
-              sizes={"100vw"}
+              unoptimized
               placeholder="blur"
               layout="fill"
               objectFit="cover"
@@ -153,7 +168,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
                   )
                 ) {
                   // redirect to the item page
-                  Router.push("/artwork/" + item.key.split("/")[2]);
+                  Router.push("/artworks/" + item.key.split("/")[2]);
                 }
               }}
             />
@@ -161,7 +176,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
           <div className="homepage-gallery-explorer-container row justify-content-center align-items-center">
             <button
               className="btn btn-lg custom-button custom-button-dark gallery-explorer-btn mx-auto mb-5 text-center d-block col"
-              onClick={() => Router.push("/gallery")}
+              onClick={() => Router.push("/artworks")}
             >
               Esplora la Galleria
             </button>

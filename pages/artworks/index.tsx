@@ -8,7 +8,12 @@ import { useState } from "react";
 import { startLoadingBar, stopLoadingBar } from "../../lib/loading";
 import Router from "next/router";
 import Link from "next/link";
-import { NextSeo } from "next-seo";
+import {
+  BreadcrumbJsonLd,
+  NextSeo,
+  OrganizationJsonLd,
+  WebPageJsonLd,
+} from "next-seo";
 
 // SEO
 const title: string = "Galleria dei Lavori | Claudio Bizzo";
@@ -64,9 +69,9 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
       <NextSeo
         title={title}
         description={description}
-        canonical="https://www.claudiobizzo.com/gallery"
+        canonical="https://www.claudiobizzo.com/artworks"
         openGraph={{
-          url: "https://www.claudiobizzo.com/gallery",
+          url: "https://www.claudiobizzo.com/artworks",
           title: title,
           description: description,
           images: [
@@ -78,9 +83,53 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
               type: "image/jpeg",
             },
           ],
-          siteName: "Claudio Bizzo",
+          siteName: title,
         }}
       />
+      {/* JSON-LD */}
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "Homepage",
+            item: "https://www.claudiobizzo.com",
+          },
+          {
+            position: 2,
+            name: "Galleria dei Lavori",
+            item: "https://www.claudiobizzo.com/artworks",
+          },
+        ]}
+        key={`galleryBreadcrumb`}
+      />
+      <OrganizationJsonLd
+        type="Corporation"
+        logo="https://www.claudiobizzo.com/logo_full_2.png"
+        legalName="Claudio Bizzo"
+        name="Claudio Bizzo"
+        address={{
+          addressLocality: "Scorze",
+          addressRegion: "VE",
+          postalCode: "30037",
+          addressCountry: "IT",
+        }}
+        contactPoint={[
+          {
+            telephone: "+39-345-283-9043",
+            contactType: "customer service",
+            email: "claudio.bizzo58@gmail.com",
+            areaServed: "IT",
+            availableLanguage: ["Italian"],
+          },
+        ]}
+        // sameAs={["LINK SOCIAL (Facebook + Pinterest"]}
+        url="https://www.claudiobizzo.com"
+      />
+      <WebPageJsonLd
+        description={description}
+        id={`https://www.claudiobizzo.com/artworks`}
+      />
+      {/* PAGE */}
       <Layout>
         <div className="mid mid-background-color gallery-page-mid">
           <div className="title-container">
@@ -98,7 +147,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                     >
                       <Link
                         href={
-                          "/artwork/" +
+                          "/artworks/" +
                           (name === "no_image_available"
                             ? "not_available"
                             : artwork.imageFiles[0].publicId.split("/")[2])
@@ -123,7 +172,7 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                   className="btn btn-lg custom-button custom-button-dark-secondary mt-4 mx-auto text-center d-block"
                                   onClick={() =>
                                     Router.push(
-                                      "/artwork/" +
+                                      "/artworks/" +
                                         (name === "no_image_available"
                                           ? "not_available"
                                           : artwork.imageFiles[0].publicId.split(
