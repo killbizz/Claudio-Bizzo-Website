@@ -929,7 +929,7 @@ a.nav-link, label {
   font-weight: 400;
 }
 
-.title-container h1 {
+.title-container h1, .title-container h2 {
   font-size: 3.5em;
   font-weight: 400;
   width: 100%;

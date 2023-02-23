@@ -155,7 +155,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
         </div>
         <div className="homepage-mid-2 mid-background-color">
           <div className="title-container">
-            <h1 className="my-auto text-center">LAVORI IN EVIDENZA</h1>
+            <h2 className="my-auto text-center">LAVORI IN EVIDENZA</h2>
           </div>
           <div className="homepage-carousel-container row justify-content-center align-items-center mx-auto">
             <CustomCarousel
@@ -184,9 +184,9 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
         </div>
         <div className="homepage-mid-3 mid-dark-background-color">
           <div className="title-container">
-            <h1 className="text-center mb-5" style={{ color: "white" }}>
+            <h2 className="text-center mb-5" style={{ color: "white" }}>
               EVENTI PRINCIPALI
-            </h1>
+            </h2>
           </div>
           <VerticalTimeline className="vertical-timeline-custom-line mt-2 ">
             {featuredEvents.map((value) => (
@@ -248,7 +248,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
         </div>
         <div className="homepage-sponsors mid-background-color">
           <div className="title-container">
-            <h1 className="my-auto text-center">SPONSORS</h1>
+            <h2 className="my-auto text-center">SPONSORS</h2>
           </div>
           <div className="container-fluid sponsors-container px-0">
             <div className="row">
