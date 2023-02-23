@@ -4,7 +4,7 @@ import CustomTimeline from "../../components/timeline/CustomTimeline";
 import { getEvents } from "../../services/event";
 import { Event } from "../../types/Event";
 import { Fragment } from "react";
-import { EventJsonLd, NextSeo } from "next-seo";
+import { BreadcrumbJsonLd, EventJsonLd, NextSeo, OrganizationJsonLd, WebPageJsonLd } from "next-seo";
 
 // SEO
 const title: string = "Eventi | Claudio Bizzo";
@@ -31,21 +31,73 @@ const EventsPage = ({ events }: EventsPageProps) => {
               url: "https://www.claudiobizzo.com/homepage_zoom_img.jpg",
               width: 1527,
               height: 1527,
-              alt: "Claudio Bizzo",
+              alt: "Claudio Bizzo, artigiano e creativo di opere in legno della provincia di Venezia",
               type: "image/jpeg",
             },
           ],
-          siteName: "Claudio Bizzo",
+          siteName: title,
         }}
       />
-      {/* EVENTS JSON-LD */}
+      {/* JSON-LD */}
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "Homepage",
+            item: "https://www.claudiobizzo.com",
+          },
+          {
+            position: 2,
+            name: "Eventi",
+            item: "https://www.claudiobizzo.com/events",
+          },
+        ]}
+        key={`eventsBreadcrumb`}
+      />
+      <OrganizationJsonLd
+        type="Corporation"
+        logo="https://www.claudiobizzo.com/logo_full_2.png"
+        legalName="Claudio Bizzo"
+        name="Claudio Bizzo"
+        address={{
+          addressLocality: "Scorze",
+          addressRegion: "VE",
+          postalCode: "30037",
+          addressCountry: "IT",
+        }}
+        contactPoint={[
+          {
+            telephone: "+39-345-283-9043",
+            contactType: "customer service",
+            email: "claudio.bizzo58@gmail.com",
+            areaServed: "IT",
+            availableLanguage: ["Italian"],
+          },
+        ]}
+        // sameAs={["LINK SOCIAL (Facebook + Pinterest"]}
+        url="https://www.claudiobizzo.com"
+      />
+      <WebPageJsonLd
+        description={description}
+        id={`https://www.claudiobizzo.com/events`}
+      />
       {events.map((value) => (
         <Fragment key={value.nome_evento}>
           <EventJsonLd
             name={value.nome_evento}
             keyOverride={value.nome_evento}
             startDate={`${value.data_inizio.split("/").join("-")}T00:00:00.000Z`}
-            endDate={`${value.data_fine.split("/").join("-")}T00:00:00.000Z`}
+            endDate={`${value.data_fine.split("/").join("-")}T23:59:59.000Z`}
+            performers={[
+              {
+                name: 'Claudio Bizzo',
+              }
+            ]}
+            organizer={{
+              type: 'Organization',
+              name: 'Claudio Bizzo',
+              url: 'https://www.claudiobizzo.com',
+            }}
             location={{
               name: value.nome_evento,
               address: value.luogo,

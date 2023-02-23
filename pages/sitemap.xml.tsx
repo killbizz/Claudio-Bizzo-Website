@@ -13,7 +13,7 @@ function generateSiteMap(folders: Folder[]) {
         </image:image>
      </url>
      <url>
-        <loc>${WEBSITE_URL}/gallery</loc>
+        <loc>${WEBSITE_URL}/artworks</loc>
      </url>
      <url>
         <loc>${WEBSITE_URL}/about</loc>
@@ -34,7 +34,7 @@ function generateSiteMap(folders: Folder[]) {
        .map((folder) => {
          return `
       <url>
-        <loc>${`${WEBSITE_URL}/artwork/${folder.name}`}</loc>
+        <loc>${`${WEBSITE_URL}/artworks/${folder.name}`}</loc>
       </url>
       `;
        })

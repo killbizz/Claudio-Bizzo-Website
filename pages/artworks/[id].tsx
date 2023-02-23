@@ -5,11 +5,17 @@ import { getArtworkInFolder, getFolder } from "../../services/artwork";
 import { Artwork } from "../../types/Artwork";
 import Folder from "../../types/Folder";
 import Router from "next/router";
-import { NextSeo, ProductJsonLd } from "next-seo";
+import {
+  BreadcrumbJsonLd,
+  ImageJsonLd,
+  NextSeo,
+  OrganizationJsonLd,
+  WebPageJsonLd,
+} from "next-seo";
 
 interface ArtworkPageProps {
   artwork: Artwork;
-  id: string
+  id: string;
 }
 
 const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
@@ -19,32 +25,87 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
       <NextSeo
         title={`${artwork.data.title} | Claudio Bizzo`}
         description={`${artwork.data.title} : ${artwork.data.description}`}
-        canonical={`https://www.claudiobizzo.com/artwork/${id}`}
+        canonical={`https://www.claudiobizzo.com/artworks/${id}`}
         openGraph={{
-          url: `https://www.claudiobizzo.com/artwork/${id}`,
+          url: `https://www.claudiobizzo.com/artworks/${id}`,
           title: `${artwork.data.title} | Claudio Bizzo`,
           description: `${artwork.data.title} : ${artwork.data.description}`,
           images: [
             {
               url: artwork.imageFiles[0].url,
-              alt: artwork.imageFiles[0].name,
+              alt:
+                artwork.imageFiles[0].name +
+                " : opera di Claudio Bizzo, artigiano e creativo della provincia di Venezia",
               type: `image/${artwork.imageFiles[0].extension}`,
             },
           ],
-          siteName: "Claudio Bizzo",
+          siteName: `${artwork.data.title} | Claudio Bizzo`,
         }}
       />
-      {/* ARTWORK JSON-LD */}
-      <ProductJsonLd
-        productName={artwork.data.title}
-        keyOverride={artwork.data.title}
-        images={Array.from(artwork.imageFiles[0].url)}
-        description={artwork.data.description}
-        brand="Claudio Bizzo"
-        manufacturerName="Claudio Bizzo"
-        manufacturerLogo="https://www.claudiobizzo.com/logo_full_2.png"
-        material={artwork.data.materials}
+      {/* JSON-LD */}
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "Homepage",
+            item: "https://www.claudiobizzo.com",
+          },
+          {
+            position: 2,
+            name: "Galleria dei Lavori",
+            item: "https://www.claudiobizzo.com/artworks",
+          },
+          {
+            position: 3,
+            name: `${artwork.data.title} | Claudio Bizzo`,
+            item: `https://www.claudiobizzo.com/artworks/${id}`,
+          },
+        ]}
+        key={`${id}Breadcrumb`}
       />
+      <OrganizationJsonLd
+        type="Corporation"
+        logo="https://www.claudiobizzo.com/logo_full_2.png"
+        legalName="Claudio Bizzo"
+        name="Claudio Bizzo"
+        address={{
+          addressLocality: "Scorze",
+          addressRegion: "VE",
+          postalCode: "30037",
+          addressCountry: "IT",
+        }}
+        contactPoint={[
+          {
+            telephone: "+39-345-283-9043",
+            contactType: "customer service",
+            email: "claudio.bizzo58@gmail.com",
+            areaServed: "IT",
+            availableLanguage: ["Italian"],
+          },
+        ]}
+        // sameAs={["LINK SOCIAL (Facebook + Pinterest"]}
+        url="https://www.claudiobizzo.com"
+      />
+      <WebPageJsonLd
+        description={`${artwork.data.title} : ${artwork.data.description}`}
+        id={`https://www.claudiobizzo.com/artworks/${id}`}
+      />
+      <ImageJsonLd
+        images={
+          artwork.imageFiles.map((value) => (
+            {
+              contentUrl: value.url,
+              creator: {
+                "@type": "Person",
+                name: "Claudio Bizzo",
+              },
+              creditText: "Claudio Bizzo",
+              copyrightNotice: "© Claudio Bizzo",
+            }
+          ))
+        }
+      />
+      {/* PAGE */}
       <Layout>
         <div className="mid mid-background-color">
           <div className="container-fluid h-100">
@@ -201,7 +262,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({
   return {
     props: {
       artwork: a,
-      id: params.id.toString()
+      id: params.id.toString(),
     },
     revalidate: 60 * 60, // 1 hour
   };

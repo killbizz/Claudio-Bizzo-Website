@@ -51,7 +51,7 @@ const CustomError404 = () => {
                   </button>
                   <button
                     className="btn btn-lg custom-button custom-button-dark my-auto mx-auto text-center d-block"
-                    onClick={() => Router.push("/gallery")}
+                    onClick={() => Router.push("/artworks")}
                   >
                     Esplora la Galleria
                   </button>

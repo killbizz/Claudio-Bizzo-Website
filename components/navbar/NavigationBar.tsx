@@ -42,9 +42,9 @@ const NavigationBar = () => {
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
-                                <Link href="/gallery">
+                                <Link href="/artworks">
                                     <a className={"nav-link custom-link" 
-                                        + (router.pathname === "/gallery" ? " active" : "")}>GALLERIA</a>
+                                        + (router.pathname === "/artworks" ? " active" : "")}>GALLERIA</a>
                                 </Link>
                             </Nav.Item>
                             <Nav.Item className=" mx-4">
