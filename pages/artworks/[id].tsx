@@ -139,10 +139,10 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
                     </div>
                     <div className="artwork-page-share-button-container col-md d-flex justify-content-center align-items-center">
                       <ShareButton
-                        urlToShare="#"
-                        titleToShare=""
-                        descriptionToShare=""
-                        hashtagToShare=""
+                        urlToShare={`https://www.claudiobizzo.com/artworks/${id}`}
+                        titleToShare={`${artwork.data.title} | Claudio Bizzo`}
+                        descriptionToShare={`${artwork.data.title} : ${artwork.data.description}`}
+                        hashtagToShare="#artigianato"
                       />
                     </div>
                   </div>

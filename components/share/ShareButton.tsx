@@ -55,9 +55,9 @@ const ShareButton = ({
       >
         <div className={`share_item ${show ? "one" : ""}`}>
           <FacebookShareButton
-            url={"https://github.com/next-share"}
-            quote={"DAGHEEEEEEE"}
-            hashtag={"#nextshare"}
+            url={urlToShare}
+            quote={descriptionToShare}
+            hashtag={hashtagToShare}
           >
             <FacebookIcon
               size={SOCIAL_BUTTONS_SIZE}
@@ -69,9 +69,9 @@ const ShareButton = ({
         </div>
         <div className={`share_item ${show ? "two" : ""}`}>
           <PinterestShareButton
-            url={"https://github.com/next-share"}
+            url={urlToShare}
             media={
-              "next-share is a social share buttons for your next React apps."
+              descriptionToShare
             }
           >
             <PinterestIcon
@@ -84,9 +84,9 @@ const ShareButton = ({
         </div>
         <div className={`share_item ${show ? "three" : ""}`}>
           <TelegramShareButton
-            url={"https://github.com/next-share"}
+            url={urlToShare}
             title={
-              "next-share is a social share buttons for your next React apps."
+              titleToShare
             }
           >
             <TelegramIcon
@@ -99,11 +99,11 @@ const ShareButton = ({
         </div>
         <div className={`share_item ${show ? "four" : ""}`}>
           <WhatsappShareButton
-            url={"https://github.com/next-share"}
+            url={urlToShare}
             title={
-              "next-share is a social share buttons for your next React apps."
+              titleToShare
             }
-            separator=":: "
+            separator=" :: "
           >
             <WhatsappIcon
               size={SOCIAL_BUTTONS_SIZE}
