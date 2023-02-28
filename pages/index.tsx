@@ -224,7 +224,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
               </Fragment>
             ))}
           </VerticalTimeline>
-          <div className="artwork-get-info-container w-50 row justify-content-center align-items-center">
+          <div className="homepage-vuoi-incontrarmi-container w-50 row justify-content-center align-items-center">
             <h3
               className="homepage-subtitle text-center mb-4"
               style={{ color: "white" }}

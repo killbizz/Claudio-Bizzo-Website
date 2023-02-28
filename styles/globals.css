@@ -300,6 +300,19 @@ body, html {
   margin-bottom: 1em;
 }
 
+.homepage-vuoi-incontrarmi-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: relative !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  height: 14%;
+  margin-top: 4.35rem !important;
+  margin-bottom: 4.35rem !important;
+}
+
 /* ----- SPONSORS ----- */
 
 .homepage-sponsors {
@@ -382,12 +395,9 @@ body, html {
   align-items: center;
   justify-content: center;
   position: relative !important;
-  /* height: 14%; */
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
-  /* margin-top: 4.2rem !important;
-  margin-bottom: 2rem !important; */
 }
 
 .artwork-page-carousel-container {
