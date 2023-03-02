@@ -767,7 +767,7 @@ body, html {
   background: linear-gradient(#0000, rgb(0 0 0/14%)) top/100% 800% !important;
   background-color: #8bcfe8 !important;
   color: black !important;
-  border-color: black !important;
+  /* border-color: black !important; */
   border-radius: 4px !important;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   transition: color .15s ease-in-out, background-color .4s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, background-position .4s ease-in-out !important;
@@ -801,6 +801,7 @@ body, html {
 .custom-button-dark-secondary:hover {
   color: white !important;
   background-color: #326475 !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -836,41 +837,15 @@ body, html {
 }
 
 .share_menu {
-  /*   z-index: -1; */
   transform: scale(0.9);
 }
 
 .share_toggle {
-  /* height: 0;
-  width: 80px;
-  border-bottom: 50px solid #326475;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  transition: 0.3s; */
+  border-radius: 25px !important;
   width: 90px !important;
   height: 80px;
   z-index: 1;
 }
-
-/* .share_toggle:before {
-  content: "";
-  height: 0;
-  width: 80px;
-  border-top: 50px solid #326475;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  position: absolute;
-  top: 50px;
-  left: -40px;
-  transition: 0.3s;
-} */
-
-/* .share_toggle:hover {
-  color: black;
-} */
 
 #share_add {
   user-drag: none;
@@ -882,8 +857,6 @@ body, html {
   font-size: 100px;
   color: white;
   position: relative;
-  /* top: 33px;
-  right: 16px; */
   right: 3px;
   transition: 0.3s;
 }
@@ -921,8 +894,6 @@ body, html {
 }
 
 .share_item > button > svg {
-  /* color: #d2d2d2; */
-  /* font-size: 60px; */
   transition: 0.3s;
 }
 
