@@ -14,6 +14,7 @@ type Props = {
   urlToShare: string;
   titleToShare?: string;
   descriptionToShare?: string;
+  imageToShare?: string;
   hashtagToShare?: string;
 };
 
@@ -23,6 +24,7 @@ const ShareButton = ({
   urlToShare,
   titleToShare,
   descriptionToShare,
+  imageToShare,
   hashtagToShare,
 }: Props) => {
   const [show, setShow] = useState(false);
@@ -70,9 +72,8 @@ const ShareButton = ({
         <div className={`share_item ${show ? "two" : ""}`}>
           <PinterestShareButton
             url={urlToShare}
-            media={
-              descriptionToShare
-            }
+            media={imageToShare}
+            title={titleToShare}
           >
             <PinterestIcon
               size={SOCIAL_BUTTONS_SIZE}

@@ -142,6 +142,7 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
                         urlToShare={`https://www.claudiobizzo.com/artworks/${id}`}
                         titleToShare={`${artwork.data.title} | Claudio Bizzo`}
                         descriptionToShare={`${artwork.data.title} : ${artwork.data.description}`}
+                        imageToShare={artwork.imageFiles[0].url}
                         hashtagToShare="#artigianato"
                       />
                     </div>
