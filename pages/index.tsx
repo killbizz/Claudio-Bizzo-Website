@@ -21,6 +21,7 @@ import {
   ImageJsonLd,
   NextSeo,
   OrganizationJsonLd,
+  SocialProfileJsonLd,
   WebPageJsonLd,
 } from "next-seo";
 
@@ -97,6 +98,15 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
       <WebPageJsonLd
         description={description}
         id="https://www.claudiobizzo.com/"
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
       />
       <ImageJsonLd
         images={[
@@ -200,7 +210,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
                     value.data_inizio.split("/").reverse().join("/") +
                     (value.data_inizio !== value.data_fine
                       ? "   -   " +
-                        value.data_fine.split("/").reverse().join("/")
+                      value.data_fine.split("/").reverse().join("/")
                       : "")
                   }
                   iconStyle={{ background: "#c29f7a", color: "#ffefde" }}

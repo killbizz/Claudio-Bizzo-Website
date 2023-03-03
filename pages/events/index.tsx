@@ -4,7 +4,7 @@ import CustomTimeline from "../../components/timeline/CustomTimeline";
 import { getEvents } from "../../services/event";
 import { Event } from "../../types/Event";
 import { Fragment } from "react";
-import { BreadcrumbJsonLd, EventJsonLd, NextSeo, OrganizationJsonLd, WebPageJsonLd } from "next-seo";
+import { BreadcrumbJsonLd, EventJsonLd, NextSeo, OrganizationJsonLd, SocialProfileJsonLd, WebPageJsonLd } from "next-seo";
 
 // SEO
 const title: string = "Eventi | Claudio Bizzo";
@@ -81,6 +81,15 @@ const EventsPage = ({ events }: EventsPageProps) => {
         description={description}
         id={`https://www.claudiobizzo.com/events`}
       />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
+      />
       {events.map((value) => (
         <Fragment key={value.nome_evento}>
           <EventJsonLd
@@ -107,14 +116,14 @@ const EventsPage = ({ events }: EventsPageProps) => {
         </Fragment>
       ))}
       {/* PAGE */}
-    <Layout>
-      <div className="events-page-mid mid-dark-background-color">
-        <div className="title-container">
-          <h1 className="text-center mb-1" style={{"color" : "white"}}>EVENTI</h1>
+      <Layout>
+        <div className="events-page-mid mid-dark-background-color">
+          <div className="title-container">
+            <h1 className="text-center mb-1" style={{ "color": "white" }}>EVENTI</h1>
+          </div>
+          <CustomTimeline events={events} />
         </div>
-        <CustomTimeline events={events} />
-      </div>
-    </Layout>
+      </Layout>
     </>
   );
 };

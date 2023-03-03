@@ -1,4 +1,4 @@
-import { BreadcrumbJsonLd, NextSeo, OrganizationJsonLd, WebPageJsonLd } from "next-seo";
+import { BreadcrumbJsonLd, NextSeo, OrganizationJsonLd, SocialProfileJsonLd, WebPageJsonLd } from "next-seo";
 import EmailForm from "../../components/email/EmailForm";
 import Layout from "../../components/Layout";
 
@@ -72,6 +72,15 @@ const ContactPage = () => {
       <WebPageJsonLd
         description={description}
         id={`https://www.claudiobizzo.com/contact`}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
       />
       {/* PAGE */}
       <Layout>

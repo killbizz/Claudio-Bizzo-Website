@@ -10,6 +10,7 @@ import {
   ImageJsonLd,
   NextSeo,
   OrganizationJsonLd,
+  SocialProfileJsonLd,
   WebPageJsonLd,
 } from "next-seo";
 import ShareButton from "../../components/share/ShareButton";
@@ -90,6 +91,15 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
       <WebPageJsonLd
         description={`${artwork.data.title} : ${artwork.data.description}`}
         id={`https://www.claudiobizzo.com/artworks/${id}`}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
       />
       <ImageJsonLd
         images={artwork.imageFiles.map((value) => ({
@@ -261,7 +271,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({
   try {
     a = await getArtworkInFolder(
       `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI/` +
-        params.id.toString()
+      params.id.toString()
     );
   } catch (error) {
     console.error(error);

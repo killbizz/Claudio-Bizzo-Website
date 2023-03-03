@@ -4,7 +4,7 @@ import aboutLab from "../../public/about_lab_img.png";
 import Layout from "../../components/Layout";
 import history from "../../data/about";
 import Router from "next/router";
-import { BreadcrumbJsonLd, ImageJsonLd, NextSeo, OrganizationJsonLd, WebPageJsonLd } from "next-seo";
+import { BreadcrumbJsonLd, ImageJsonLd, NextSeo, OrganizationJsonLd, SocialProfileJsonLd, WebPageJsonLd } from "next-seo";
 
 // SEO
 const title: string = "Chi Sono | Claudio Bizzo";
@@ -75,6 +75,15 @@ const AboutPage = () => {
       <WebPageJsonLd
         description={description}
         id={`https://www.claudiobizzo.com/about`}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
       />
       <ImageJsonLd
         images={[
