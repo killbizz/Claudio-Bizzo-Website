@@ -12,6 +12,7 @@ import {
   BreadcrumbJsonLd,
   NextSeo,
   OrganizationJsonLd,
+  SocialProfileJsonLd,
   WebPageJsonLd,
 } from "next-seo";
 
@@ -129,6 +130,15 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
         description={description}
         id={`https://www.claudiobizzo.com/artworks`}
       />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
+      />
       {/* PAGE */}
       <Layout>
         <div className="mid mid-background-color gallery-page-mid">
@@ -173,11 +183,11 @@ const GalleryPage = ({ initialArtworks, folders }: GalleryPageProps) => {
                                   onClick={() =>
                                     Router.push(
                                       "/artworks/" +
-                                        (name === "no_image_available"
-                                          ? "not_available"
-                                          : artwork.imageFiles[0].publicId.split(
-                                              "/"
-                                            )[2])
+                                      (name === "no_image_available"
+                                        ? "not_available"
+                                        : artwork.imageFiles[0].publicId.split(
+                                          "/"
+                                        )[2])
                                     )
                                   }
                                 >

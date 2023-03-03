@@ -5,7 +5,6 @@ import {
   FormLabel,
   Form,
   FormControl,
-  Button,
   FormText,
   Col,
 } from "react-bootstrap";
@@ -249,9 +248,9 @@ Mario Rossi.`
           />
         </Col>
 
-        <Button type="submit" className="custom-button custom-button-dark mt-4 mb-4 px-5" disabled={sending}>
+        <button type="submit" className="btn btn-lg custom-button custom-button-dark mt-4 mb-4 px-5" disabled={sending}>
           Invio
-        </Button>
+        </button>
       </FormGroup>
     </Form>
   );

@@ -10,8 +10,10 @@ import {
   ImageJsonLd,
   NextSeo,
   OrganizationJsonLd,
+  SocialProfileJsonLd,
   WebPageJsonLd,
 } from "next-seo";
+import ShareButton from "../../components/share/ShareButton";
 
 interface ArtworkPageProps {
   artwork: Artwork;
@@ -90,20 +92,25 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
         description={`${artwork.data.title} : ${artwork.data.description}`}
         id={`https://www.claudiobizzo.com/artworks/${id}`}
       />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Claudio Bizzo"
+        url="https://www.claudiobizzo.com"
+        sameAs={[
+          'https://www.facebook.com/profile.php?id=100090776381452',
+          'https://www.pinterest.it/claudiobizzo58'
+        ]}
+      />
       <ImageJsonLd
-        images={
-          artwork.imageFiles.map((value) => (
-            {
-              contentUrl: value.url,
-              creator: {
-                "@type": "Person",
-                name: "Claudio Bizzo",
-              },
-              creditText: "Claudio Bizzo",
-              copyrightNotice: "© Claudio Bizzo",
-            }
-          ))
-        }
+        images={artwork.imageFiles.map((value) => ({
+          contentUrl: value.url,
+          creator: {
+            "@type": "Person",
+            name: "Claudio Bizzo",
+          },
+          creditText: "Claudio Bizzo",
+          copyrightNotice: "© Claudio Bizzo",
+        }))}
       />
       {/* PAGE */}
       <Layout>
@@ -127,15 +134,28 @@ const ArtworkPage = ({ artwork, id }: ArtworkPageProps) => {
               </div>
               <div className="col artwork-page-container artwork-right-section-background">
                 <div className="artwork-right-section-container">
-                  <div className="artwork-get-info-container row justify-content-center align-items-center">
-                    <p className="col text-center mb-2">Sei interessato?</p>
-                    <div className="w-100" />
-                    <button
-                      className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mx-auto text-center d-block col"
-                      onClick={() => Router.push("/contact")}
-                    >
-                      Chiedi Informazioni
-                    </button>
+                  <div className="artwork-share-and-info-container row">
+                    <div className="col-md d-flex justify-content-center align-items-center">
+                      <div className="artwork-get-info-container row justify-content-center align-items-center">
+                        <p className="col text-center mb-2">Sei interessato?</p>
+                        <div className="w-100" />
+                        <button
+                          className="btn btn-lg custom-button custom-button-dark artwork-get-info-btn mx-auto text-center d-block col"
+                          onClick={() => Router.push("/contact")}
+                        >
+                          Chiedi Informazioni
+                        </button>
+                      </div>
+                    </div>
+                    <div className="artwork-page-share-button-container col-md d-flex justify-content-center align-items-center">
+                      <ShareButton
+                        urlToShare={`https://www.claudiobizzo.com/artworks/${id}`}
+                        titleToShare={`${artwork.data.title} | Claudio Bizzo`}
+                        descriptionToShare={`${artwork.data.title} : ${artwork.data.description}`}
+                        imageToShare={artwork.imageFiles[0].url}
+                        hashtagToShare="#artigianato"
+                      />
+                    </div>
                   </div>
                   <div className="artwork-features-container pt-2">
                     <div className="row justify-content-center">
@@ -251,7 +271,7 @@ export const getStaticProps: GetStaticProps<ArtworkPageProps> = async ({
   try {
     a = await getArtworkInFolder(
       `${process.env.NEXT_PUBLIC_CLOUDINARY_MAIN_FOLDER}/LAVORI/` +
-        params.id.toString()
+      params.id.toString()
     );
   } catch (error) {
     console.error(error);
