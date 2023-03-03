@@ -20,15 +20,15 @@ const NavigationBar = () => {
                     </Navbar.Brand>
                     <Navbar.Brand>
                         <div>
-                            <a href="https://www.facebook.com/profile.php?id=100009326235389" aria-label="Facebook Link">
+                            <a href="https://www.facebook.com/profile.php?id=100090776381452" aria-label="Facebook Link">
                                 <i className="fa fa-facebook-square fa-2x logos" />
                             </a>
                         </div>  
                     </Navbar.Brand>
                     <Navbar.Brand>
                         <div>
-                            <a href="https://www.instagram.com/claudiobizzo/" aria-label="Instagram Link">
-                                <i className="fa fa-instagram fa-2x logos" />
+                            <a href="https://www.pinterest.it/claudiobizzo58" aria-label="Pinterest Link">
+                                <i className="fa fa-pinterest fa-2x logos" />
                             </a>
                         </div>
                     </Navbar.Brand>
