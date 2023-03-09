@@ -23,6 +23,15 @@ module.exports = withAxiom({
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/gallery',
+        destination: '/artworks',
+        permanent: true, // triggers 308
+      },
+    ];
+  },
   reactStrictMode: false, 
   images: {
     domains: ['res.cloudinary.com'],
