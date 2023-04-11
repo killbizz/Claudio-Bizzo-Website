@@ -28,7 +28,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.2.0",
     "react-vertical-timeline-component": "^3.5.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vm2": ">=3.9.15"
   },
   "devDependencies": {
     "@types/cookie": "^0.5.1",
