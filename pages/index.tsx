@@ -263,7 +263,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
           <div className="container-fluid sponsors-container px-0">
             <div className="row">
               <div className="col-md-6 d-flex my-2 justify-content-center align-items-center">
-                <Link href="https://www.trevigianacollanti.it/">
+                <Link href="https://www.trevigianacollanti.it/" legacyBehavior>
                   <a>
                     <div>
                       <Image
@@ -278,7 +278,7 @@ const IndexPage = ({ featuredArtworks, featuredEvents }: HomePageProps) => {
                 </Link>
               </div>
               <div className="col-md-6 d-flex my-2 justify-content-center align-items-center">
-                <Link href="http://www.rubyklein.it/">
+                <Link href="http://www.rubyklein.it/" legacyBehavior>
                   <a>
                     <div>
                       <Image
