@@ -7,14 +7,14 @@ import "nprogress/nprogress.css"; //styles of nprogress
 import { Fragment } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // styles for the react carousel
 
-export { reportWebVitals } from "next-axiom"; // report info from the app to axiom dashboard
+import { withAxiom } from "next-axiom";
 
 //Binding events
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
-export default function SoliDiClaudioFE({ Component, pageProps }: AppProps) {
+function SoliDiClaudioFE({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <DefaultSeo
@@ -29,3 +29,5 @@ export default function SoliDiClaudioFE({ Component, pageProps }: AppProps) {
     </Fragment>
   );
 }
+
+export default withAxiom(SoliDiClaudioFE);
